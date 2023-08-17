@@ -9,16 +9,20 @@ public:
 //default value constructor
     Stat(stat_name name, int size);
 //default destructor
-    ~Stat();
-//increase stat
+    ~Stat() = default;
+//increase stat value
     void increase(int increase_by);
-//decrease stat
+//decrease stat value
     void decrease(int decrease_by);
+//increase stat size
+    void size_up(int increase_by);
+//decrease stat size
+    void size_down(int decrease_by);
 //reset current_value to maximum size
     void reset();
 private:
     stat_name m_name{};
-    int current_value{};
+    int m_current_value{};
     int m_size{};
 };
 #endif

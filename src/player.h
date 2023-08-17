@@ -4,8 +4,6 @@
 #include "armor.h"
 #include "elements.h"
 #include "stat.h"
-
-#include <vector>
 /*
 Player Class
 
