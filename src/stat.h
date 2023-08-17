@@ -1,9 +1,18 @@
 #ifndef STAT_H
 #define STAT_H
-#include "elements.h"
+
 class Stat
 {
 public:
+//list of all stat values for all player and enemy characters and also equipables listed as enum
+    enum stat_name
+    {
+        hp,
+        attack,
+        defense,
+        agility,
+        luck,
+    };
 //default zero-value constructor
     Stat(stat_name name);
 //default value constructor
@@ -20,6 +29,7 @@ public:
     void size_down(int decrease_by);
 //reset current_value to maximum size
     void reset();
+
 private:
     stat_name m_name{};
     int m_current_value{};

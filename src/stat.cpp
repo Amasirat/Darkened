@@ -1,7 +1,12 @@
 #include "stat.h"
-//default zero-value constructor(should be changed)
+#include "global.h"
+//default zero-value constructor
 Stat::Stat(stat_name name) : 
-m_name{name} 
+m_name{name}, m_size{game::default_stat_size} 
+{}
+//default value constructor
+Stat::Stat(stat_name name, int size) :
+m_name{name}, m_size{size}
 {}
 //increase stat value
 void Stat::increase(int increase_by)

@@ -153,6 +153,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/stat.o: src/stat.cpp.o
+.PHONY : src/stat.o
+
+# target to build an object file
+src/stat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/stat.cpp.o
+.PHONY : src/stat.cpp.o
+
+src/stat.i: src/stat.cpp.i
+.PHONY : src/stat.i
+
+# target to preprocess a source file
+src/stat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/stat.cpp.i
+.PHONY : src/stat.cpp.i
+
+src/stat.s: src/stat.cpp.s
+.PHONY : src/stat.s
+
+# target to generate assembly for a file
+src/stat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/stat.cpp.s
+.PHONY : src/stat.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/stat.o"
+	@echo "... src/stat.i"
+	@echo "... src/stat.s"
 .PHONY : help
 
 

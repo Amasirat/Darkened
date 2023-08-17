@@ -4,6 +4,7 @@
 //or default player levels, etc...
 namespace game
 {
+//default starting size for Stat classes
    inline const int default_stat_size{5}; 
 };
 //namespace for default system values like file

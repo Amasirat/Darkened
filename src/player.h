@@ -2,7 +2,6 @@
 #define PLAYER_H
 
 #include "armor.h"
-#include "elements.h"
 #include "stat.h"
 /*
 Player Class
@@ -25,11 +24,11 @@ public:
     void equip_armor(const Armor& armor);
 private:
 //player stats
-    Stat m_hp{hp};
-    Stat m_attack{attack};
-    Stat m_defense{defense};
-    Stat m_agility{agility};
-    Stat m_luck{luck};
+    Stat m_hp{Stat::hp};
+    Stat m_attack{Stat::attack};
+    Stat m_defense{Stat::defense};
+    Stat m_agility{Stat::agility};
+    Stat m_luck{Stat::luck};
 //equipment
     Armor m_armor{};
 };

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/amasirat/projects/Darkened/src/main.cpp" "CMakeFiles/darkened.dir/src/main.cpp.o" "gcc" "CMakeFiles/darkened.dir/src/main.cpp.o.d"
+  "/home/amasirat/projects/Darkened/src/stat.cpp" "CMakeFiles/darkened.dir/src/stat.cpp.o" "gcc" "CMakeFiles/darkened.dir/src/stat.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
