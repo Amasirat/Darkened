@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++   -g -o CMakeFiles/darkened.dir/src/main.cpp.o -c /home/amasirat/projects/Darkened/src/main.cpp",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -o CMakeFiles/darkened.dir/src/main.cpp.o -c /home/amasirat/projects/Darkened/src/main.cpp",
   "file": "/home/amasirat/projects/Darkened/src/main.cpp",
   "output": "CMakeFiles/darkened.dir/src/main.cpp.o"
 }
