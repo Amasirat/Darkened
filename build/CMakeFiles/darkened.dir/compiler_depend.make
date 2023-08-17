@@ -190,14 +190,11 @@ CMakeFiles/darkened.dir/src/main.cpp.o: /home/amasirat/projects/Darkened/src/mai
   /usr/lib/clang/15.0.7/include/stddef.h
 
 CMakeFiles/darkened.dir/src/stat.cpp.o: /home/amasirat/projects/Darkened/src/stat.cpp \
-  /home/amasirat/projects/Darkened/src/elements.h \
   /home/amasirat/projects/Darkened/src/global.h \
   /home/amasirat/projects/Darkened/src/stat.h
 
 
 /home/amasirat/projects/Darkened/src/stat.h:
-
-/home/amasirat/projects/Darkened/src/elements.h:
 
 /usr/lib/clang/15.0.7/include/stddef.h:
 
