@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g CMakeFiles/darkened.dir/src/main.cpp.o -o darkened 
