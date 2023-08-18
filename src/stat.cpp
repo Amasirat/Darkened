@@ -1,5 +1,7 @@
 #include "stat.h"
 #include "global.h"
+
+#include <stdexcept>
 //default zero-value constructor
 Stat::Stat(stat_name name) : 
 m_name{name}, m_size{game::default_stat_size} 
@@ -30,15 +32,22 @@ void Stat::decrease(int decrease_by)
 void Stat::size_up(int increase_by)
 {
     m_size += increase_by;
-//potential error handling required 
-//for exceeding limit
+    if(m_size > game::stat_limit)
+    {
+        m_size = game::stat_limit;
+        throw std::runtime_error("Value Limit Reached");
+    }
 }
 //decrease stat size
 void Stat::size_down(int decrease_by)
 {
     m_size -= decrease_by;
-//potential error handling required 
-//for exceeding limit 
+//we can't size down a Stat to below zero
+    if(m_size < 0)
+    {
+        m_size = 0;
+        throw std::runtime_error("Value Limit Reached");
+    }
 }
 //reset current_value to maximum size
 void Stat::reset()
