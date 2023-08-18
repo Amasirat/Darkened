@@ -1,16 +1,9 @@
-#include "../src/stat.h"\
-#include <exception>
-
-
-void stat_increase_test()
+#include "../src/stat.h"
+#include "../src/error.h"
+#include <iostream>
+void stat_size_up_test(int parameter)
 {
     Stat hitpoint{Stat::hp, 8};
-    try
-    {
-
-    }
-    catch(...)
-    {
-
-    }
+    hitpoint.size_up(parameter);
+    std::cout << hitpoint.size() << '\n';
 }

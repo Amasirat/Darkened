@@ -29,7 +29,13 @@ public:
     void size_down(int decrease_by);
 //reset current_value to maximum size
     void reset();
-
+//getters
+//  name
+    stat_name name() const {return m_name;}
+//  current_value
+    int current() const {return m_current_value;}
+//  size
+    int size() const {return m_size;}
 private:
     stat_name m_name{};
     int m_current_value{};

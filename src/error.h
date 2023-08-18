@@ -9,7 +9,7 @@ public:
 //default destructor
     ~Error() = default;
 //print error message on screen
-    void print();
+    void print() const;
 private:
     std::string m_error_message{};
 };

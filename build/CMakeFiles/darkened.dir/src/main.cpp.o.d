@@ -152,4 +152,7 @@ CMakeFiles/darkened.dir/src/main.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/basic_ios.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/ostream.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/istream \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/istream.tcc
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/istream.tcc \
+  /home/amasirat/projects/Darkened/src/../tests/unit_tests.h \
+  /home/amasirat/projects/Darkened/src/../tests/../src/stat.h \
+  /home/amasirat/projects/Darkened/src/../tests/../src/error.h
