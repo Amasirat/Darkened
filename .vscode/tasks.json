@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "cd build && make" // cd to your build directory
+            "command": "cd build && make && cd .." // cd to your build directory and back
         }
     ]
 }
