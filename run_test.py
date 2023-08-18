@@ -1,11 +1,10 @@
 import sys
 import os
 """
-This automatic scripts takes in only one argument for the directory of the .cpp file of the intended
-class function to test
+This script automatically runs test on one class and takes in only one argument for the directory of the .cpp file of the intended
+class of the function intended to be tested
 
-python run_test.py src/stat.cpp
-
+example: python run_test.py src/stat.cpp
 """
 def main():
     if len(sys.argv) > 2:
@@ -13,7 +12,6 @@ def main():
         return
     
     test_module = sys.argv[1]
-    print(test_module)
 
 
 if __name__ == "__main__":
