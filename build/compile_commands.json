@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/amasirat/projects/Darkened/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -o CMakeFiles/darkened.dir/src/error.cpp.o -c /home/amasirat/projects/Darkened/src/error.cpp",
+  "file": "/home/amasirat/projects/Darkened/src/error.cpp",
+  "output": "CMakeFiles/darkened.dir/src/error.cpp.o"
+},
+{
+  "directory": "/home/amasirat/projects/Darkened/build",
   "command": "/usr/bin/clang++   -g -std=gnu++17 -o CMakeFiles/darkened.dir/src/stat.cpp.o -c /home/amasirat/projects/Darkened/src/stat.cpp",
   "file": "/home/amasirat/projects/Darkened/src/stat.cpp",
   "output": "CMakeFiles/darkened.dir/src/stat.cpp.o"
