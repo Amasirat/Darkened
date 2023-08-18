@@ -13,8 +13,8 @@ TEST_EXEC = "tests/test_run"
 # Compiles and runs test program taking the directory to the appropiate .cpp directory of the class
 # intending to be tested
 def run_test(test_directory):
-    clang_command = f"clang++ -std=c++17 {ERROR_CPP} {TEST_EXEC_DIR} {test_directory} -o {TEST_EXEC}"
-    result = os.system(clang_command)
+    command = f"clang++ -std=c++17 {ERROR_CPP} {TEST_EXEC_DIR} {test_directory} -o {TEST_EXEC}"
+    result = os.system(command)
     if result == 0:
         os.system(f"./{TEST_EXEC}")
 
