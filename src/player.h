@@ -3,6 +3,9 @@
 
 #include "armor.h"
 #include "stat.h"
+#include "item.h"
+
+#include <vector>
 /*
 Player Class
 
@@ -31,5 +34,7 @@ private:
     Stat m_luck{Stat::luck};
 //equipment
     Armor m_armor{};
+//player items
+    std::vector<Item*> m_items{};
 };
 #endif
