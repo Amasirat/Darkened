@@ -20,6 +20,7 @@ def run_test(test_directory):
 
 # main function
 def main():
+# condition checks to make sure user puts in only one argument
     if len(sys.argv) > 2:
         print("Too many arguments")
         return
@@ -28,7 +29,6 @@ def main():
         return
     
     test_module = sys.argv[1]
-
     run_test(test_module)
 
 if __name__ == "__main__":
