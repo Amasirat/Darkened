@@ -9,6 +9,7 @@ namespace game
    inline const int stat_limit{200};
    inline const int random_upper_limit{50};
    inline const int random_lower_limit{1};
+   inline const int level_limit{100};
 };
 //namespace for default system values like file
 //directories, configs etc...

@@ -29,6 +29,8 @@ public:
     void size_down(int decrease_by);
 //reset current_value to maximum size
     void reset();
+//set stat size
+    void set_size(int size);
 //getters
 //  name
     stat_name name() const {return m_name;}

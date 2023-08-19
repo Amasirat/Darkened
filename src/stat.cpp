@@ -54,3 +54,12 @@ void Stat::reset()
 {
     m_current_value = m_size;
 }
+//set stat size
+void Stat::set_size(int size)
+{
+    m_size = size;
+    if(m_current_value > m_size)
+    {
+        m_current_value = m_size;
+    }
+}
