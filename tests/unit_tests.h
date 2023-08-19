@@ -1,9 +1,8 @@
-#include "../src/stat.h"
+#include "../src/random.h"
 #include "../src/error.h"
 #include <iostream>
-void stat_size_up_test(int parameter)
+int random_generate_test()
 {
-    Stat hitpoint{Stat::hp, 8};
-    hitpoint.size_up(parameter);
-    std::cout << hitpoint.size() << '\n';
+    Random dice{};
+    return dice.generate();
 }

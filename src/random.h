@@ -15,10 +15,12 @@ public:
 //default constructor
     Random();
 //default destructor
-    ~Random();
+    ~Random() = default;
 //generate random number and return that number
     int generate() const;
 private:
-
+    unsigned long m_seed{};
+    int m_lower_limit{};
+    int m_upper_limit{};
 };
 #endif

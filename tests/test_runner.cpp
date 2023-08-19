@@ -5,6 +5,9 @@
 
 int main()
 {
-    std::cout << "No Test is written\n";
+    for(int i{0}; i < 10; ++i)
+    {
+        std::cout << random_generate_test() << '\n';
+    }
     return 0;
 }

@@ -7,6 +7,8 @@ namespace game
 //default starting size for Stat classes
    inline const int default_stat_size{5}; 
    inline const int stat_limit{200};
+   inline const int random_upper_limit{50};
+   inline const int random_lower_limit{1};
 };
 //namespace for default system values like file
 //directories, configs etc...
