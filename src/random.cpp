@@ -7,6 +7,18 @@ Random::Random() :
 m_lower_limit{game::random_lower_limit},
 m_upper_limit{game::random_upper_limit}
 {
+    initialize();
+}
+//default value constructor
+Random::Random(int lower, int upper) : 
+m_lower_limit{lower},
+m_upper_limit{upper}
+{
+    initialize();
+}
+//initializer
+void Random::initialize()
+{
     m_seed = (unsigned long)std::chrono::steady_clock::now().
     time_since_epoch().count();
 }
