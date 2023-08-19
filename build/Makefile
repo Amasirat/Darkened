@@ -177,6 +177,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/random.o: src/random.cpp.o
+.PHONY : src/random.o
+
+# target to build an object file
+src/random.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/random.cpp.o
+.PHONY : src/random.cpp.o
+
+src/random.i: src/random.cpp.i
+.PHONY : src/random.i
+
+# target to preprocess a source file
+src/random.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/random.cpp.i
+.PHONY : src/random.cpp.i
+
+src/random.s: src/random.cpp.s
+.PHONY : src/random.s
+
+# target to generate assembly for a file
+src/random.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/random.cpp.s
+.PHONY : src/random.cpp.s
+
 src/stat.o: src/stat.cpp.o
 .PHONY : src/stat.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/random.o"
+	@echo "... src/random.i"
+	@echo "... src/random.s"
 	@echo "... src/stat.o"
 	@echo "... src/stat.i"
 	@echo "... src/stat.s"
