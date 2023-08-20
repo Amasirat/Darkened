@@ -2,10 +2,8 @@
 #define RANDOM_H
 #include <iostream>
 #include <random>
-
 /*
-Random class that wraps around the mersenne twister psuedo-random number generator algorithm
-
+Random class that wraps around the mersenne twister PRNG number generator algorithm
 
 find function implementations in .cpp file of the same name in src directory
 */
