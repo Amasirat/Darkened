@@ -1,4 +1,6 @@
 #include <iostream>
+#include "player.h"
+#include "stat.h"
 
 int main()
 {

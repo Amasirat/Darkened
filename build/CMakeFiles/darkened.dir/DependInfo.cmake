@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/amasirat/projects/Darkened/src/error.cpp" "CMakeFiles/darkened.dir/src/error.cpp.o" "gcc" "CMakeFiles/darkened.dir/src/error.cpp.o.d"
   "/home/amasirat/projects/Darkened/src/main.cpp" "CMakeFiles/darkened.dir/src/main.cpp.o" "gcc" "CMakeFiles/darkened.dir/src/main.cpp.o.d"
+  "/home/amasirat/projects/Darkened/src/player.cpp" "CMakeFiles/darkened.dir/src/player.cpp.o" "gcc" "CMakeFiles/darkened.dir/src/player.cpp.o.d"
   "/home/amasirat/projects/Darkened/src/random.cpp" "CMakeFiles/darkened.dir/src/random.cpp.o" "gcc" "CMakeFiles/darkened.dir/src/random.cpp.o.d"
   "/home/amasirat/projects/Darkened/src/stat.cpp" "CMakeFiles/darkened.dir/src/stat.cpp.o" "gcc" "CMakeFiles/darkened.dir/src/stat.cpp.o.d"
   )

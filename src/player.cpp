@@ -3,31 +3,54 @@
 #include "error.h"
 
 //default constructor
-Player::Player(const std::string& name) : m_name{name},
-m_level{1}
-{
-}
+Player::Player(const std::string& name, int level) : m_name{name},
+m_level{level}
+{}
 //decrease player stats, taking a stat enum vector to know which stat to decrease, and how much to decrease
 void Player::decrease_stats(Stat::stat_name stat_to_change, int diff_num)
 {
     switch(stat_to_change)
     {
         case Stat::hp:
-            m_stats.m_hp.decrease(diff_num);
+            m_stats[0].decrease(diff_num);
             break;
         case Stat::attack:
-            m_stats.m_attack.decrease(diff_num);
-            break;
-        case Stat::agility:
-            m_stats.m_agility.decrease(diff_num);
+            m_stats[1].decrease(diff_num);
             break;
         case Stat::defense:
-            m_stats.m_defense.decrease(diff_num);
+            m_stats[2].decrease(diff_num);
+            break;
+        case Stat::agility:
+            m_stats[3].decrease(diff_num);
             break;
         case Stat::luck:
-            m_stats.m_luck.decrease(diff_num);
+            m_stats[4].decrease(diff_num);
             break;
         default:
             throw Error("Player recieved unknown stat literal\n");
     }
+}
+//increase player stats, taking a stat enum to know which stat to increase, and how much to increase
+void Player::increase_stats(Stat::stat_name stat_to_change, int diff_num)
+{
+    switch(stat_to_change)
+    {
+        case Stat::hp:
+            m_stats[0].increase(diff_num);
+            break;
+        case Stat::attack:
+            m_stats[1].increase(diff_num);
+            break;
+        case Stat::defense:
+            m_stats[2].increase(diff_num);
+            break;
+        case Stat::agility:
+            m_stats[3].increase(diff_num);
+            break;
+        case Stat::luck:
+            m_stats[4].increase(diff_num);
+            break;
+        default:
+            throw Error("Player recieved unknown stat literal\n");
+    } 
 }

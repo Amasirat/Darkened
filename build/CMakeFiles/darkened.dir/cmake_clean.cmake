@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/darkened.dir/src/error.cpp.o.d"
   "CMakeFiles/darkened.dir/src/main.cpp.o"
   "CMakeFiles/darkened.dir/src/main.cpp.o.d"
+  "CMakeFiles/darkened.dir/src/player.cpp.o"
+  "CMakeFiles/darkened.dir/src/player.cpp.o.d"
   "CMakeFiles/darkened.dir/src/random.cpp.o"
   "CMakeFiles/darkened.dir/src/random.cpp.o.d"
   "CMakeFiles/darkened.dir/src/stat.cpp.o"

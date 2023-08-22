@@ -10,5 +10,6 @@ add_executable(darkened
     src/error.cpp
     src/stat.cpp
     src/random.cpp
+    src/player.cpp
     src/main.cpp
 )

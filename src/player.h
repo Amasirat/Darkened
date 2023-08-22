@@ -16,7 +16,7 @@ class Player
 {
 public:
 //default constructor
-    Player(const std::string& name);
+    Player(const std::string& name = "user", int level = 1);
 //copy constructor(copying an object of this class is not allowed)
     Player(const Player& player) = delete;
 //default destructor
@@ -25,26 +25,33 @@ public:
     void decrease_stats(Stat::stat_name stat_to_change, int diff_num);
 //increase player stats, taking a stat enum to know which stat to increase, and how much to increase
     void increase_stats(Stat::stat_name stat_to_change, int diff_num);
+//level up player
+    void level_up();
 //function to equip armor
-    void equip_armor(const Armor& armor);
+//void equip_armor(const Armor& armor);
+//getters
+//returns name of player
+    std::string name() const
+    { return m_name; }
+//returns level of player
+    int level() const
+    { return m_level; }
 private:
 //name
     std::string m_name{};
 //level
     int m_level{};
 //player stats
-    struct player_stats
-    {
-        Stat m_hp{Stat::hp};
-        Stat m_attack{Stat::attack};
-        Stat m_defense{Stat::defense};
-        Stat m_agility{Stat::agility};
-        Stat m_luck{Stat::luck};
+    std::vector<Stat> m_stats{
+        Stat{Stat::hp},
+        Stat{Stat::attack},
+        Stat{Stat::defense},
+        Stat{Stat::agility},
+        Stat{Stat::luck}
     };
-    player_stats m_stats{};
 //equipment
-    Armor m_armor{};
+//Armor m_armor{};
 //player items
-    std::vector<Item*> m_items{};
+//std::vector<Item*> m_items{};
 };
 #endif
