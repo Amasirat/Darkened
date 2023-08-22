@@ -1,5 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
+#include <string>
 //namespace for game related global variables like default stat size
 //or default player levels, etc...
 namespace game
@@ -17,7 +18,7 @@ namespace game
 //directories, configs etc...
 namespace sys
 {
-
+   inline constexpr std::string log_directory{"../logs/"};
 };
 
 #endif
