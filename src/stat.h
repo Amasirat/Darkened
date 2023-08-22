@@ -1,5 +1,6 @@
 #ifndef STAT_H
 #define STAT_H
+#include <string>
 /*
 Class for All Stats in game. 
 Stats have a ceiling value where they can't go higher than which is called their size and their current value.
@@ -11,6 +12,10 @@ member functions:
     void decrease(int): decrease value of a given stat by an int variable
     void size_up(int):  increase size of the stat by an int variable
     void size_down(int): decrease size of the stat by an int variable
+    stat_name enum_name() const: returns enum of m_name
+    std::string name() cost: returns name of stat in string form for use by other parts of the program
+    int size() const: returns total size of stat object
+    int current() const: returns current stat value
 */
 class Stat
 {
@@ -44,7 +49,9 @@ public:
     void set_size(int size);
 //getters
 //  name
-    stat_name name() const {return m_name;}
+    stat_name enum_name() const {return m_name;}
+//  name of stat in std::string form
+    std::string name() const;
 //  current_value
     int current() const {return m_current_value;}
 //  size

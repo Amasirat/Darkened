@@ -1,17 +1,22 @@
 #include "stat.h"
 #include "global.h"
 #include "error.h"
+//system libs
+#include <string>
 //default zero-value constructor
 Stat::Stat(stat_name name) : 
-m_name{name}, m_size{game::default_stat_size} 
+m_name{name}, m_size{game::default_stat_size},
+m_current_value{game::default_stat_size}
 {}
 //default value constructor
 Stat::Stat(stat_name name, int size) :
-m_name{name}, m_size{size}
+m_name{name}, m_size{size}, m_current_value{size}
 {}
 //increase stat value
 void Stat::increase(int increase_by)
 {
+    if(increase_by <= 0)
+        throw Error("Invalid Value(number below zero)");
     m_current_value += increase_by;
     if(m_current_value > m_size)
     {
@@ -22,6 +27,10 @@ void Stat::increase(int increase_by)
 //decrease stat value
 void Stat::decrease(int decrease_by)
 {
+    if (decrease_by <= 0)
+    {
+        throw Error("Invalid Value");
+    }
     m_current_value -= decrease_by;
     if(m_current_value < 0)
     {
@@ -32,6 +41,8 @@ void Stat::decrease(int decrease_by)
 //increase stat size
 void Stat::size_up(int increase_by)
 {
+    if(increase_by <= 0)
+        throw Error("Invalid Error(number below zero)");
     m_size += increase_by;
     if(m_size > game::stat_limit)
     {
@@ -42,6 +53,8 @@ void Stat::size_up(int increase_by)
 //decrease stat size
 void Stat::size_down(int decrease_by)
 {
+    if(decrease_by <= 0)
+        throw Error("Invalid Value");
     m_size -= decrease_by;
 //we can't size down a Stat to below zero
     if(m_size < 0)
@@ -63,9 +76,28 @@ void Stat::reset()
 //set stat size
 void Stat::set_size(int size)
 {
+    if(size <= 0)
+        throw Error("Invalid Value");
     m_size = size;
-    if(m_current_value > m_size)
+    m_current_value = m_size;
+
+}
+//name of stat in std::string form
+std::string Stat::name() const
+{
+    switch(m_name)
     {
-        m_current_value = m_size;
+        case hp:
+            return "hp";
+        case attack:
+            return "attack";
+        case agility:
+            return "agility";
+        case defense:
+            return "defense";
+        case luck:
+            return "luck";
+        default:
+            return "undefined stat";
     }
 }
