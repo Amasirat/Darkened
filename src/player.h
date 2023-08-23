@@ -4,6 +4,7 @@
 #include "armor.h"
 #include "stat.h"
 #include "item.h"
+#include "enemy.h"
 
 #include <string>
 #include <vector>
@@ -21,6 +22,8 @@ public:
     Player(const Player& player) = delete;
 //default destructor
     ~Player() = default;
+//attack an enemy
+    void attack(Enemy& enemy) const;
 //decrease player stats, taking a stat enum vector to know which stat to decrease, and how much to decrease
     void decrease_stats(Stat::stat_name stat_to_change, int diff_num);
 //increase player stats, taking a stat enum to know which stat to increase, and how much to increase
