@@ -3,6 +3,8 @@
 #include "global.h"
 #include "error.h"
 
+#include <iostream>
+
 //default constructor
 Player::Player(const std::string& name, int level) : m_name{name},
 m_level{level}

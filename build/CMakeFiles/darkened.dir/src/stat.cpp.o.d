@@ -1,8 +1,6 @@
 CMakeFiles/darkened.dir/src/stat.cpp.o: \
   /home/amasirat/projects/Darkened/src/stat.cpp \
   /home/amasirat/projects/Darkened/src/stat.h \
-  /home/amasirat/projects/Darkened/src/global.h \
-  /home/amasirat/projects/Darkened/src/error.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/string \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/requires_hosted.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -122,4 +120,6 @@ CMakeFiles/darkened.dir/src/stat.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/uses_allocator.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/uses_allocator_args.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/tuple \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/ranges_util.h
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/ranges_util.h \
+  /home/amasirat/projects/Darkened/src/global.h \
+  /home/amasirat/projects/Darkened/src/error.h

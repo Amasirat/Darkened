@@ -3,6 +3,7 @@
 #include "stat.h"
 #include "player.h"
 #include <vector>
+class Player;
 class Enemy
 {
 public:

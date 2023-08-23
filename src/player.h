@@ -1,10 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#include "enemy.h"
 #include "armor.h"
 #include "stat.h"
 #include "item.h"
-#include "enemy.h"
 
 #include <string>
 #include <vector>
