@@ -1,4 +1,5 @@
 #include "player.h"
+#include "stat.h"
 #include "global.h"
 #include "error.h"
 
@@ -53,4 +54,16 @@ void Player::increase_stats(Stat::stat_name stat_to_change, int diff_num)
         default:
             throw Error("Player recieved unknown stat literal\n");
     } 
+}
+//level up player
+void Player::level_up(Stat::stat_name stat_to_change)
+{
+    if(m_level == game::level_limit)
+    {
+        std::cerr << "Level Limit has Reached\n";
+        return;
+    }
+    constexpr int increase_by{1};
+    increase_stats(stat_to_change, increase_by);
+    ++m_level;
 }

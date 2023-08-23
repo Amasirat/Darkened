@@ -29,7 +29,7 @@ public:
 //increase player stats, taking a stat enum to know which stat to increase, and how much to increase
     void increase_stats(Stat::stat_name stat_to_change, int diff_num);
 //level up player
-    void level_up();
+    void level_up(Stat::stat_name stat_to_change);
 //function to equip armor
 //void equip_armor(const Armor& armor);
 //getters
