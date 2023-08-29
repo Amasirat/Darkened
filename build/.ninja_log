@@ -1,0 +1,7 @@
+# ninja log v5
+2	2309	1693339210491555608	CMakeFiles/darkened.dir/src/stat.cpp.o	4109803364f699b6
+2	2450	1693339210628222275	CMakeFiles/darkened.dir/src/error.cpp.o	a0b9cd834237430f
+18	2613	1693339210798222274	CMakeFiles/darkened.dir/src/main.cpp.o	e308c3a0d696c46
+11	2672	1693339210858222273	CMakeFiles/darkened.dir/src/player.cpp.o	7e0d26cc6d69f45c
+2	5471	1693339213658222260	CMakeFiles/darkened.dir/src/random.cpp.o	172eed28c0d2aec6
+5471	5743	1693339213928222259	darkened	f75b85506e7a80b0

@@ -10,7 +10,7 @@ namespace game
    inline constexpr int stat_limit{200};
 //default values for random related parameters
    inline constexpr int random_upper_limit{20};
-   inline constexpr int random_lower_limit{1};
+   inline constexpr int random_lower_limit{0};
 
    inline constexpr int level_limit{100};
 };
@@ -18,7 +18,7 @@ namespace game
 //directories, configs etc...
 namespace sys
 {
-   inline constexpr std::string log_directory{"../logs/"};
+   //inline constexpr std::string log_directory{"../logs/"};
 };
 
 #endif

@@ -38,16 +38,23 @@ void Stat::decrease(int decrease_by)
         throw Error("Reached Value Limit");
     }
 }
-//increase stat size
-void Stat::size_up(int increase_by)
+//change stat size, pass in negative int to decrease and positive to increase stat size
+void Stat::change_size(int change_by)
 {
-    if(increase_by <= 0)
-        throw Error("Invalid Error(number below zero)");
-    m_size += increase_by;
+    //temperory implementation, needs fixing
+        m_size += change_by;
+        m_current_value = m_size;
+    
+//additional error checking for when size reaches the higher limit defined in global.h and 0
     if(m_size > game::stat_limit)
     {
         m_size = game::stat_limit;
-        throw Error("Value Limit Reached");
+        throw Error("Value Limit Reached(inside Stat class)");
+    }
+    else if(m_size < 0)
+    {
+        m_size = 0;
+        throw Error("Value Limit Reached(inside Stat class)");
     }
 }
 //decrease stat size
