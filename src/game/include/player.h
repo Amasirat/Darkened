@@ -23,10 +23,9 @@ public:
     ~Player() = default;
 //attack an enemy
     void attack() const;
-//decrease player stats, taking a stat enum vector to know which stat to decrease, and how much to decrease
-    void decrease_stats(Stat::stat_name stat_to_change, int diff_num);
-//increase player stats, taking a stat enum to know which stat to increase, and how much to increase
-    void increase_stats(Stat::stat_name stat_to_change, int diff_num);
+//change player stats, taking a stat enum to know which stat to change, and how much.
+//use neative numbers to decrease and positive numbers to increase
+    void change_stats(Stat::stat_name stat_to_change, int diff_num);
 //increase player stat's size, taking a stat enum to know which stat to increase
 //pass in negative number to decrease and positive number to increase
     void stat_size_change(Stat::stat_name stat_to_change, int diff_num);

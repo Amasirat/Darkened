@@ -36,10 +36,8 @@ public:
     Stat(stat_name name, int size);
 //default destructor
     ~Stat() = default;
-//increase stat value
-    void increase(int increase_by);
-//decrease stat value
-    void decrease(int decrease_by);
+//change stat value
+    void change(int change_by);
 //change stat size, pass in negative int to decrease and positive to increase stat size
     void change_size(int change_by);
 //decrease stat size

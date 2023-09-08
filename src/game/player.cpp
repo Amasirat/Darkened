@@ -17,50 +17,27 @@ void Player::attack() const
     Random rng{};
     int enemy_stat_decrease{((int)rng.generate() + m_stats[1].current()) * (int)log((double)m_stats[4].current())};
     std::cout << enemy_stat_decrease << '\n';
-}
-//decrease player stats, taking a stat enum vector to know which stat to decrease, and how much to decrease
-void Player::decrease_stats(Stat::stat_name stat_to_change, int diff_num)
+}            
+//change player stats, taking a stat enum to know which stat to change, and how much.
+//use neative numbers to decrease and positive numbers to increase
+void Player::change_stats(Stat::stat_name stat_to_change, int diff_num)
 {
     switch(stat_to_change)
     {
         case Stat::hp:
-            m_stats[0].decrease(diff_num);
+            m_stats[0].change(diff_num);
             break;
         case Stat::attack:
-            m_stats[1].decrease(diff_num);
+            m_stats[1].change(diff_num);
             break;
         case Stat::defense:
-            m_stats[2].decrease(diff_num);
+            m_stats[2].change(diff_num);
             break;
         case Stat::agility:
-            m_stats[3].decrease(diff_num);
+            m_stats[3].change(diff_num);
             break;
         case Stat::luck:
-            m_stats[4].decrease(diff_num);
-            break;
-        default:
-            throw Error("Player recieved unknown stat literal\n");
-    }
-}
-//increase player stats, taking a stat enum to know which stat to increase, and how much to increase
-void Player::increase_stats(Stat::stat_name stat_to_change, int diff_num)
-{
-    switch(stat_to_change)
-    {
-        case Stat::hp:
-            m_stats[0].increase(diff_num);
-            break;
-        case Stat::attack:
-            m_stats[1].increase(diff_num);
-            break;
-        case Stat::defense:
-            m_stats[2].increase(diff_num);
-            break;
-        case Stat::agility:
-            m_stats[3].increase(diff_num);
-            break;
-        case Stat::luck:
-            m_stats[4].increase(diff_num);
+            m_stats[4].change(diff_num);
             break;
         default:
             throw Error("Player recieved unknown stat literal\n");
@@ -83,6 +60,6 @@ void Player::level_up(Stat::stat_name stat_to_change)
         return;
     }
     constexpr int increase_by{1};
-    increase_stats(stat_to_change, increase_by);
+    change_stats(stat_to_change, increase_by);
     ++m_level;
 }

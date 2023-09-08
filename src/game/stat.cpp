@@ -12,30 +12,20 @@ m_current_value{game::default_stat_size}
 Stat::Stat(stat_name name, int size) :
 m_name{name}, m_size{size}, m_current_value{size}
 {}
-//increase stat value
-void Stat::increase(int increase_by)
+
+//change stat value. use negative numbers to decrease and positive numbers to increase
+void Stat::change(int change_by)
 {
-    if(increase_by <= 0)
-        throw Error("Invalid Value(number below zero)");
-    m_current_value += increase_by;
+    m_current_value += change_by;
     if(m_current_value > m_size)
     {
         m_current_value = m_size;
-        throw Error("Reached Value Limit");
+        throw Error("Value Limit Reached");
     }
-}
-//decrease stat value
-void Stat::decrease(int decrease_by)
-{
-    if (decrease_by <= 0)
-    {
-        throw Error("Invalid Value");
-    }
-    m_current_value -= decrease_by;
-    if(m_current_value < 0)
+    else if (m_current_value < 0)
     {
         m_current_value = 0;
-        throw Error("Reached Value Limit");
+        throw Error("Value Limit Reached");   
     }
 }
 //change stat size, pass in negative int to decrease and positive to increase stat size

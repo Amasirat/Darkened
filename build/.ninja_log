@@ -1,13 +1,11 @@
 # ninja log v5
 2	2309	1693339210491555608	CMakeFiles/darkened.dir/src/stat.cpp.o	4109803364f699b6
 2	2450	1693339210628222275	CMakeFiles/darkened.dir/src/error.cpp.o	a0b9cd834237430f
-18	2613	1693339210798222274	CMakeFiles/darkened.dir/src/main.cpp.o	e308c3a0d696c46
-11	2672	1693339210858222273	CMakeFiles/darkened.dir/src/player.cpp.o	7e0d26cc6d69f45c
-2	5471	1693339213658222260	CMakeFiles/darkened.dir/src/random.cpp.o	172eed28c0d2aec6
-5471	5743	1693339213928222259	darkened	f75b85506e7a80b0
 17	4445	1694157631183647331	CMakeFiles/darkened.dir/src/main.cpp.o	74fde9d35859b30d
 5	4451	1694157631190314155	CMakeFiles/darkened.dir/src/error_handling/error.cpp.o	19707bfee4ddbb8a
+11	2672	1693339210858222273	CMakeFiles/darkened.dir/src/player.cpp.o	7e0d26cc6d69f45c
 5	4465	1694157631203647805	CMakeFiles/darkened.dir/src/game/stat.cpp.o	1069f814e691ce9f
+2	5471	1693339213658222260	CMakeFiles/darkened.dir/src/random.cpp.o	172eed28c0d2aec6
+5265	9520	1694157636257102240	darkened	1f7edd3ac120c352
 10	4473	1694157631213648042	CMakeFiles/darkened.dir/src/game/player.cpp.o	5224916b7acc97a6
 6	5265	1694157632003666794	CMakeFiles/darkened.dir/src/game/random.cpp.o	cc1e92bc474c93b7
-5265	9520	1694157636257102240	darkened	1f7edd3ac120c352
