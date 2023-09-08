@@ -31,6 +31,7 @@ add_executable(darkened
     src/game/stat.cpp
     src/game/random.cpp
     src/game/enemy.cpp
+    src/error_handling/log.cpp
     src/game/player.cpp
     src/main.cpp
 )

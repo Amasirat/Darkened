@@ -84,6 +84,13 @@ build CMakeFiles/darkened.dir/src/game/enemy.cpp.o: CXX_COMPILER__darkened_unsca
   OBJECT_DIR = CMakeFiles/darkened.dir
   OBJECT_FILE_DIR = CMakeFiles/darkened.dir/src/game
 
+build CMakeFiles/darkened.dir/src/error_handling/log.cpp.o: CXX_COMPILER__darkened_unscanned_Debug /home/amasirat/projects/Darkened/src/error_handling/log.cpp || cmake_object_order_depends_target_darkened
+  DEP_FILE = CMakeFiles/darkened.dir/src/error_handling/log.cpp.o.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include
+  OBJECT_DIR = CMakeFiles/darkened.dir
+  OBJECT_FILE_DIR = CMakeFiles/darkened.dir/src/error_handling
+
 build CMakeFiles/darkened.dir/src/game/player.cpp.o: CXX_COMPILER__darkened_unscanned_Debug /home/amasirat/projects/Darkened/src/game/player.cpp || cmake_object_order_depends_target_darkened
   DEP_FILE = CMakeFiles/darkened.dir/src/game/player.cpp.o.d
   FLAGS = -g -std=gnu++20
@@ -106,7 +113,7 @@ build CMakeFiles/darkened.dir/src/main.cpp.o: CXX_COMPILER__darkened_unscanned_D
 #############################################
 # Link the executable darkened
 
-build darkened: CXX_EXECUTABLE_LINKER__darkened_Debug CMakeFiles/darkened.dir/src/error_handling/error.cpp.o CMakeFiles/darkened.dir/src/sys/save.cpp.o CMakeFiles/darkened.dir/src/game/stat.cpp.o CMakeFiles/darkened.dir/src/game/random.cpp.o CMakeFiles/darkened.dir/src/game/enemy.cpp.o CMakeFiles/darkened.dir/src/game/player.cpp.o CMakeFiles/darkened.dir/src/main.cpp.o
+build darkened: CXX_EXECUTABLE_LINKER__darkened_Debug CMakeFiles/darkened.dir/src/error_handling/error.cpp.o CMakeFiles/darkened.dir/src/sys/save.cpp.o CMakeFiles/darkened.dir/src/game/stat.cpp.o CMakeFiles/darkened.dir/src/game/random.cpp.o CMakeFiles/darkened.dir/src/game/enemy.cpp.o CMakeFiles/darkened.dir/src/error_handling/log.cpp.o CMakeFiles/darkened.dir/src/game/player.cpp.o CMakeFiles/darkened.dir/src/main.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/darkened.dir
   POST_BUILD = :

@@ -18,7 +18,7 @@ namespace game
 //directories, configs etc...
 namespace sys
 {
-   //inline constexpr std::string log_directory{"../logs/"};
+   inline constexpr std::string log_directory{"../logs/"};
    #ifdef __linux__
    inline const std::string homedir{getenv("HOME")};
    #endif
