@@ -18,25 +18,16 @@ def run_test(test_directory):
     result = os.system(command)
     if result == 0:
         os.system(f"./{TEST_EXEC}")
-
-def run_test_noargs():
-    command = f"clang++ -std=c++17  -o {TEST_EXEC} {TEST_CPP_DIR}"
-    result = os.system(command)
-    if result == 0:
-        os.system(f"./{TEST_EXEC}")
-    
-
+        
 # main function
 def main():
 # condition checks to make sure user puts in only one argument
     if len(sys.argv) > 10:
         print("Too many arguments")
         return
-    elif len(sys.argv) <= 1:
-        run_test_noargs()
-    else:
-        test_module = sys.argv[1:]
-        run_test(test_module)
+    
+    test_module = sys.argv[1:]
+    run_test(test_module)
 
 if __name__ == "__main__":
     main()
