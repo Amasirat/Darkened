@@ -4,6 +4,7 @@
 #include "armor.h"
 #include "stat.h"
 #include "item.h"
+#include "error.h"
 
 #include <string>
 #include <vector>
@@ -22,7 +23,7 @@ public:
 //default destructor
     ~Player() = default;
 //attack an enemy
-    void attack() const;
+    void attack() const;    
 //change player stats, taking a stat enum to know which stat to change, and how much.
 //use neative numbers to decrease and positive numbers to increase
     void change_stats(Stat::stat_name stat_to_change, int diff_num);
@@ -57,5 +58,33 @@ private:
 //Armor m_armor{};
 //player items
 //std::vector<Item*> m_items{};
+
+//functions only used by this class
+//translating stat to its corresponding vector index
+    int translate_stat_name(Stat::stat_name stat)
+    {
+        int stat_index{};
+        switch(stat)
+        {
+            case Stat::hp:
+                stat_index = 0;
+                break;
+            case Stat::attack:
+                stat_index = 1;
+                break;
+            case Stat::defense:
+                stat_index = 2;
+                break;
+            case Stat::agility:
+                stat_index = 3;
+                break;
+            case Stat::luck:
+                stat_index = 4;
+                break;
+            default:
+                throw Error("undefined index recieved");
+        }
+        return stat_index;
+    }
 };
 #endif

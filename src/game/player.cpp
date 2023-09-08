@@ -22,34 +22,14 @@ void Player::attack() const
 //use neative numbers to decrease and positive numbers to increase
 void Player::change_stats(Stat::stat_name stat_to_change, int diff_num)
 {
-    switch(stat_to_change)
-    {
-        case Stat::hp:
-            m_stats[0].change(diff_num);
-            break;
-        case Stat::attack:
-            m_stats[1].change(diff_num);
-            break;
-        case Stat::defense:
-            m_stats[2].change(diff_num);
-            break;
-        case Stat::agility:
-            m_stats[3].change(diff_num);
-            break;
-        case Stat::luck:
-            m_stats[4].change(diff_num);
-            break;
-        default:
-            throw Error("Player recieved unknown stat literal\n");
-    } 
+    int index{translate_stat_name(stat_to_change)};
+    m_stats[index].change(diff_num);
 }
 //increase player stat's size, taking a stat enum to know which stat to increase, and how much to increase
 void Player::stat_size_change(Stat::stat_name stat_to_change, int diff_num)
 {
-    switch(stat_to_change)
-    {
-
-    }
+    int stat_index{translate_stat_name(stat_to_change)};
+    m_stats[stat_index].change_size(diff_num);
 }
 //level up player, player levels up when a stat is increased
 void Player::level_up(Stat::stat_name stat_to_change)

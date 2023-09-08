@@ -15,7 +15,7 @@ set(HEADER_FILES
     src/game/include/armor.h
     src/game/include/player.h
     src/game/include/random.h
-
+    src/game/include/enemy.h
 )
 
 include_directories(src/game/include src/error_handling/include)
@@ -24,6 +24,7 @@ add_executable(darkened
     src/error_handling/error.cpp
     src/game/stat.cpp
     src/game/random.cpp
+    src/game/enemy.cpp
     src/game/player.cpp
     src/main.cpp
 )

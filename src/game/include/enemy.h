@@ -11,12 +11,13 @@ public:
     enum enemy_name
     {
         revengeful_crow,
+        dark_lurker,
     };
 //default constructor
     Enemy(enemy_name name, std::vector<int> stat_num);
 //default destructor
-    ~Enemy();
-//attacking players
+    ~Enemy() = default;
+//attacking player
     void attack(Player* player) const;
 
 private:

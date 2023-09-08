@@ -19,6 +19,12 @@
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
+  "command": "/usr/bin/g++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/enemy.cpp.o -c /home/amasirat/projects/Darkened/src/game/enemy.cpp",
+  "file": "/home/amasirat/projects/Darkened/src/game/enemy.cpp",
+  "output": "CMakeFiles/darkened.dir/src/game/enemy.cpp.o"
+},
+{
+  "directory": "/home/amasirat/projects/Darkened/build",
   "command": "/usr/bin/g++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/player.cpp.o -c /home/amasirat/projects/Darkened/src/game/player.cpp",
   "file": "/home/amasirat/projects/Darkened/src/game/player.cpp",
   "output": "CMakeFiles/darkened.dir/src/game/player.cpp.o"
