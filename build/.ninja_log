@@ -11,3 +11,6 @@
 4802	5882	1694181439861193284	darkened	cd1212bd4e8acbbb
 5	4691	1694174371873763139	CMakeFiles/darkened.dir/src/game/player.cpp.o	ee594fe954717eb
 5	7032	1694174374217118064	CMakeFiles/darkened.dir/src/game/random.cpp.o	822ba87f7cc17423
+415	19269	1694184818676407423	CMakeFiles/darkened.dir/src/sys/save.cpp.o	aee9f7c313e25721
+417	19271	1694184818679740841	CMakeFiles/darkened.dir/src/main.cpp.o	f85272c381ce0dd2
+19271	21404	1694184820893130302	darkened	cd1212bd4e8acbbb
