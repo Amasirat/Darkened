@@ -25,13 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 23,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 21,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -54,6 +54,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/home/amasirat/projects/Darkened/src/error_handling/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/amasirat/projects/Darkened/src/sys/include"
 				}
 			],
 			"language" : "CXX",
@@ -72,7 +76,8 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6
 			]
 		}
 	],
@@ -110,7 +115,8 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6
 			]
 		}
 	],
@@ -120,6 +126,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/error_handling/error.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/sys/save.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

@@ -11,7 +11,7 @@
 Player::Player(const std::string& name, int level) : m_name{name},
 m_level{level}
 {}
-//attack an enemy
+//attack an enemy(it's unfinished)
 void Player::attack() const
 {
     Random rng{};

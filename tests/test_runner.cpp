@@ -1,5 +1,5 @@
 #include "unit_tests.h"
-#include "../src/error.h"
+#include "../src/error_handling/include/error.h"
 #include <iostream>
 
 int main()

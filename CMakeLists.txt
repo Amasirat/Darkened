@@ -10,6 +10,7 @@ project(darkened VERSION 0.0.1)
 set(HEADER_FILES 
     src/error_handling/include/error.h
     src/error_handling/include/log.h
+    src/sys/include/save.h
     src/game/include/stat.h
     src/game/include/global.h
     src/game/include/armor.h
@@ -18,10 +19,15 @@ set(HEADER_FILES
     src/game/include/enemy.h
 )
 
-include_directories(src/game/include src/error_handling/include)
+include_directories(
+    src/game/include 
+    src/error_handling/include
+    src/sys/include    
+)
 
 add_executable(darkened
     src/error_handling/error.cpp
+    src/sys/save.cpp
     src/game/stat.cpp
     src/game/random.cpp
     src/game/enemy.cpp
