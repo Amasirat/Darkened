@@ -3,10 +3,11 @@
 #include <string>
 /*
 Class for All Stats in game. 
-Stats have a ceiling value where they can't go higher than which is called their size and their current value.
+Stats have a ceiling value where they can't go higher than which is called their size and 
+their current value.
 
-A Stat contains the definition of an enum type stat_name. Only use the contents of that enum to name different 
-objects of type Stat. 
+A Stat contains the definition of an enum type stat_name. Only use the contents of that enum to 
+name different objects of type Stat. 
 member functions:
     void increase(int): increase value of a given stat by an int variable
     void decrease(int): decrease value of a given stat by an int variable

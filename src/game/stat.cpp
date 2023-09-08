@@ -1,6 +1,6 @@
-#include "stat.h"
-#include "global.h"
 #include "error.h"
+#include "global.h"
+#include "stat.h"
 //system libs
 #include <string>
 //default zero-value constructor
