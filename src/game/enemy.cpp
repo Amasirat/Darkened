@@ -5,7 +5,7 @@
 Enemy::Enemy(enemy_name name, std::vector<int> stat_num) :
 m_name{name}
 {
-    const int needed_size{m_stats.size()};
+    const int needed_size{(int)m_stats.size()};
     if(needed_size != 4)
     {
         std::cerr << "WARNING: vector size was not " << needed_size << '\n';

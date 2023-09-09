@@ -1,16 +1,15 @@
 # ninja log v5
+27	6839	1694253002557580570	CMakeFiles/darkened.dir/src/error_handling/log.cpp.o	b4e5c0e5ecd6c352
 2	2309	1693339210491555608	CMakeFiles/darkened.dir/src/stat.cpp.o	4109803364f699b6
+8	2112	1694252997830846201	CMakeFiles/darkened.dir/src/game/stat.cpp.o	6eb7b481cfde467f
+3	39	0	clean	a31eedcededa8236
 2	2450	1693339210628222275	CMakeFiles/darkened.dir/src/error.cpp.o	a0b9cd834237430f
-7	1278	1694189274086801306	CMakeFiles/darkened.dir/src/main.cpp.o	f85272c381ce0dd2
-4	3926	1694174371093755947	CMakeFiles/darkened.dir/src/error_handling/error.cpp.o	c827c69ea9ffc54e
-220	4225	1694187460950354535	CMakeFiles/darkened.dir/src/sys/save.cpp.o	aee9f7c313e25721
-11	2672	1693339210858222273	CMakeFiles/darkened.dir/src/player.cpp.o	7e0d26cc6d69f45c
-220	2029	1694187458753725561	CMakeFiles/darkened.dir/src/game/stat.cpp.o	6eb7b481cfde467f
+5	2238	1694252997957514736	CMakeFiles/darkened.dir/src/error_handling/error.cpp.o	c827c69ea9ffc54e
+2112	3570	1694252999287534097	CMakeFiles/darkened.dir/src/main.cpp.o	f85272c381ce0dd2
+5	6324	1694253002040906683	CMakeFiles/darkened.dir/src/sys/save.cpp.o	aee9f7c313e25721
 2	5471	1693339213658222260	CMakeFiles/darkened.dir/src/random.cpp.o	172eed28c0d2aec6
-5	4919	1694174372103765259	CMakeFiles/darkened.dir/src/game/enemy.cpp.o	7c98efb8951e6cd9
+11	2672	1693339210858222273	CMakeFiles/darkened.dir/src/player.cpp.o	7e0d26cc6d69f45c
+16	2087	1694252997804179142	CMakeFiles/darkened.dir/src/game/enemy.cpp.o	7c98efb8951e6cd9
 22694	29685	1694188300043727294	darkened	4d3d40108d653e1d
-233	3342	1694187460063702946	CMakeFiles/darkened.dir/src/game/player.cpp.o	ee594fe954717eb
-227	6087	1694187462810323497	CMakeFiles/darkened.dir/src/game/random.cpp.o	822ba87f7cc17423
-4	1431	1694189543516325050	CMakeFiles/darkened.dir/src/error_handling/log.cpp.o	b4e5c0e5ecd6c352
-5	1072	1694189742424912313	CMakeFiles/darkened.dir/src/main.cpp.o	f85272c381ce0dd2
-5	1350	1694189742704920006	CMakeFiles/darkened.dir/src/error_handling/log.cpp.o	b4e5c0e5ecd6c352
+2088	4234	1694252999950877002	CMakeFiles/darkened.dir/src/game/player.cpp.o	ee594fe954717eb
+16	9406	1694253005124282614	CMakeFiles/darkened.dir/src/game/random.cpp.o	822ba87f7cc17423
