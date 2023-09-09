@@ -2,23 +2,34 @@
 #include "error.h"
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 #include <string>
+#include <ctime>//for getting unique names for log files using ctime method
 namespace fs = std::filesystem;
-//static id to identify log of each unique session
-int s_id{0};
 //default constructor
-Log::Log(const std::string& log_directory, const std::string& log_file) :
-m_log_directory{log_directory}, 
-m_log_file{log_file}
+Log::Log(const std::string& log_directory)
 {
-    if (fs::create_directory(log_directory))
-    {
-        std::string full_directory{log_directory + 
-        log_file + 
-        std::to_string(s_id)};
+    //current time
+    time_t now{time(0)};
+    char* date{ctime(&now)};
+    m_log_directory = log_directory + date;
+    std::cout << m_log_directory << '\n';
 
-        std::ofstream log_file(full_directory);
+    if(!fs::is_directory(m_log_directory))
+    {
+        fs::create_directory(log_directory);
     }
-    else
-        throw Error("Failed to create log directory");
+    //opening log file
+    std::ofstream file(m_log_directory);
+    file << date << " Created Log File";   
+}
+//clear all log files
+void Log::clear() const
+{
+    fs::remove_all(m_log_directory);
+}
+//writing into log file
+void Log::write_log(const std::string& message) const
+{
+    
 }
