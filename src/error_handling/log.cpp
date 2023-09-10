@@ -11,9 +11,10 @@ Log::Log(const std::string& log_directory)
 {
     //current time
     time_t now{time(0)};
-    char* date{ctime(&now)};
+    std::string date{ctime(&now)};
+    date.erase(date.find('\n', 0), 1);
+
     m_log_directory = log_directory + date;
-    std::cout << m_log_directory << '\n';
 
     if(!fs::is_directory(m_log_directory))
     {
@@ -22,11 +23,6 @@ Log::Log(const std::string& log_directory)
     //opening log file
     std::ofstream file(m_log_directory);
     file << date << " Created Log File";   
-}
-//clear all log files
-void Log::clear() const
-{
-    fs::remove_all(m_log_directory);
 }
 //writing into log file
 void Log::write_log(const std::string& message) const
