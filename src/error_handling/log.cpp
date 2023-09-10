@@ -25,7 +25,13 @@ Log::Log(const std::string& log_directory)
     file << date << " Created Log File";   
 }
 //writing into log file
-void Log::write_log(const std::string& message) const
+void Log::write(const std::string& message) const
 {
-    
+    std::fstream file(m_log_directory, std::ios::app);
+    time_t now(time(0));
+    std::string time{ctime(&now)};
+    time.erase(time.find('\n', 0), 1);
+
+    file << '\n' << time << ' ' << message;
+    file.close();
 }

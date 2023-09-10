@@ -14,7 +14,7 @@ int main()
 {
     try
     {
-        Log log{};
+        
     }
     catch(const Error& error)
     {

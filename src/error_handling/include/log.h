@@ -21,7 +21,7 @@ public:
 //clear all log files
     void clear() const;
 //writing into log file
-    void write_log(const std::string& message) const;
+    void write(const std::string& message) const;
 private:
     std::string m_log_directory{};
 };
