@@ -1,5 +1,6 @@
 #include "random.h"
 #include "global.h"
+#include "log.h"
 #include <random>
 #include <chrono>
 //default constructor
@@ -21,11 +22,16 @@ void Random::initialize()
 {
     m_seed = (unsigned long)std::chrono::steady_clock::now().
     time_since_epoch().count();
+//log entry
+Log().write("rng wrapper initialized");
 }
 //generate random number and return that number
 int Random::generate() const
 {
     std::mt19937 mt(m_seed);
     std::uniform_int_distribution die{m_lower_limit, m_upper_limit};
+
+//log entry
+Log().write("rng wrapper generated number");
     return die(mt);
 }

@@ -1,5 +1,6 @@
 #include "player.h"
 #include "stat.h"
+#include "log.h"
 #include "global.h"
 #include "random.h"
 #include "error.h"
@@ -10,7 +11,9 @@
 //default constructor
 Player::Player(const std::string& name, int level) : m_name{name},
 m_level{level}
-{}
+{
+    Log().write("Player constructed");
+}
 //attack an enemy(it's unfinished)
 void Player::attack() const
 {
@@ -30,13 +33,16 @@ void Player::stat_size_change(Stat::stat_name stat_to_change, int diff_num)
 {
     int stat_index{translate_stat_name(stat_to_change)};
     m_stats[stat_index].change_size(diff_num);
+
+Log().write("player stat size changed");
 }
 //level up player, player levels up when a stat is increased
 void Player::level_up(Stat::stat_name stat_to_change)
 {
-    if(m_level == game::level_limit)
+    if(m_level >= game::level_limit)
     {
-        std::cerr << "Level Limit has Reached\n";
+        std::string message{"ERROR: Level limit has reached(Player level_up method)"};
+        Log().write(message);
         return;
     }
     constexpr int increase_by{1};

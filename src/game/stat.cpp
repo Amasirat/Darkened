@@ -1,5 +1,6 @@
 #include "error.h"
 #include "global.h"
+#include "log.h"
 #include "stat.h"
 //system libs
 #include <string>
@@ -20,11 +21,13 @@ void Stat::change(int change_by)
     if(m_current_value > m_size)
     {
         m_current_value = m_size;
+    Log().write("Value Limit Reached(inside Stat class)");
         throw Error("Value Limit Reached");
     }
     else if (m_current_value < 0)
     {
         m_current_value = 0;
+    Log().write("Invalid value reached(inside Stat class)");
         throw Error("Value Limit Reached");   
     }
 }
@@ -69,15 +72,20 @@ void Stat::size_down(int decrease_by)
 void Stat::reset()
 {
     m_current_value = m_size;
+Log().write("Stat::stat values reset");
 }
 //set stat size
 void Stat::set_size(int size)
 {
     if(size <= 0)
+    {
+        Log().write("Stat::set_size()::Invalid Value");
         throw Error("Invalid Value");
+    }
+    
     m_size = size;
     m_current_value = m_size;
-
+Log().write("Stat::set_size()::Stat size has been newly set");
 }
 //name of stat in std::string form
 std::string Stat::name() const
@@ -95,6 +103,7 @@ std::string Stat::name() const
         case luck:
             return "luck";
         default:
+            Log().write("Stat::undefined stat detected");
             return "undefined stat";
     }
 }

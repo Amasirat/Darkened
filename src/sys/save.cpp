@@ -1,4 +1,5 @@
 #include "save.h"
+#include "log.h"
 #include "player.h"
 #include "global.h"
 #include "error.h"
@@ -10,6 +11,7 @@ m_player{player}
 {
     if(player == nullptr)
     {
+        Log().write("Save::Player pointer contained null address");
         throw Error("pointer to player was null, Saving procedure failed");
     }
 }
