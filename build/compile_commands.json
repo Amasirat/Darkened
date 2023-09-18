@@ -1,49 +1,49 @@
 [
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/error_handling/error.cpp.o -c /home/amasirat/projects/Darkened/src/error_handling/error.cpp",
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/error_handling/error.cpp.o -c /home/amasirat/projects/Darkened/src/error_handling/error.cpp",
   "file": "/home/amasirat/projects/Darkened/src/error_handling/error.cpp",
   "output": "CMakeFiles/darkened.dir/src/error_handling/error.cpp.o"
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/sys/save.cpp.o -c /home/amasirat/projects/Darkened/src/sys/save.cpp",
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/sys/save.cpp.o -c /home/amasirat/projects/Darkened/src/sys/save.cpp",
   "file": "/home/amasirat/projects/Darkened/src/sys/save.cpp",
   "output": "CMakeFiles/darkened.dir/src/sys/save.cpp.o"
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/stat.cpp.o -c /home/amasirat/projects/Darkened/src/game/stat.cpp",
-  "file": "/home/amasirat/projects/Darkened/src/game/stat.cpp",
-  "output": "CMakeFiles/darkened.dir/src/game/stat.cpp.o"
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/classes/stat.cpp.o -c /home/amasirat/projects/Darkened/src/game/classes/stat.cpp",
+  "file": "/home/amasirat/projects/Darkened/src/game/classes/stat.cpp",
+  "output": "CMakeFiles/darkened.dir/src/game/classes/stat.cpp.o"
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/random.cpp.o -c /home/amasirat/projects/Darkened/src/game/random.cpp",
-  "file": "/home/amasirat/projects/Darkened/src/game/random.cpp",
-  "output": "CMakeFiles/darkened.dir/src/game/random.cpp.o"
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/classes/random.cpp.o -c /home/amasirat/projects/Darkened/src/game/classes/random.cpp",
+  "file": "/home/amasirat/projects/Darkened/src/game/classes/random.cpp",
+  "output": "CMakeFiles/darkened.dir/src/game/classes/random.cpp.o"
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/enemy.cpp.o -c /home/amasirat/projects/Darkened/src/game/enemy.cpp",
-  "file": "/home/amasirat/projects/Darkened/src/game/enemy.cpp",
-  "output": "CMakeFiles/darkened.dir/src/game/enemy.cpp.o"
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/classes/enemy.cpp.o -c /home/amasirat/projects/Darkened/src/game/classes/enemy.cpp",
+  "file": "/home/amasirat/projects/Darkened/src/game/classes/enemy.cpp",
+  "output": "CMakeFiles/darkened.dir/src/game/classes/enemy.cpp.o"
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/error_handling/log.cpp.o -c /home/amasirat/projects/Darkened/src/error_handling/log.cpp",
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/error_handling/log.cpp.o -c /home/amasirat/projects/Darkened/src/error_handling/log.cpp",
   "file": "/home/amasirat/projects/Darkened/src/error_handling/log.cpp",
   "output": "CMakeFiles/darkened.dir/src/error_handling/log.cpp.o"
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/player.cpp.o -c /home/amasirat/projects/Darkened/src/game/player.cpp",
-  "file": "/home/amasirat/projects/Darkened/src/game/player.cpp",
-  "output": "CMakeFiles/darkened.dir/src/game/player.cpp.o"
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/game/classes/player.cpp.o -c /home/amasirat/projects/Darkened/src/game/classes/player.cpp",
+  "file": "/home/amasirat/projects/Darkened/src/game/classes/player.cpp",
+  "output": "CMakeFiles/darkened.dir/src/game/classes/player.cpp.o"
 },
 {
   "directory": "/home/amasirat/projects/Darkened/build",
-  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/main.cpp.o -c /home/amasirat/projects/Darkened/src/main.cpp",
+  "command": "/usr/bin/clang++ -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include -g -std=gnu++20 -o CMakeFiles/darkened.dir/src/main.cpp.o -c /home/amasirat/projects/Darkened/src/main.cpp",
   "file": "/home/amasirat/projects/Darkened/src/main.cpp",
   "output": "CMakeFiles/darkened.dir/src/main.cpp.o"
 }
