@@ -8,15 +8,6 @@ their current value.
 
 A Stat contains the definition of an enum type stat_name. Only use the contents of that enum to 
 name different objects of type Stat. 
-member functions:
-    void increase(int): increase value of a given stat by an int variable
-    void decrease(int): decrease value of a given stat by an int variable
-    void size_up(int):  increase size of the stat by an int variable
-    void size_down(int): decrease size of the stat by an int variable
-    stat_name enum_name() const: returns enum of m_name
-    std::string name() cost: returns name of stat in string form for use by other parts of the program
-    int size() const: returns total size of stat object
-    int current() const: returns current stat value
 */
 class Stat
 {
@@ -50,7 +41,7 @@ public:
 //  name
     stat_name enum_name() const {return m_name;}
 //  name of stat in std::string form
-    std::string name() const;
+    std::string_view name() const;
 //  current_value
     int current() const {return m_current_value;}
 //  size

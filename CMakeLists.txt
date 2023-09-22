@@ -10,27 +10,31 @@ set(HEADER_FILES
     src/error_handling/include/error.h
     src/error_handling/include/log.h
     src/sys/include/save.h
-    src/game/include/classes/stat.h
-    src/game/include/classes/global.h
-    src/game/include/classes/armor.h
-    src/game/include/classes/player.h
-    src/game/include/classes/random.h
-    src/game/include/classes/enemy.h
+    src/game/classes/include/stat.h
+    src/game/classes/include/global.h
+    src/game/classes/include/armor.h
+    src/game/classes/include/player.h
+    src/game/classes/include/random.h
+    src/game/classes/include/enemy.h
+    src/sys/include/terminalIO.h
 )
 
 include_directories(
-    src/game/classes/include 
+    src/game/classes/include
+    src/game/modules/include 
     src/error_handling/include
     src/sys/include    
 )
 
 add_executable(darkened
     src/error_handling/error.cpp
+    src/error_handling/log.cpp
     src/sys/save.cpp
+    src/sys/terminalIO.cpp
     src/game/classes/stat.cpp
     src/game/classes/random.cpp
+    src/game/classes/battle.cpp
     src/game/classes/enemy.cpp
-    src/error_handling/log.cpp
     src/game/classes/player.cpp
     src/main.cpp
 )

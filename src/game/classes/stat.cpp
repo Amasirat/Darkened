@@ -4,6 +4,7 @@
 #include "stat.h"
 //system libs
 #include <string>
+#include <string_view>
 //default zero-value constructor
 Stat::Stat(stat_name name) : 
 m_name{name}, m_size{game::default_stat_size},
@@ -21,19 +22,20 @@ void Stat::change(int change_by)
     if(m_current_value > m_size)
     {
         m_current_value = m_size;
-    Log().write("Value Limit Reached(inside Stat class)");
+    Log().write("ERROR:Value Limit Reached(inside Stat class)");
         throw Error("Value Limit Reached");
     }
     else if (m_current_value < 0)
     {
         m_current_value = 0;
-    Log().write("Invalid value reached(inside Stat class)");
+    Log().write("ERROR:Invalid value reached(inside Stat class)");
         throw Error("Value Limit Reached");   
     }
 }
 //change stat size, pass in negative int to decrease and positive to increase stat size
 void Stat::change_size(int change_by)
 {
+Log().write("changing a stat's size");
     //temperory implementation, needs fixing
         m_size += change_by;
         m_current_value = m_size;
@@ -42,11 +44,13 @@ void Stat::change_size(int change_by)
     if(m_size > game::stat_limit)
     {
         m_size = game::stat_limit;
+        Log().write("ERROR: Stat::change_size::m_size reached limit");
         throw Error("Value Limit Reached(inside Stat class)");
     }
     else if(m_size < 0)
     {
         m_size = 0;
+        Log().write("ERROR: Stat::change_size::m_size reached limit");
         throw Error("Value Limit Reached(inside Stat class)");
     }
 }
@@ -60,6 +64,7 @@ void Stat::size_down(int decrease_by)
     if(m_size < 0)
     {
         m_size = 0;
+Log().write("Stat::size_down::m_size was 0 while attempting size down");
         throw Error("Value Limit Reached");
     }
 
@@ -88,7 +93,7 @@ void Stat::set_size(int size)
 Log().write("Stat::set_size()::Stat size has been newly set");
 }
 //name of stat in std::string form
-std::string Stat::name() const
+std::string_view Stat::name() const
 {
     switch(m_name)
     {
