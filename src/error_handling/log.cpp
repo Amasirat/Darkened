@@ -25,7 +25,7 @@ Log::Log(const std::string& log_directory)
         if(!fs::is_directory(log_directory))
             fs::create_directory(log_directory);
         
-        m_log_directory = log_directory + date;
+        m_log_directory = log_directory + date + ".log";
 //opening log file
         std::ofstream file(m_log_directory);
         file << date << " Created Log File";

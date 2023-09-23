@@ -7,7 +7,7 @@ Enemy::Enemy(enemy_name name, std::vector<int> stat_num) :
 m_name{name}
 {
     const int needed_size{(int)m_stats.size()};
-    if(needed_size != 4)
+    if(needed_size != (int)stat_num.size())
     {
         std::string message{"WARNING: vector size was either greater or smaller(enemy class constructor)"};
         Log().write(message);
@@ -18,7 +18,6 @@ m_name{name}
     for(auto num : stat_num)
     {
         m_stats.at(stat_index).set_size(num);
-        std::cout << m_stats.at(stat_index).current() << '\t';
         ++stat_index;
     }
 }

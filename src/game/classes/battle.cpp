@@ -1,6 +1,9 @@
 #include "battle.h"
+#include "terminalIO.h"
 #include "log.h"
 #include "error.h"
+
+#include <iostream>
 
 //default constructor
 Battle::Battle(Player* player, std::vector<Enemy*> enemies) :
@@ -27,5 +30,13 @@ Log().write("entered battle arena");
     while(!m_enemies.empty())
     {
         menu();
+        int usr_input{int_input("We have been confronted! What to do hero?!")};
     }
+    return true;
+}
+//main menu for every battle arena
+void Battle::menu() const
+{
+    clrscreen();
+    std::cout << "1.Attack\t\t2.Items\t\t3.Check Enemy\t\t4.Clear Screen\t\t\n";
 }

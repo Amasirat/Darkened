@@ -22,20 +22,20 @@ void Stat::change(int change_by)
     if(m_current_value > m_size)
     {
         m_current_value = m_size;
-    Log().write("ERROR:Value Limit Reached(inside Stat class)");
+    Log().write("ERROR:Stat::Value Limit Reached");
         throw Error("Value Limit Reached");
     }
     else if (m_current_value < 0)
     {
         m_current_value = 0;
-    Log().write("ERROR:Invalid value reached(inside Stat class)");
+    Log().write("ERROR:Stat::Invalid value reached");
         throw Error("Value Limit Reached");   
     }
 }
 //change stat size, pass in negative int to decrease and positive to increase stat size
 void Stat::change_size(int change_by)
 {
-Log().write("changing a stat's size");
+Log().write("changing a stat's size...");
     //temperory implementation, needs fixing
         m_size += change_by;
         m_current_value = m_size;
@@ -44,13 +44,13 @@ Log().write("changing a stat's size");
     if(m_size > game::stat_limit)
     {
         m_size = game::stat_limit;
-        Log().write("ERROR: Stat::change_size::m_size reached limit");
+        Log().write("ERROR: Stat::change_size::m_size reached higher limit");
         throw Error("Value Limit Reached(inside Stat class)");
     }
     else if(m_size < 0)
     {
         m_size = 0;
-        Log().write("ERROR: Stat::change_size::m_size reached limit");
+        Log().write("ERROR: Stat::change_size::m_size reached lower limit");
         throw Error("Value Limit Reached(inside Stat class)");
     }
 }
@@ -58,7 +58,10 @@ Log().write("changing a stat's size");
 void Stat::size_down(int decrease_by)
 {
     if(decrease_by <= 0)
+    {
+        Log().write("ERROR:Stat::size_down() recieved negative int as input");
         throw Error("Invalid Value");
+    }
     m_size -= decrease_by;
 //we can't size down a Stat to below zero
     if(m_size < 0)
@@ -99,16 +102,21 @@ std::string_view Stat::name() const
     {
         case hp:
             return "hp";
+            break;
         case attack:
             return "attack";
+            break;
         case agility:
             return "agility";
+            break;
         case defense:
             return "defense";
+            break;
         case luck:
             return "luck";
+            break;
         default:
-            Log().write("Stat::undefined stat detected");
+            Log().write("WARNING:Stat::undefined stat detected");
             return "undefined stat";
     }
 }

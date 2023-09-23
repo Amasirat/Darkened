@@ -1,6 +1,0 @@
-Tue Sep 12 16:47:38 2023 Created Log File
-Tue Sep 12 16:47:38 2023 WARNING: vector size was either greater or smaller(enemy class constructor)
-Tue Sep 12 16:47:44 2023 Player constructed
-Tue Sep 12 16:47:44 2023 ERROR: Level limit has reached(Player level_up method)
-Tue Sep 12 16:47:48 2023 Player constructed
-Tue Sep 12 16:47:48 2023 ERROR: Level limit has reached(Player level_up method)
