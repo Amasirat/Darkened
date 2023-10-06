@@ -3,26 +3,21 @@
 #include "stat.h"
 #include "player.h"
 #include <vector>
+#include <string>
 class Player;
 class Enemy
 {
 public:
-//enums representing all possible enemy types
-    enum enemy_name
-    {
-        revengeful_crow,
-        dark_lurker,
-    };
 //default constructor
-    Enemy(enemy_name name, std::vector<int> stat_num);
+    Enemy(const std::string& name, std::vector<int> stat_num);
 //default destructor
     ~Enemy() = default;
 //attacking player
-    void attack(Player* player) const;
+    bool attack(Player* player) const;
 
 private:
 //enemy name
-    enemy_name m_name{};
+    std::string m_name{};
 //A series of stats that enemies possess
     std::vector<Stat> m_stats{
         Stat(Stat::hp),
@@ -31,5 +26,31 @@ private:
         Stat(Stat::agility),
         Stat(Stat::luck)
     };
+    //translating stat to its corresponding vector index
+    int translate_stat_name(Stat::stat_name stat) const
+    {
+        int stat_index{};
+        switch(stat)
+        {
+            case Stat::hp:
+                stat_index = 0;
+                break;
+            case Stat::attack:
+                stat_index = 1;
+                break;
+            case Stat::defense:
+                stat_index = 2;
+                break;
+            case Stat::agility:
+                stat_index = 3;
+                break;
+            case Stat::luck:
+                stat_index = 4;
+                break;
+            default:
+                throw Error("undefined index recieved");
+        }
+        return stat_index;
+    }
 };
 #endif

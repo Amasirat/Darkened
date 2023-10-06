@@ -10,20 +10,20 @@ set(HEADER_FILES
     src/error_handling/include/error.h
     src/error_handling/include/log.h
     src/sys/include/save.h
+    src/sys/include/terminalIO.h
     src/game/classes/include/stat.h
     src/game/classes/include/global.h
     src/game/classes/include/armor.h
     src/game/classes/include/player.h
     src/game/classes/include/random.h
     src/game/classes/include/enemy.h
-    src/sys/include/terminalIO.h
 )
 
 include_directories(
     src/game/classes/include
     src/game/modules/include 
     src/error_handling/include
-    src/sys/include    
+    src/sys/include
 )
 
 add_executable(darkened

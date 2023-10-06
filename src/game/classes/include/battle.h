@@ -25,5 +25,23 @@ public:
 private:
     Player* m_player{};
     std::vector<Enemy*> m_enemies;
+//enums for all possible battle actions
+    enum actions
+    {
+        attack,
+        items,
+        check,
+        clear_screen,
+    };
+    std::vector<actions> m_actions{
+        attack,
+        items,
+        check,
+        clear_screen,
+    };
+//returns the string version of actions enum
+    std::string translate_enum(actions action) const;
+//function to attempt player decisions in battle, it has side effects
+    void battle_actions(int usr_int) const;
 };
 #endif

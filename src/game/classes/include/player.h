@@ -32,6 +32,8 @@ public:
     void stat_size_change(Stat::stat_name stat_to_change, int diff_num);
 //level up player
     void level_up(Stat::stat_name stat_to_change);
+//take a hit from external entities
+    bool take_hit(int hit_amount);
 //function to equip armor
 //void equip_armor(const Armor& armor);
 //getters

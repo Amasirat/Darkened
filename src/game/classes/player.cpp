@@ -49,3 +49,16 @@ void Player::level_up(Stat::stat_name stat_to_change)
     change_stats(stat_to_change, increase_by);
     ++m_level;
 }
+//take a hit from external entities
+bool Player::take_hit(int hit_amount)
+{
+Log().write("awaiting player's hit...");
+    bool is_alive{true};
+    Stat hp{m_stats.at(translate_stat_name(Stat::hp))};
+    change_stats(hp.enum_name(), -hit_amount);
+    if(hp.current() == 0)
+    {
+        is_alive = false;
+    }
+    return is_alive;
+}

@@ -129,29 +129,173 @@ darkened/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/build
 .PHONY : darkened/fast
 
-src/error.o: src/error.cpp.o
-.PHONY : src/error.o
+src/error_handling/error.o: src/error_handling/error.cpp.o
+.PHONY : src/error_handling/error.o
 
 # target to build an object file
-src/error.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error.cpp.o
-.PHONY : src/error.cpp.o
+src/error_handling/error.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error_handling/error.cpp.o
+.PHONY : src/error_handling/error.cpp.o
 
-src/error.i: src/error.cpp.i
-.PHONY : src/error.i
+src/error_handling/error.i: src/error_handling/error.cpp.i
+.PHONY : src/error_handling/error.i
 
 # target to preprocess a source file
-src/error.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error.cpp.i
-.PHONY : src/error.cpp.i
+src/error_handling/error.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error_handling/error.cpp.i
+.PHONY : src/error_handling/error.cpp.i
 
-src/error.s: src/error.cpp.s
-.PHONY : src/error.s
+src/error_handling/error.s: src/error_handling/error.cpp.s
+.PHONY : src/error_handling/error.s
 
 # target to generate assembly for a file
-src/error.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error.cpp.s
-.PHONY : src/error.cpp.s
+src/error_handling/error.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error_handling/error.cpp.s
+.PHONY : src/error_handling/error.cpp.s
+
+src/error_handling/log.o: src/error_handling/log.cpp.o
+.PHONY : src/error_handling/log.o
+
+# target to build an object file
+src/error_handling/log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error_handling/log.cpp.o
+.PHONY : src/error_handling/log.cpp.o
+
+src/error_handling/log.i: src/error_handling/log.cpp.i
+.PHONY : src/error_handling/log.i
+
+# target to preprocess a source file
+src/error_handling/log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error_handling/log.cpp.i
+.PHONY : src/error_handling/log.cpp.i
+
+src/error_handling/log.s: src/error_handling/log.cpp.s
+.PHONY : src/error_handling/log.s
+
+# target to generate assembly for a file
+src/error_handling/log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/error_handling/log.cpp.s
+.PHONY : src/error_handling/log.cpp.s
+
+src/game/classes/battle.o: src/game/classes/battle.cpp.o
+.PHONY : src/game/classes/battle.o
+
+# target to build an object file
+src/game/classes/battle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/battle.cpp.o
+.PHONY : src/game/classes/battle.cpp.o
+
+src/game/classes/battle.i: src/game/classes/battle.cpp.i
+.PHONY : src/game/classes/battle.i
+
+# target to preprocess a source file
+src/game/classes/battle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/battle.cpp.i
+.PHONY : src/game/classes/battle.cpp.i
+
+src/game/classes/battle.s: src/game/classes/battle.cpp.s
+.PHONY : src/game/classes/battle.s
+
+# target to generate assembly for a file
+src/game/classes/battle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/battle.cpp.s
+.PHONY : src/game/classes/battle.cpp.s
+
+src/game/classes/enemy.o: src/game/classes/enemy.cpp.o
+.PHONY : src/game/classes/enemy.o
+
+# target to build an object file
+src/game/classes/enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/enemy.cpp.o
+.PHONY : src/game/classes/enemy.cpp.o
+
+src/game/classes/enemy.i: src/game/classes/enemy.cpp.i
+.PHONY : src/game/classes/enemy.i
+
+# target to preprocess a source file
+src/game/classes/enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/enemy.cpp.i
+.PHONY : src/game/classes/enemy.cpp.i
+
+src/game/classes/enemy.s: src/game/classes/enemy.cpp.s
+.PHONY : src/game/classes/enemy.s
+
+# target to generate assembly for a file
+src/game/classes/enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/enemy.cpp.s
+.PHONY : src/game/classes/enemy.cpp.s
+
+src/game/classes/player.o: src/game/classes/player.cpp.o
+.PHONY : src/game/classes/player.o
+
+# target to build an object file
+src/game/classes/player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/player.cpp.o
+.PHONY : src/game/classes/player.cpp.o
+
+src/game/classes/player.i: src/game/classes/player.cpp.i
+.PHONY : src/game/classes/player.i
+
+# target to preprocess a source file
+src/game/classes/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/player.cpp.i
+.PHONY : src/game/classes/player.cpp.i
+
+src/game/classes/player.s: src/game/classes/player.cpp.s
+.PHONY : src/game/classes/player.s
+
+# target to generate assembly for a file
+src/game/classes/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/player.cpp.s
+.PHONY : src/game/classes/player.cpp.s
+
+src/game/classes/random.o: src/game/classes/random.cpp.o
+.PHONY : src/game/classes/random.o
+
+# target to build an object file
+src/game/classes/random.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/random.cpp.o
+.PHONY : src/game/classes/random.cpp.o
+
+src/game/classes/random.i: src/game/classes/random.cpp.i
+.PHONY : src/game/classes/random.i
+
+# target to preprocess a source file
+src/game/classes/random.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/random.cpp.i
+.PHONY : src/game/classes/random.cpp.i
+
+src/game/classes/random.s: src/game/classes/random.cpp.s
+.PHONY : src/game/classes/random.s
+
+# target to generate assembly for a file
+src/game/classes/random.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/random.cpp.s
+.PHONY : src/game/classes/random.cpp.s
+
+src/game/classes/stat.o: src/game/classes/stat.cpp.o
+.PHONY : src/game/classes/stat.o
+
+# target to build an object file
+src/game/classes/stat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/stat.cpp.o
+.PHONY : src/game/classes/stat.cpp.o
+
+src/game/classes/stat.i: src/game/classes/stat.cpp.i
+.PHONY : src/game/classes/stat.i
+
+# target to preprocess a source file
+src/game/classes/stat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/stat.cpp.i
+.PHONY : src/game/classes/stat.cpp.i
+
+src/game/classes/stat.s: src/game/classes/stat.cpp.s
+.PHONY : src/game/classes/stat.s
+
+# target to generate assembly for a file
+src/game/classes/stat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/stat.cpp.s
+.PHONY : src/game/classes/stat.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -177,77 +321,53 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/player.o: src/player.cpp.o
-.PHONY : src/player.o
+src/sys/save.o: src/sys/save.cpp.o
+.PHONY : src/sys/save.o
 
 # target to build an object file
-src/player.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/player.cpp.o
-.PHONY : src/player.cpp.o
+src/sys/save.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/save.cpp.o
+.PHONY : src/sys/save.cpp.o
 
-src/player.i: src/player.cpp.i
-.PHONY : src/player.i
+src/sys/save.i: src/sys/save.cpp.i
+.PHONY : src/sys/save.i
 
 # target to preprocess a source file
-src/player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/player.cpp.i
-.PHONY : src/player.cpp.i
+src/sys/save.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/save.cpp.i
+.PHONY : src/sys/save.cpp.i
 
-src/player.s: src/player.cpp.s
-.PHONY : src/player.s
+src/sys/save.s: src/sys/save.cpp.s
+.PHONY : src/sys/save.s
 
 # target to generate assembly for a file
-src/player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/player.cpp.s
-.PHONY : src/player.cpp.s
+src/sys/save.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/save.cpp.s
+.PHONY : src/sys/save.cpp.s
 
-src/random.o: src/random.cpp.o
-.PHONY : src/random.o
+src/sys/terminalIO.o: src/sys/terminalIO.cpp.o
+.PHONY : src/sys/terminalIO.o
 
 # target to build an object file
-src/random.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/random.cpp.o
-.PHONY : src/random.cpp.o
+src/sys/terminalIO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o
+.PHONY : src/sys/terminalIO.cpp.o
 
-src/random.i: src/random.cpp.i
-.PHONY : src/random.i
-
-# target to preprocess a source file
-src/random.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/random.cpp.i
-.PHONY : src/random.cpp.i
-
-src/random.s: src/random.cpp.s
-.PHONY : src/random.s
-
-# target to generate assembly for a file
-src/random.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/random.cpp.s
-.PHONY : src/random.cpp.s
-
-src/stat.o: src/stat.cpp.o
-.PHONY : src/stat.o
-
-# target to build an object file
-src/stat.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/stat.cpp.o
-.PHONY : src/stat.cpp.o
-
-src/stat.i: src/stat.cpp.i
-.PHONY : src/stat.i
+src/sys/terminalIO.i: src/sys/terminalIO.cpp.i
+.PHONY : src/sys/terminalIO.i
 
 # target to preprocess a source file
-src/stat.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/stat.cpp.i
-.PHONY : src/stat.cpp.i
+src/sys/terminalIO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.i
+.PHONY : src/sys/terminalIO.cpp.i
 
-src/stat.s: src/stat.cpp.s
-.PHONY : src/stat.s
+src/sys/terminalIO.s: src/sys/terminalIO.cpp.s
+.PHONY : src/sys/terminalIO.s
 
 # target to generate assembly for a file
-src/stat.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/stat.cpp.s
-.PHONY : src/stat.cpp.s
+src/sys/terminalIO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.s
+.PHONY : src/sys/terminalIO.cpp.s
 
 # Help Target
 help:
@@ -258,21 +378,36 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... darkened"
-	@echo "... src/error.o"
-	@echo "... src/error.i"
-	@echo "... src/error.s"
+	@echo "... src/error_handling/error.o"
+	@echo "... src/error_handling/error.i"
+	@echo "... src/error_handling/error.s"
+	@echo "... src/error_handling/log.o"
+	@echo "... src/error_handling/log.i"
+	@echo "... src/error_handling/log.s"
+	@echo "... src/game/classes/battle.o"
+	@echo "... src/game/classes/battle.i"
+	@echo "... src/game/classes/battle.s"
+	@echo "... src/game/classes/enemy.o"
+	@echo "... src/game/classes/enemy.i"
+	@echo "... src/game/classes/enemy.s"
+	@echo "... src/game/classes/player.o"
+	@echo "... src/game/classes/player.i"
+	@echo "... src/game/classes/player.s"
+	@echo "... src/game/classes/random.o"
+	@echo "... src/game/classes/random.i"
+	@echo "... src/game/classes/random.s"
+	@echo "... src/game/classes/stat.o"
+	@echo "... src/game/classes/stat.i"
+	@echo "... src/game/classes/stat.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/player.o"
-	@echo "... src/player.i"
-	@echo "... src/player.s"
-	@echo "... src/random.o"
-	@echo "... src/random.i"
-	@echo "... src/random.s"
-	@echo "... src/stat.o"
-	@echo "... src/stat.i"
-	@echo "... src/stat.s"
+	@echo "... src/sys/save.o"
+	@echo "... src/sys/save.i"
+	@echo "... src/sys/save.s"
+	@echo "... src/sys/terminalIO.o"
+	@echo "... src/sys/terminalIO.i"
+	@echo "... src/sys/terminalIO.s"
 .PHONY : help
 
 

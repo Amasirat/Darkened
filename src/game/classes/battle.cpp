@@ -27,16 +27,81 @@ Log().write("entered battle arena");
     Enemy* current_target{m_enemies.at(0)};
     bool player_win{false};
 // main battle loop
+    bool is_player_alive;
     while(!m_enemies.empty())
     {
         menu();
+    //player's turn
         int usr_input{int_input("We have been confronted! What to do hero?!")};
+        switch(usr_input)
+        {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                clrscreen();
+                break;
+        }
+        
+    //enemies' turn
+        for(auto enemy : m_enemies)
+        {
+            is_player_alive = enemy->attack(m_player);
+            if(!is_player_alive)
+            {
+                player_win = false;
+                return player_win;
+            }
+        }
     }
-    return true;
+    return player_win;
 }
 //main menu for every battle arena
 void Battle::menu() const
 {
     clrscreen();
-    std::cout << "1.Attack\t\t2.Items\t\t3.Check Enemy\t\t4.Clear Screen\t\t\n";
+//std::cout << "1.Attack\t\t2.Items\t\t3.Check Enemy\t\t4.Clear Screen\t\t\n";
+    for(int ii{0}; ii < m_actions.size(); ++ii)
+    {
+        std::cout << translate_enum(m_actions.at(ii));
+        if(ii != m_actions.size() - 1)
+        {
+            std::cout << "\t\t";
+        }
+    }
+    std::cout << '\n';
+}
+//function to attempt player decisions in battle, it has side effects
+void Battle::battle_actions(int usr_int) const
+{
+    switch(usr_int)
+    {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            clrscreen();
+            break;
+    }
+}
+//returns the string version of actions enum
+std::string Battle::translate_enum(actions action) const
+{
+    switch(action)
+    {
+        case attack:
+            return "Attack";
+        case items:
+            return "Items";
+        case check:
+            return "Check Enemy";
+        case clear_screen:
+            return "Clear Screen";
+    }
 }
