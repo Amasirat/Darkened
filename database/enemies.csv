@@ -1,3 +1,4 @@
 id,name, hp, attack, defense, agility, luck
 1,revengeful_crow, 5, 3, 2, 5, 2
 2,dark_lurker, 5, 3, 5, 4, 3
+3,jack_the_reaper, 10, 5, 5, 4, 5

@@ -97,33 +97,33 @@ CMakeFiles/darkened.dir/src/error_handling/log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/darkened.dir/src/error_handling/log.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amasirat/projects/Darkened/src/error_handling/log.cpp -o CMakeFiles/darkened.dir/src/error_handling/log.cpp.s
 
-CMakeFiles/darkened.dir/src/sys/save.cpp.o: CMakeFiles/darkened.dir/flags.make
-CMakeFiles/darkened.dir/src/sys/save.cpp.o: /home/amasirat/projects/Darkened/src/sys/save.cpp
-CMakeFiles/darkened.dir/src/sys/save.cpp.o: CMakeFiles/darkened.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amasirat/projects/Darkened/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/darkened.dir/src/sys/save.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/darkened.dir/src/sys/save.cpp.o -MF CMakeFiles/darkened.dir/src/sys/save.cpp.o.d -o CMakeFiles/darkened.dir/src/sys/save.cpp.o -c /home/amasirat/projects/Darkened/src/sys/save.cpp
+CMakeFiles/darkened.dir/src/game/sys/save.cpp.o: CMakeFiles/darkened.dir/flags.make
+CMakeFiles/darkened.dir/src/game/sys/save.cpp.o: /home/amasirat/projects/Darkened/src/game/sys/save.cpp
+CMakeFiles/darkened.dir/src/game/sys/save.cpp.o: CMakeFiles/darkened.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amasirat/projects/Darkened/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/darkened.dir/src/game/sys/save.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/darkened.dir/src/game/sys/save.cpp.o -MF CMakeFiles/darkened.dir/src/game/sys/save.cpp.o.d -o CMakeFiles/darkened.dir/src/game/sys/save.cpp.o -c /home/amasirat/projects/Darkened/src/game/sys/save.cpp
 
-CMakeFiles/darkened.dir/src/sys/save.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/darkened.dir/src/sys/save.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amasirat/projects/Darkened/src/sys/save.cpp > CMakeFiles/darkened.dir/src/sys/save.cpp.i
+CMakeFiles/darkened.dir/src/game/sys/save.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/darkened.dir/src/game/sys/save.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amasirat/projects/Darkened/src/game/sys/save.cpp > CMakeFiles/darkened.dir/src/game/sys/save.cpp.i
 
-CMakeFiles/darkened.dir/src/sys/save.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/darkened.dir/src/sys/save.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amasirat/projects/Darkened/src/sys/save.cpp -o CMakeFiles/darkened.dir/src/sys/save.cpp.s
+CMakeFiles/darkened.dir/src/game/sys/save.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/darkened.dir/src/game/sys/save.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amasirat/projects/Darkened/src/game/sys/save.cpp -o CMakeFiles/darkened.dir/src/game/sys/save.cpp.s
 
-CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o: CMakeFiles/darkened.dir/flags.make
-CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o: /home/amasirat/projects/Darkened/src/sys/terminalIO.cpp
-CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o: CMakeFiles/darkened.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amasirat/projects/Darkened/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o -MF CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o.d -o CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o -c /home/amasirat/projects/Darkened/src/sys/terminalIO.cpp
+CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o: CMakeFiles/darkened.dir/flags.make
+CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o: /home/amasirat/projects/Darkened/src/game/sys/terminalIO.cpp
+CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o: CMakeFiles/darkened.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amasirat/projects/Darkened/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o -MF CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o.d -o CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o -c /home/amasirat/projects/Darkened/src/game/sys/terminalIO.cpp
 
-CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amasirat/projects/Darkened/src/sys/terminalIO.cpp > CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.i
+CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amasirat/projects/Darkened/src/game/sys/terminalIO.cpp > CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.i
 
-CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amasirat/projects/Darkened/src/sys/terminalIO.cpp -o CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.s
+CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amasirat/projects/Darkened/src/game/sys/terminalIO.cpp -o CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.s
 
 CMakeFiles/darkened.dir/src/game/classes/stat.cpp.o: CMakeFiles/darkened.dir/flags.make
 CMakeFiles/darkened.dir/src/game/classes/stat.cpp.o: /home/amasirat/projects/Darkened/src/game/classes/stat.cpp
@@ -213,8 +213,8 @@ CMakeFiles/darkened.dir/src/main.cpp.s: cmake_force
 darkened_OBJECTS = \
 "CMakeFiles/darkened.dir/src/error_handling/error.cpp.o" \
 "CMakeFiles/darkened.dir/src/error_handling/log.cpp.o" \
-"CMakeFiles/darkened.dir/src/sys/save.cpp.o" \
-"CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o" \
+"CMakeFiles/darkened.dir/src/game/sys/save.cpp.o" \
+"CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o" \
 "CMakeFiles/darkened.dir/src/game/classes/stat.cpp.o" \
 "CMakeFiles/darkened.dir/src/game/classes/random.cpp.o" \
 "CMakeFiles/darkened.dir/src/game/classes/battle.cpp.o" \
@@ -227,8 +227,8 @@ darkened_EXTERNAL_OBJECTS =
 
 darkened: CMakeFiles/darkened.dir/src/error_handling/error.cpp.o
 darkened: CMakeFiles/darkened.dir/src/error_handling/log.cpp.o
-darkened: CMakeFiles/darkened.dir/src/sys/save.cpp.o
-darkened: CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o
+darkened: CMakeFiles/darkened.dir/src/game/sys/save.cpp.o
+darkened: CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o
 darkened: CMakeFiles/darkened.dir/src/game/classes/stat.cpp.o
 darkened: CMakeFiles/darkened.dir/src/game/classes/random.cpp.o
 darkened: CMakeFiles/darkened.dir/src/game/classes/battle.cpp.o

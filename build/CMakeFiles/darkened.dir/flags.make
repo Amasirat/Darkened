@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/game/modules/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/sys/include
+CXX_INCLUDES = -I/home/amasirat/projects/Darkened/src/game/classes/include -I/home/amasirat/projects/Darkened/src/game/modules/include -I/home/amasirat/projects/Darkened/src/error_handling/include -I/home/amasirat/projects/Darkened/src/game/sys/include
 
 CXX_FLAGS = -g -std=gnu++20
 

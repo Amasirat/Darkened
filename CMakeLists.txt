@@ -9,8 +9,8 @@ project(darkened VERSION 0.0.1)
 set(HEADER_FILES 
     src/error_handling/include/error.h
     src/error_handling/include/log.h
-    src/sys/include/save.h
-    src/sys/include/terminalIO.h
+    src/game/sys/include/save.h
+    src/game/sys/include/terminalIO.h
     src/game/classes/include/stat.h
     src/game/classes/include/global.h
     src/game/classes/include/armor.h
@@ -23,14 +23,14 @@ include_directories(
     src/game/classes/include
     src/game/modules/include 
     src/error_handling/include
-    src/sys/include
+    src/game/sys/include
 )
 
 add_executable(darkened
     src/error_handling/error.cpp
     src/error_handling/log.cpp
-    src/sys/save.cpp
-    src/sys/terminalIO.cpp
+    src/game/sys/save.cpp
+    src/game/sys/terminalIO.cpp
     src/game/classes/stat.cpp
     src/game/classes/random.cpp
     src/game/classes/battle.cpp

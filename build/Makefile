@@ -297,6 +297,54 @@ src/game/classes/stat.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/classes/stat.cpp.s
 .PHONY : src/game/classes/stat.cpp.s
 
+src/game/sys/save.o: src/game/sys/save.cpp.o
+.PHONY : src/game/sys/save.o
+
+# target to build an object file
+src/game/sys/save.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/sys/save.cpp.o
+.PHONY : src/game/sys/save.cpp.o
+
+src/game/sys/save.i: src/game/sys/save.cpp.i
+.PHONY : src/game/sys/save.i
+
+# target to preprocess a source file
+src/game/sys/save.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/sys/save.cpp.i
+.PHONY : src/game/sys/save.cpp.i
+
+src/game/sys/save.s: src/game/sys/save.cpp.s
+.PHONY : src/game/sys/save.s
+
+# target to generate assembly for a file
+src/game/sys/save.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/sys/save.cpp.s
+.PHONY : src/game/sys/save.cpp.s
+
+src/game/sys/terminalIO.o: src/game/sys/terminalIO.cpp.o
+.PHONY : src/game/sys/terminalIO.o
+
+# target to build an object file
+src/game/sys/terminalIO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.o
+.PHONY : src/game/sys/terminalIO.cpp.o
+
+src/game/sys/terminalIO.i: src/game/sys/terminalIO.cpp.i
+.PHONY : src/game/sys/terminalIO.i
+
+# target to preprocess a source file
+src/game/sys/terminalIO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.i
+.PHONY : src/game/sys/terminalIO.cpp.i
+
+src/game/sys/terminalIO.s: src/game/sys/terminalIO.cpp.s
+.PHONY : src/game/sys/terminalIO.s
+
+# target to generate assembly for a file
+src/game/sys/terminalIO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/game/sys/terminalIO.cpp.s
+.PHONY : src/game/sys/terminalIO.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -320,54 +368,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/sys/save.o: src/sys/save.cpp.o
-.PHONY : src/sys/save.o
-
-# target to build an object file
-src/sys/save.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/save.cpp.o
-.PHONY : src/sys/save.cpp.o
-
-src/sys/save.i: src/sys/save.cpp.i
-.PHONY : src/sys/save.i
-
-# target to preprocess a source file
-src/sys/save.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/save.cpp.i
-.PHONY : src/sys/save.cpp.i
-
-src/sys/save.s: src/sys/save.cpp.s
-.PHONY : src/sys/save.s
-
-# target to generate assembly for a file
-src/sys/save.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/save.cpp.s
-.PHONY : src/sys/save.cpp.s
-
-src/sys/terminalIO.o: src/sys/terminalIO.cpp.o
-.PHONY : src/sys/terminalIO.o
-
-# target to build an object file
-src/sys/terminalIO.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.o
-.PHONY : src/sys/terminalIO.cpp.o
-
-src/sys/terminalIO.i: src/sys/terminalIO.cpp.i
-.PHONY : src/sys/terminalIO.i
-
-# target to preprocess a source file
-src/sys/terminalIO.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.i
-.PHONY : src/sys/terminalIO.cpp.i
-
-src/sys/terminalIO.s: src/sys/terminalIO.cpp.s
-.PHONY : src/sys/terminalIO.s
-
-# target to generate assembly for a file
-src/sys/terminalIO.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/darkened.dir/build.make CMakeFiles/darkened.dir/src/sys/terminalIO.cpp.s
-.PHONY : src/sys/terminalIO.cpp.s
 
 # Help Target
 help:
@@ -399,15 +399,15 @@ help:
 	@echo "... src/game/classes/stat.o"
 	@echo "... src/game/classes/stat.i"
 	@echo "... src/game/classes/stat.s"
+	@echo "... src/game/sys/save.o"
+	@echo "... src/game/sys/save.i"
+	@echo "... src/game/sys/save.s"
+	@echo "... src/game/sys/terminalIO.o"
+	@echo "... src/game/sys/terminalIO.i"
+	@echo "... src/game/sys/terminalIO.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/sys/save.o"
-	@echo "... src/sys/save.i"
-	@echo "... src/sys/save.s"
-	@echo "... src/sys/terminalIO.o"
-	@echo "... src/sys/terminalIO.i"
-	@echo "... src/sys/terminalIO.s"
 .PHONY : help
 
 

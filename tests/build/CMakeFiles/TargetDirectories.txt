@@ -1,3 +1,0 @@
-/home/amasirat/projects/Darkened/tests/build/CMakeFiles/test.dir
-/home/amasirat/projects/Darkened/tests/build/CMakeFiles/edit_cache.dir
-/home/amasirat/projects/Darkened/tests/build/CMakeFiles/rebuild_cache.dir
