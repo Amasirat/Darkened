@@ -161,20 +161,6 @@ CMakeFiles/darkened.dir/src/main.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/ostream.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/istream \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/istream.tcc \
-  /home/amasirat/projects/Darkened/src/game/classes/include/player.h \
-  /home/amasirat/projects/Darkened/src/game/classes/include/enemy.h \
-  /home/amasirat/projects/Darkened/src/game/classes/include/stat.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/vector \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/stl_uninitialized.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/stl_vector.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/stl_bvector.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/vector.tcc \
-  /home/amasirat/projects/Darkened/src/game/classes/include/armor.h \
-  /home/amasirat/projects/Darkened/src/game/classes/include/item.h \
-  /home/amasirat/projects/Darkened/src/error_handling/include/error.h \
-  /home/amasirat/projects/Darkened/src/game/classes/include/battle.h \
-  /home/amasirat/projects/Darkened/src/error_handling/include/log.h \
-  /home/amasirat/projects/Darkened/src/game/classes/include/global.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/filesystem \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/fs_fwd.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/cstdint \
@@ -206,5 +192,23 @@ CMakeFiles/darkened.dir/src/main.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/unique_ptr.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/ext/aligned_buffer.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/align.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/stl_uninitialized.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/fs_dir.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/fs_ops.h
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/fs_ops.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/fstream \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/fstream.tcc \
+  /home/amasirat/projects/Darkened/src/game/classes/include/player.h \
+  /home/amasirat/projects/Darkened/src/game/classes/include/enemy.h \
+  /home/amasirat/projects/Darkened/src/game/classes/include/stat.h \
+  /home/amasirat/projects/Darkened/src/error_handling/include/error.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/vector \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/stl_vector.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/stl_bvector.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/bits/vector.tcc \
+  /home/amasirat/projects/Darkened/src/game/classes/include/armor.h \
+  /home/amasirat/projects/Darkened/src/game/classes/include/item.h \
+  /home/amasirat/projects/Darkened/src/game/classes/include/battle.h \
+  /home/amasirat/projects/Darkened/src/error_handling/include/log.h \
+  /home/amasirat/projects/Darkened/src/game/classes/include/global.h

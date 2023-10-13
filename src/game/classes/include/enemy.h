@@ -2,14 +2,21 @@
 #define ENEMY_H
 #include "stat.h"
 #include "player.h"
+#include "error.h"
+
+#include <filesystem>
 #include <vector>
 #include <string>
+namespace fs = std::filesystem;
+
 class Player;
 class Enemy
 {
 public:
 //default constructor
     Enemy(const std::string& name, std::vector<int> stat_num);
+//database reading constructor
+    Enemy(const fs::path& database_dir = "../database/enemy.csv", int enemy_id = 1);
 //default destructor
     ~Enemy() = default;
 //attacking player
@@ -26,7 +33,7 @@ private:
         Stat(Stat::agility),
         Stat(Stat::luck)
     };
-    //translating stat to its corresponding vector index
+//translating stat to its corresponding vector index
     int translate_stat_name(Stat::stat_name stat) const
     {
         int stat_index{};
