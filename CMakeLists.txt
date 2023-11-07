@@ -12,7 +12,7 @@ set(HEADER_FILES
     src/game/sys/include/save.h
     src/game/sys/include/terminalIO.h
     src/game/classes/include/stat.h
-    src/game/classes/include/global.h
+    src/game/sys/include/global.h
     src/game/classes/include/armor.h
     src/game/classes/include/player.h
     src/game/classes/include/random.h

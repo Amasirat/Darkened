@@ -1,8 +1,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 #include <string>
-//Item is a pure abstract class meant to for other classes of the similar type to inherit
-//its functionality and implement them themselves
+//Item is a pure abstract class meant for classes to inherit from
 class Item
 {
 public:
