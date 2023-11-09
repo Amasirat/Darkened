@@ -8,5 +8,7 @@ void clrscreen();
 int int_input(std::string_view prompt);
 //get generic string from user
 std::string_view string_input(std::string_view prompt);
+//check if a given string is a positive integer
+bool is_number(const std::string& s);
 
 #endif

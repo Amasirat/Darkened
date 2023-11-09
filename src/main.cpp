@@ -11,25 +11,26 @@
 #include <fstream>
 #include "player.h"
 #include "battle.h"
+#include "database.h"
 #include "enemy.h"
 #include "log.h"
+#include "global.h"
 #include "stat.h"
+#include "terminalIO.h"
 namespace fs = std::filesystem;
 int main()
 {
-    std::ifstream database{"../database/enemies.csv"};
-    if (!database)
+    try
     {
-        std::cout << "couldn't\n";
-        return -1;
+        std::vector<std::string> row_details{get_database_row(sys::enemy_database, 3)};
+        std::cout << row_details[1] << '\n';
     }
-    while(database)
+    catch(const Error::exceptions& e)
     {
-        std::string row{};
-        std::getline(database, row);
+        Error{e}.print();
+    }
 
-        std::cout << row << '\n';
-    }
+
     return 0;
 }
 

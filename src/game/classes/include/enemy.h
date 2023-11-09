@@ -3,7 +3,7 @@
 #include "stat.h"
 #include "player.h"
 #include "error.h"
-
+#include "global.h"
 #include <filesystem>
 #include <vector>
 #include <string>
@@ -16,7 +16,7 @@ public:
 //default constructor
     Enemy(const std::string& name, std::vector<int> stat_num);
 //database reading constructor
-    Enemy(const fs::path& database_dir = "../database/enemy.csv", int enemy_id = 1);
+    Enemy(const fs::path& database_dir = sys::enemy_database , int enemy_id = 1);
 //default destructor
     ~Enemy() = default;
 //attacking player

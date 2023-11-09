@@ -2,9 +2,11 @@
 #include "random.h"
 #include "log.h"
 #include "error.h"
+#include "database.h"
 
 #include <iostream>
 #include <filesystem>
+#include <string>
 #include <fstream>
 namespace fs = std::filesystem;
 //default constructor
@@ -14,8 +16,7 @@ m_name{name}
     const int needed_size{(int)m_stats.size()};
     if(needed_size != (int)stat_num.size())
     {
-        std::string message{"WARNING: vector size was either greater or smaller(enemy class constructor)"};
-        Log().write(message);
+        Log().write("WARNING: vector size was either greater or smaller(enemy class constructor)");
         stat_num.resize(needed_size);
     }
 
@@ -29,16 +30,20 @@ m_name{name}
 //database reading constructor
 Enemy::Enemy(const fs::path& database_dir, int enemy_id)
 {
-Log().write("Reading enemy Database...");
-
-    if(!fs::is_directory(database_dir))
+Log().write("Constructing enemy...");
+    std::vector<std::string> db_findings{get_database_row(database_dir, enemy_id)};
+//if vector was greater than decided database length
+    if(db_findings.size() != sys::db_item_count)
     {
-        std::string error_message{"ERROR:database directory does not exist"};
-        Log().write(error_message);
-        throw Error(error_message);
+        Log().write("WARNING: database inquiry returned an greater sized vector than expected");
+        db_findings.resize(sys::db_item_count);
     }
-    std::fstream database{database_dir, std::ios::in};
 
+    m_name = db_findings[1];
+    for(int i{0}; i < m_stats.size(); ++i)
+    {
+        m_stats.at(i).set_size(std::stoi(db_findings[i + 2]));
+    }
 }
 //attacking player
 bool Enemy::attack(Player* player) const

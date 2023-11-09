@@ -2,6 +2,7 @@
 #define GLOBAL_H
 #include <string>
 #include <filesystem>
+namespace fs = std::filesystem;
 //namespace for game related global variables like default stat size
 //or default player levels, etc...
 namespace game
@@ -19,11 +20,18 @@ namespace game
 //directories, configs etc...
 namespace sys
 {
-   inline constexpr std::string log_directory{"/logs/"};
+//where program stores log files
+   inline constexpr std::string log_directory{"logs/"};
    #ifdef __linux__
+//path to user's home directory on linux
    inline const std::string homedir{getenv("HOME")};
    #endif
-   inline const std::string enemy_database{"../database/enemy.csv"};
+//path to enemy database
+   inline const fs::path enemy_database{"database/enemies.csv"};
+//delimiter for rows when reading database csv files
+   inline const std::string delimiter{","};
+//the amount of elements a database row can have
+   inline constexpr int db_item_count{7};
 };
 
 #endif
