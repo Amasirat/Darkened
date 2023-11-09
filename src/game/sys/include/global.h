@@ -23,6 +23,7 @@ namespace sys
    #ifdef __linux__
    inline const std::string homedir{getenv("HOME")};
    #endif
+   inline const std::string enemy_database{"../database/enemy.csv"};
 };
 
 #endif
