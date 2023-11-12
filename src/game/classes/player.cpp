@@ -25,14 +25,13 @@ void Player::attack() const
 //use neative numbers to decrease and positive numbers to increase
 void Player::change_stats(Stat::stat_name stat_to_change, int diff_num)
 {
-    int index{translate_stat_name(stat_to_change)};
+    int index{stat_index(stat_to_change)};
     m_stats[index].change(diff_num);
 }
 //increase player stat's size, taking a stat enum to know which stat to increase, and how much to increase
 void Player::stat_size_change(Stat::stat_name stat_to_change, int diff_num)
 {
-    int stat_index{translate_stat_name(stat_to_change)};
-    m_stats[stat_index].change_size(diff_num);
+    m_stats[stat_index(stat_to_change)].change_size(diff_num);
 
 Log().write("player stat size changed");
 }
@@ -54,7 +53,7 @@ bool Player::take_hit(int hit_amount)
 {
 Log().write("awaiting player's hit...");
     bool is_alive{true};
-    Stat hp{m_stats.at(translate_stat_name(Stat::hp))};
+    Stat hp{m_stats.at(stat_index(Stat::hp))};
     change_stats(hp.enum_name(), -hit_amount);
     if(hp.current() == 0)
     {

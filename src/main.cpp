@@ -16,7 +16,7 @@
 #include "log.h"
 #include "global.h"
 #include "stat.h"
-#include "terminalIO.h"
+#include "input_output.h"
 namespace fs = std::filesystem;
 int main()
 {

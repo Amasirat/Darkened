@@ -11,7 +11,7 @@ set(HEADER_FILES
     src/error_handling/include/log.h
     src/game/sys/include/save.h
     src/game/sys/include/database.h
-    src/game/sys/include/terminalIO.h
+    src/game/sys/include/input_output.h
     src/game/classes/include/stat.h
     src/game/sys/include/global.h
     src/game/classes/include/armor.h
@@ -31,7 +31,7 @@ add_executable(darkened
     src/error_handling/error.cpp
     src/error_handling/log.cpp
     src/game/sys/save.cpp
-    src/game/sys/terminalIO.cpp
+    src/game/sys/input_output.cpp
     src/game/sys/database.cpp
     src/game/classes/stat.cpp
     src/game/classes/random.cpp

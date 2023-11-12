@@ -1,5 +1,5 @@
 #include "battle.h"
-#include "terminalIO.h"
+#include "input_output.h"
 #include "log.h"
 #include "error.h"
 

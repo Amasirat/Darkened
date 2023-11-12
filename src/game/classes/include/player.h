@@ -63,7 +63,7 @@ private:
 
 //functions only used by this class
 //translating stat to its corresponding vector index
-    int translate_stat_name(Stat::stat_name stat)
+    int stat_index(Stat::stat_name stat)
     {
         int stat_index{};
         switch(stat)
