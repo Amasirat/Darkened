@@ -29,3 +29,10 @@ Log().write("awaiting int_input...");
     }
     return usr_input;
 }
+//check if a given string is a positive integer
+bool is_number(const std::string& s)
+{
+    std::string::const_iterator it = s.begin();
+    while (it != s.end() && std::isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
