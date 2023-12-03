@@ -2,6 +2,7 @@
 #define GLOBAL_H
 #include <string>
 #include <filesystem>
+
 namespace fs = std::filesystem;
 //namespace for game related global variables like default stat size
 //or default player levels, etc...

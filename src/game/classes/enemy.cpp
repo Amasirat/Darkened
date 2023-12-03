@@ -46,10 +46,9 @@ Log().write("Constructing enemy...");
     }
 }
 //attacking player
-bool Enemy::attack(Player* player) const
+bool Enemy::attack() const
 {
     Random rng{};
     int hit_value{rng.generate() * m_stats.at(translate_stat_name(Stat::attack)).current()};
-    bool player_is_alive{player->take_hit(hit_value)};
     return true;
 }

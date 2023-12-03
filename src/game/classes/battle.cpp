@@ -16,7 +16,6 @@ m_enemies{enemies}
 //default destructor
 Battle::~Battle()
 {
-    
 Log().write("battle area exited");
 }
 //function that handles player and enemy interaction
@@ -27,7 +26,7 @@ Log().write("entered battle arena");
     Enemy* current_target{m_enemies.at(0)};
     bool player_win{false};
 // main battle loop
-    bool is_player_alive;
+    bool is_player_alive{true};
     while(!m_enemies.empty())
     {
         menu();
@@ -47,15 +46,6 @@ Log().write("entered battle arena");
         }
         
     //enemies' turn
-        for(auto enemy : m_enemies)
-        {
-            is_player_alive = enemy->attack(m_player);
-            if(!is_player_alive)
-            {
-                player_win = false;
-                return player_win;
-            }
-        }
     }
     return player_win;
 }

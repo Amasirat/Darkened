@@ -20,7 +20,7 @@ public:
 //default destructor
     ~Enemy() = default;
 //attacking player
-    bool attack(Player* player) const;
+    bool attack() const;
 
 private:
 //enemy name

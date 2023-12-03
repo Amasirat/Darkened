@@ -22,15 +22,17 @@ int main()
 {
     try
     {
-        std::vector<std::string> row_details{get_database_row(sys::enemy_database, 3)};
-        std::cout << row_details[1] << '\n';
+
     }
     catch(const Error::exceptions& e)
     {
-        Error{e}.print();
+
     }
-
-
+    catch(...)
+    {
+        std::cout << "Unanticipated Error Occured!\n";
+    }
+    
     return 0;
 }
 
