@@ -43,6 +43,9 @@ public:
 //returns level of player
     int level() const
     { return m_level; }
+//returns hp
+    int hp() const
+    { return m_stats.at(stat_index(Stat::hp)).current(); }
 private:
 //name
     std::string m_name{};
@@ -63,7 +66,7 @@ private:
 
 //functions only used by this class
 //translating stat to its corresponding vector index
-    int stat_index(Stat::stat_name stat)
+    int stat_index(Stat::stat_name stat) const
     {
         int stat_index{};
         switch(stat)

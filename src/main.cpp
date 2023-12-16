@@ -26,7 +26,9 @@ int main()
     }
     catch(const Error::exceptions& e)
     {
-
+        Error er{e};
+        Log().write(er.error_message());
+        er.print();
     }
     catch(...)
     {

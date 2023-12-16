@@ -19,8 +19,8 @@ public:
     ~Error() = default;
 //print error message on screen
     void print() const;
-
-
+//return current error message
+    std::string error_message() const;
 private:
     std::string m_error_message{};
     exceptions m_error_type{};
