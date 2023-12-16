@@ -38,15 +38,16 @@ Log().write("player stat size changed");
 //level up player, player levels up when a stat is increased
 void Player::level_up(Stat::stat_name stat_to_change)
 {
-    if(m_level >= game::level_limit)
+    ++m_level;
+    if(m_level > game::level_limit)
     {
         std::string message{"ERROR: Level limit has reached(Player level_up method)"};
         Log().write(message);
+        --m_level;
         return;
     }
     constexpr int increase_by{1};
     change_stats(stat_to_change, increase_by);
-    ++m_level;
 }
 //take a hit from external entities
 bool Player::take_hit(int hit_amount)
@@ -55,7 +56,7 @@ Log().write("awaiting player's hit...");
     bool is_alive{true};
     Stat hp{m_stats.at(stat_index(Stat::hp))};
     change_stats(hp.enum_name(), -hit_amount);
-    if(hp.current() == 0)
+    if(hp.current() <= 0)
     {
         is_alive = false;
     }

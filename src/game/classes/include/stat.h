@@ -31,8 +31,6 @@ public:
     void change(int change_by);
 //change stat size, pass in negative int to decrease and positive to increase stat size
     void change_size(int change_by);
-//decrease stat size
-    void size_down(int decrease_by);
 //reset current_value to maximum size
     void reset();
 //set stat size

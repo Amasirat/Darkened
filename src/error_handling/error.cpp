@@ -32,3 +32,8 @@ void Error::print() const
 {
     std::cerr << m_error_message << '\n';
 }
+//return current error message
+std::string Error::error_message() const
+{
+    return m_error_message;
+}

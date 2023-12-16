@@ -22,14 +22,10 @@ void Stat::change(int change_by)
     if(m_current_value > m_size)
     {
         m_current_value = m_size;
-    Log().write("ERROR:Stat::Value Limit Reached");
-        throw Error("Value Limit Reached");
     }
     else if (m_current_value < 0)
     {
-        m_current_value = 0;
-    Log().write("ERROR:Stat::Invalid value reached");
-        throw Error("Value Limit Reached");   
+        m_current_value = 0; 
     }
 }
 //change stat size, pass in negative int to decrease and positive to increase stat size
@@ -54,28 +50,6 @@ Log().write("changing a stat's size...");
         throw Error("Value Limit Reached(inside Stat class)");
     }
 }
-//decrease stat size
-void Stat::size_down(int decrease_by)
-{
-    if(decrease_by <= 0)
-    {
-        Log().write("ERROR:Stat::size_down() recieved negative int as input");
-        throw Error("Invalid Value");
-    }
-    m_size -= decrease_by;
-//we can't size down a Stat to below zero
-    if(m_size < 0)
-    {
-        m_size = 0;
-Log().write("Stat::size_down::m_size was 0 while attempting size down");
-        throw Error("Value Limit Reached");
-    }
-
-    if(m_current_value > m_size)
-    {
-        m_current_value = m_size;
-    }
-}
 //reset current_value to maximum size
 void Stat::reset()
 {
@@ -87,8 +61,8 @@ void Stat::set_size(int size)
 {
     if(size <= 0)
     {
-        Log().write("Stat::set_size()::Invalid Value");
-        throw Error("Invalid Value");
+        Log().write("ERROR::Stat::set_size()::Invalid Value");
+        throw Error::exceptions::InvalidInput;
     }
     
     m_size = size;
