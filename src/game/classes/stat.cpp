@@ -41,13 +41,11 @@ Log().write("changing a stat's size...");
     {
         m_size = game::stat_limit;
         Log().write("ERROR: Stat::change_size::m_size reached higher limit");
-        throw Error("Value Limit Reached(inside Stat class)");
     }
     else if(m_size < 0)
     {
         m_size = 0;
         Log().write("ERROR: Stat::change_size::m_size reached lower limit");
-        throw Error("Value Limit Reached(inside Stat class)");
     }
 }
 //reset current_value to maximum size

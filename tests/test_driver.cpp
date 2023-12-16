@@ -1,6 +1,8 @@
 #include "player_testing.h"
 int main()
 {
-    std::cout << "Has\n";
-    test_take_hit();
+    for (int i{0}; i < 50; ++i)
+    {
+        test_attack();
+    }
 }

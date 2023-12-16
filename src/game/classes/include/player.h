@@ -23,7 +23,7 @@ public:
 //default destructor
     ~Player() = default;
 //attack an enemy
-    void attack() const;    
+    int attack() const;    
 //change player stats, taking a stat enum to know which stat to change, and how much.
 //use neative numbers to decrease and positive numbers to increase
     void change_stats(Stat::stat_name stat_to_change, int diff_num);

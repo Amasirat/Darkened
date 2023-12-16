@@ -15,11 +15,14 @@ m_level{level}
     Log().write("Player constructed");
 }
 //attack an enemy(it's unfinished)
-void Player::attack() const
+int Player::attack() const
 {
     Random rng{};
-    int enemy_stat_decrease{((int)rng.generate() + m_stats[1].current()) * (int)log((double)m_stats[4].current())};
-    std::cout << enemy_stat_decrease << '\n';
+    int luck{m_stats.at(stat_index(Stat::luck)).current()};
+    int attack{m_stats.at(stat_index(Stat::attack)).current()};
+    int random = rng.generate();
+    std::cout << "rng: " << random << '\n';
+    return (int)(sqrt(rng.generate()) * (((2 * (int)(rng.generate() % 2)) + 5) / 5));
 }            
 //change player stats, taking a stat enum to know which stat to change, and how much.
 //use neative numbers to decrease and positive numbers to increase
