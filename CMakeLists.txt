@@ -19,6 +19,7 @@ set(HEADER_FILES
     src/game/classes/include/random.h
     src/game/classes/include/enemy.h
     tests/unit_tests/player_testing.h
+    tests/unit_tests/stat_testing.h
 )
 
 include_directories(

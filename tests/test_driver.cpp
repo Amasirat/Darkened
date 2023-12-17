@@ -1,8 +1,9 @@
-#include "player_testing.h"
+
+#include "stat_testing.h"
 int main()
 {
-    for (int i{0}; i < 50; ++i)
-    {
-        test_attack();
-    }
+    test_change_size();
+    test_change();
+    test_change();
+    test_reset();    
 }
