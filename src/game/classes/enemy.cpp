@@ -33,10 +33,10 @@ Enemy::Enemy(const fs::path& database_dir, int enemy_id)
 Log().write("Constructing enemy...");
     std::vector<std::string> db_findings{get_database_row(database_dir, enemy_id)};
 //if vector was greater than decided database length
-    if(db_findings.size() != sys::db_item_count)
+    if(db_findings.size() != (int)m_stats.size())
     {
         Log().write("WARNING: database inquiry returned an greater sized vector than expected");
-        db_findings.resize(sys::db_item_count);
+        db_findings.resize((int)m_stats.size());
     }
 
     m_name = db_findings[1];

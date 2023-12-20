@@ -31,8 +31,6 @@ namespace sys
    inline const fs::path enemy_database{"database/enemies.csv"};
 //delimiter for rows when reading database csv files
    inline const std::string delimiter{","};
-//the amount of elements a database row can have
-   inline constexpr int db_item_count{7};
 };
 
 #endif

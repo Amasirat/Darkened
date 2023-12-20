@@ -36,6 +36,7 @@ public:
 //set stat size
     void set_size(int size);
 //getters
+
 //  name
     stat_name enum_name() const {return m_name;}
 //  name of stat in std::string form

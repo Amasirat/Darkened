@@ -18,37 +18,6 @@ Battle::~Battle()
 {
 Log().write("battle area exited");
 }
-//function that handles player and enemy interaction
-//returns true if player wins and false if player lost
-bool Battle::battle_arena() const
-{
-Log().write("entered battle arena");
-    Enemy* current_target{m_enemies.at(0)};
-    bool player_win{false};
-// main battle loop
-    bool is_player_alive{true};
-    while(!m_enemies.empty())
-    {
-        menu();
-    //player's turn
-        int usr_input{int_input("We have been confronted! What to do hero?!")};
-        switch(usr_input)
-        {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                clrscreen();
-                break;
-        }
-        
-    //enemies' turn
-    }
-    return player_win;
-}
 //main menu for every battle arena
 void Battle::menu() const
 {

@@ -15,11 +15,6 @@ public:
     Battle(const Battle&) = delete;
 //default destructor
     ~Battle();
-//function that handles player and enemy interaction
-//returns true if player wins and false if player lost
-    bool battle_arena() const;
-//function called when player loses
-    void lose() const;
 //main menu for every battle arena
     void menu() const;
 private:
