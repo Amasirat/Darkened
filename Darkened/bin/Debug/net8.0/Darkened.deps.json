@@ -15,8 +15,22 @@
         }
       },
       "Entities/1.0.0": {
+        "dependencies": {
+          "GameSys": "1.0.0",
+          "RenderLib": "1.0.0"
+        },
         "runtime": {
           "Entities.dll": {}
+        }
+      },
+      "GameSys/1.0.0": {
+        "runtime": {
+          "GameSys.dll": {}
+        }
+      },
+      "RenderLib/1.0.0": {
+        "runtime": {
+          "RenderLib.dll": {}
         }
       }
     }
@@ -28,6 +42,16 @@
       "sha512": ""
     },
     "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameSys/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RenderLib/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

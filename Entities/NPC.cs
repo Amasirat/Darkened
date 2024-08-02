@@ -1,8 +1,9 @@
 namespace Entities;
 
 using RenderLib;
+using GameSys;
 
-class NPC 
+public class NPC 
 {
     public NPC(string name = "Johnny")
     {

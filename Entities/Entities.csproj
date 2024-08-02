@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RenderLib\RenderLib.csproj" />
+    <ProjectReference Include="..\GameSys\GameSys.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

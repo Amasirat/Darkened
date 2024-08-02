@@ -16,3 +16,8 @@
 /home/amasirat/projects/Darkened/Darkened/obj/Debug/net8.0/Darkened.pdb
 /home/amasirat/projects/Darkened/Darkened/obj/Debug/net8.0/Darkened.genruntimeconfig.cache
 /home/amasirat/projects/Darkened/Darkened/obj/Debug/net8.0/ref/Darkened.dll
+/home/amasirat/projects/Darkened/Darkened/bin/Debug/net8.0/GameSys.dll
+/home/amasirat/projects/Darkened/Darkened/bin/Debug/net8.0/RenderLib.dll
+/home/amasirat/projects/Darkened/Darkened/bin/Debug/net8.0/GameSys.pdb
+/home/amasirat/projects/Darkened/Darkened/bin/Debug/net8.0/RenderLib.pdb
+/home/amasirat/projects/Darkened/Darkened/obj/Debug/net8.0/Darkened.sourcelink.json

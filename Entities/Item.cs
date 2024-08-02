@@ -1,5 +1,5 @@
 namespace Entities;
-abstract class Item
+public abstract class Item
 {
     public Item()
     {

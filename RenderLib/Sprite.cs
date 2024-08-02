@@ -6,4 +6,7 @@ public class Sprite
     {
 
     }
+
+
+    public AsciiRenderer ascii{get; set;}
 }

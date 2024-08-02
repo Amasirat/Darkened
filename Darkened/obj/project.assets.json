@@ -2,43 +2,61 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "ConsoleLib/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/ConsoleLib.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ConsoleLib.dll": {}
-        }
-      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "GameSys": "1.0.0",
+          "RenderLib": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
         "runtime": {
           "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "GameSys/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/GameSys.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameSys.dll": {}
+        }
+      },
+      "RenderLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/RenderLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RenderLib.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ConsoleLib/1.0.0": {
-      "type": "project",
-      "path": "../ConsoleLib/ConsoleLib.csproj",
-      "msbuildProject": "../ConsoleLib/ConsoleLib.csproj"
-    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "GameSys/1.0.0": {
+      "type": "project",
+      "path": "../GameSys/GameSys.csproj",
+      "msbuildProject": "../GameSys/GameSys.csproj"
+    },
+    "RenderLib/1.0.0": {
+      "type": "project",
+      "path": "../RenderLib/RenderLib.csproj",
+      "msbuildProject": "../RenderLib/RenderLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "ConsoleLib >= 1.0.0",
       "Entities >= 1.0.0"
     ]
   },
@@ -67,9 +85,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/amasirat/projects/Darkened/ConsoleLib/ConsoleLib.csproj": {
-              "projectPath": "/home/amasirat/projects/Darkened/ConsoleLib/ConsoleLib.csproj"
-            },
             "/home/amasirat/projects/Darkened/Entities/Entities.csproj": {
               "projectPath": "/home/amasirat/projects/Darkened/Entities/Entities.csproj"
             }

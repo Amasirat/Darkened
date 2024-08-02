@@ -1,5 +1,5 @@
 namespace Entities;
-class Map : Item
+public class Map : Item
 {
     public Map() : base()
     {}
