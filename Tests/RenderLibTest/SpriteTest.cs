@@ -1,7 +1,7 @@
 namespace RenderLibTest;
 
 [TestClass]
-public class UnitTest1
+public class SpriteTest
 {
     [TestMethod]
     public void TestMethod1()

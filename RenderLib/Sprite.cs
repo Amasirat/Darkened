@@ -2,5 +2,8 @@
 
 public class Sprite
 {
+    public Sprite(AsciiRenderer asciiSprite)
+    {
 
+    }
 }

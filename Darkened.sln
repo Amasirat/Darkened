@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTest", "Tests\Datab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderLibTest", "Tests\RenderLibTest\RenderLibTest.csproj", "{DA3D780A-F5A7-4A96-AAFA-E321A9784550}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameSys", "GameSys\GameSys.csproj", "{8B928013-3BC5-4933-9678-A74B704EB0F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{DA3D780A-F5A7-4A96-AAFA-E321A9784550}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA3D780A-F5A7-4A96-AAFA-E321A9784550}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA3D780A-F5A7-4A96-AAFA-E321A9784550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B928013-3BC5-4933-9678-A74B704EB0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B928013-3BC5-4933-9678-A74B704EB0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B928013-3BC5-4933-9678-A74B704EB0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B928013-3BC5-4933-9678-A74B704EB0F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F632C0F8-871F-4E04-83D9-8D67BE42E144} = {D61594F1-0BF0-4327-96DB-71C6BC3F6A5E}

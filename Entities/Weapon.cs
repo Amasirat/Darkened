@@ -1,9 +1,9 @@
 namespace Entities;
 
-class Weapon : Item
+public class Weapon : Item
 {
     public Weapon() : base()
     {
-        
+
     }
 }

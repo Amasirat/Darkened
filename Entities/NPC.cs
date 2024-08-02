@@ -1,5 +1,7 @@
 namespace Entities;
 
+using RenderLib;
+
 class NPC 
 {
     public NPC(string name = "Johnny")
@@ -8,4 +10,6 @@ class NPC
     }
 
     public string Name {get; set;}
+    public Sprite NPCSprite{get; set;}
+    public DialogueDriver dialogue{get; set;}
 }

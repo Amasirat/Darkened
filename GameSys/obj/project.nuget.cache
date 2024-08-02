@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JT3HYJEThFaYYg8JKPFZ5aAaRabj8py8NhffKQAK2OlLqZn+YYOh2ozH6+6pHy0mPoIgyuX68AfCsComLClnNA==",
+  "success": true,
+  "projectFilePath": "/home/amasirat/projects/Darkened/GameSys/GameSys.csproj",
+  "expectedPackageFiles": [
+    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.7/microsoft.aspnetcore.app.ref.8.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
