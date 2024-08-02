@@ -9,7 +9,7 @@ public class Player
         this.level = level;
     }
 
-//properties
+// Properties
     public string Name
     {
         get { if (name == null) return ""; else return name; }
@@ -26,5 +26,8 @@ public class Player
     public int Level { get{return level;} }
 
     private string? name;
+    private int hp;
     private int level;
+    private int exp;
+    private int exp_required;
 }

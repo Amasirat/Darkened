@@ -1,6 +1,6 @@
-﻿namespace Program
+﻿namespace Darkened
 {
-    class Program
+    class Game
     {
         public static void Main()
         {
