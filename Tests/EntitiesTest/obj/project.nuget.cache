@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "v0XQ6AARLID3PoOspZr+13DRIQqjwraNBnRdfyrdrf4YeoacMh+KvlKO0/mhgllSmekN+X0LEqewPl0FJTiVfA==",
+  "dgSpecHash": "3oFt0BfvjGiLWA+CBWxoBazfrpt3cqByd0nA6C6nRU2hLq9MaRM84Ng5UjBuMMEB4ORXXbUxOx0AZ9St/IMlWw==",
   "success": true,
   "projectFilePath": "/home/amasirat/projects/Darkened/Tests/EntitiesTest/EntitiesTest.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,7 @@
     "/home/amasirat/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/home/amasirat/.nuget/packages/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg.sha512",
     "/home/amasirat/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
-    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.4/microsoft.aspnetcore.app.ref.8.0.4.nupkg.sha512"
+    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.7/microsoft.aspnetcore.app.ref.8.0.7.nupkg.sha512"
   ],
   "logs": []
 }

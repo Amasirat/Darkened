@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "c+cRpcszCYndFEfrdeUeIacq+PpY+dIZtRbzU5kxsLTS3CjZ9EjxTIYSqL+XIQuUDA5MU8KcKqQ60I//tlIzCQ==",
+  "dgSpecHash": "+o/wvFFCXxKrWt/scRVKeJEI3LnJku/Zm6GuXU4t2sCmhv9Y6lUViXb8+jjgy3T1FgNrBLDFlyejtg5bpRp1VA==",
   "success": true,
   "projectFilePath": "/home/amasirat/projects/Darkened/Entities/Entities.csproj",
   "expectedPackageFiles": [
-    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.4/microsoft.aspnetcore.app.ref.8.0.4.nupkg.sha512"
+    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.7/microsoft.aspnetcore.app.ref.8.0.7.nupkg.sha512"
   ],
   "logs": []
 }

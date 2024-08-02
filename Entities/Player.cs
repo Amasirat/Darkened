@@ -2,25 +2,29 @@
 
 public class Player
 {
-    public Player(string name = "user")
+// Master Constructor
+    public Player(string name = "user", int level = 1)
     {
-
+        Name = name;
+        this.level = level;
     }
 
 //properties
     public string Name
     {
-        get { return name; }
+        get { if (name == null) return ""; else return name; }
         set
         {
             if(value.Length > 512)
             {
-                throw new InvalidDataException("Size of name is too much!");
+                throw new InvalidDataException("The name given is too long!");
             }
             name = value;
         }
     }
 
-    private string name;
+    public int Level { get{return level;} }
+
+    private string? name;
     private int level;
 }

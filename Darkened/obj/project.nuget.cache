@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bNIsvn0CnMuCDnwRnfY+LL/A++3LWR2OKSKBqIk5G369LIpfcskKrIIMjDr8EOHh3UGzCk/AHoBTHqGXy575OA==",
+  "dgSpecHash": "x68D+HsPfpH+rOBU1Wy5NAaAaHjXEr4khcMQtenXm4WvTOFFWwdOYpdVSbDCpP7XkSw0gZSbauNUCAAQJ2fNwg==",
   "success": true,
   "projectFilePath": "/home/amasirat/projects/Darkened/Darkened/Darkened.csproj",
   "expectedPackageFiles": [
-    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.4/microsoft.aspnetcore.app.ref.8.0.4.nupkg.sha512"
+    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.7/microsoft.aspnetcore.app.ref.8.0.7.nupkg.sha512"
   ],
   "logs": []
 }

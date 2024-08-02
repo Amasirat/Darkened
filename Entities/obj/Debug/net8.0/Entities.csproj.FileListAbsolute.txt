@@ -9,3 +9,4 @@
 /home/amasirat/projects/Darkened/Entities/obj/Debug/net8.0/refint/Entities.dll
 /home/amasirat/projects/Darkened/Entities/obj/Debug/net8.0/Entities.pdb
 /home/amasirat/projects/Darkened/Entities/obj/Debug/net8.0/ref/Entities.dll
+/home/amasirat/projects/Darkened/Entities/obj/Debug/net8.0/Entities.sourcelink.json
