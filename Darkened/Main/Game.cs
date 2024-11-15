@@ -2,9 +2,6 @@
 using SFML.Graphics;
 
 namespace Darkened.Main;
-
-
-
 public static class Game
 {
     public static void Main()
