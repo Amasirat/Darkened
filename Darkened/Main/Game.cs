@@ -1,6 +1,6 @@
 ﻿namespace Darkened.Main;
 
-class Game
+public static class Game
 {
     public static void Main()
     {

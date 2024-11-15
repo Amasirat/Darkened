@@ -1,0 +1,15 @@
+/home/amasirat/dev/Darkened/Darkened/bin/Debug/net8.0/Darkened
+/home/amasirat/dev/Darkened/Darkened/bin/Debug/net8.0/Darkened.deps.json
+/home/amasirat/dev/Darkened/Darkened/bin/Debug/net8.0/Darkened.runtimeconfig.json
+/home/amasirat/dev/Darkened/Darkened/bin/Debug/net8.0/Darkened.dll
+/home/amasirat/dev/Darkened/Darkened/bin/Debug/net8.0/Darkened.pdb
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.GeneratedMSBuildEditorConfig.editorconfig
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.AssemblyInfoInputs.cache
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.AssemblyInfo.cs
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.csproj.CoreCompileInputs.cache
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.sourcelink.json
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.dll
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/refint/Darkened.dll
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.pdb
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/Darkened.genruntimeconfig.cache
+/home/amasirat/dev/Darkened/Darkened/obj/Debug/net8.0/ref/Darkened.dll
