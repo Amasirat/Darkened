@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkened", "Darkened\Darkened.csproj", "{68938CB6-34B7-4A7F-9C0E-6F4075A76A0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "Tests\UnitTests\UnitTests.csproj", "{937D117E-965E-4EC9-904C-6F76E2B62E5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68938CB6-34B7-4A7F-9C0E-6F4075A76A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68938CB6-34B7-4A7F-9C0E-6F4075A76A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68938CB6-34B7-4A7F-9C0E-6F4075A76A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68938CB6-34B7-4A7F-9C0E-6F4075A76A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937D117E-965E-4EC9-904C-6F76E2B62E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937D117E-965E-4EC9-904C-6F76E2B62E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937D117E-965E-4EC9-904C-6F76E2B62E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937D117E-965E-4EC9-904C-6F76E2B62E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
