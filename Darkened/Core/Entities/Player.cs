@@ -1,10 +1,10 @@
-namespace Darkened.Core;
-
+namespace Darkened.Core.Entities;
+using Darkened.Data.Interface;
 public class Player
 {
     // Constructors
     // Master Constructor
-    public Player()
+    public Player(IDatabase database)
     {}
     
     
@@ -36,4 +36,6 @@ public class Player
     private int maxHealth;
     private int mana;
     private int maxMana;
+
+    private IDatabase database;
 }
