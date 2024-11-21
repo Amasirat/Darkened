@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Darkened")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38383ff3af9d50fa887ca3559462b2bb99217489")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26ed345e6d6ad24902c8c0e8a9df9c3f6dfc80df")]
 [assembly: System.Reflection.AssemblyProductAttribute("Darkened")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Darkened")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
