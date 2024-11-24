@@ -4,11 +4,8 @@ using Data.Interface;
 
 public class Enemy
 {
-    public Enemy(IDatabase database, IRender renderer)
+    // Events
+    public event Action<Enemy> OnDeath;
+    public Enemy()
     {}
-    
-    
-    
-    private IDatabase database;
-    private IRender renderer;
 }

@@ -1,58 +1,79 @@
 namespace Darkened.Core.Entities;
-using Darkened.Data.Interface;
+using Data.Interface;
+
+/*
+ *  Player:                     Events:  OnDeath, 
+ *      Health
+ *      Stamina
+ *      Spells
+ *      Items
+ *      Weapons
+ *      Armour
+ *      bool IsGuarded
+ */
 public class Player
 {
+    // Events
+    public event Action<Player> OnDeath;
     // Constructors
     public Player(IJson playerDetails, IDatabase noteDatabase)
     {}
     public Player (
-        string playerName, 
+        string playerName = "Cleo", 
         int maxHealth = 20, 
-        int maxMana = 20, 
+        int maxSt = 20, 
         int health = -1, 
-        int mana = -1, 
+        int stamina = -1, 
         IDatabase? noteDatabase = null
     )
     {
+        // setting field parameters
         Name = playerName;
-        this.maxHealth = maxHealth;
-        this.maxMana = maxMana;
-        if(health == -1)
-            this.health = maxHealth;
-        if (mana == -1)
-            this.mana = maxMana;
+        _maxHealth = maxHealth;
+        _maxSt = maxSt;
+        _health = health == -1 ? maxHealth : health;
+        _st = stamina == -1 ? maxSt : stamina;
         notes = noteDatabase;
+    }
+    public void FlipGuarded()
+    {
+        IsGuarded = !IsGuarded;
+    }
+    public void TakeDamage(int damage)
+    {
+        Health -= CalculateDamage(damage);
+        if (Health <= 0)
+        {
+            OnDeath(this);
+        }
+        
+    }
+    // Private Methods
+    private int CalculateDamage(int damage)
+    {
+        int armourDamage = _armour?.Defense ?? 1;
+        int guardedDamage = IsGuarded ? damage / 2 : 0;
+        
+        return damage - (armourDamage + guardedDamage);
     }
     // Properties
     public string Name { get; set; }
-    
-    public int Health
-    {
-        get => health;
-        set => health = Math.Clamp(value, 0, MaxHealth);
-    }
-    public int MaxHealth
-    {
-        get => maxHealth;
-        set => maxHealth = value <= 0 ? 1 : value;
-    }
-    public int Mana
-    {
-        get => mana;
-        set => mana = Math.Clamp(value, 0, MaxMana);
-    }
-    public int MaxMana
-    {
-        get => maxMana;
-        set => maxMana = value < 0 ? 1 : value;
-    }
+    public int Health { get => _health; set => _health = Math.Clamp(value, 0, MaxHealth); }
+    public int MaxHealth { get => _maxHealth; set => _maxHealth = value <= 0 ? 1 : value; }
+    public int Stamina { get => _st; set => _st = Math.Clamp(value, 0, MaxStamina); }
+    public int MaxStamina { get => _maxSt; set => _maxSt = value < 0 ? 1 : value; }
     // This boolean dictates how much damage player takes
-    public bool Guarded { get; set; }
-
-    private int health;
-    private int maxHealth;
-    private int mana;
-    private int maxMana;
-
+    public bool IsGuarded { get; private set; }
+    
+    // fields
+    private int _health;
+    private int _maxHealth;
+    private int _st;
+    private int _maxSt;
+    
+    private Weapon? _weaponSlot1 = null;
+    private Weapon? _weaponSlot2 = null;
+    private Armour? _armour = null;
+    
     private IDatabase? notes;
 }
