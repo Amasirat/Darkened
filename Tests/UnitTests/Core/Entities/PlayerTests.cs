@@ -4,10 +4,10 @@ namespace UnitTests.Core.Entities;
 
 public class PlayerTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
+    // [SetUp]
+    // public void Setup()
+    // {
+    // }
 
     [Test]
     public void IsGuardedTurnedToTrue()
@@ -32,5 +32,18 @@ public class PlayerTests
         
         // Assert
         Assert.False(player.IsGuarded);
+    }
+
+    [Test]
+    public void OnDeathIsCalled()
+    {
+        // Setup
+        Player player = new Player();
+        int damage = 100;
+        player.OnDeath += (o) => Console.WriteLine(player.Health);
+        // Do
+        player.TakeDamage(damage);
+        
+        Assert.True(player.Health == 0);
     }
 }

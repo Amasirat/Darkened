@@ -29,10 +29,10 @@ public class Player
     {
         // setting field parameters
         Name = playerName;
-        _maxHealth = maxHealth;
-        _maxSt = maxSt;
-        _health = health == -1 ? maxHealth : health;
-        _st = stamina == -1 ? maxSt : stamina;
+        MaxHealth = maxHealth;
+        MaxStamina = maxSt;
+        Health = health == -1 ? maxHealth : health;
+        Stamina = stamina == -1 ? maxSt : stamina;
         notes = noteDatabase;
     }
     public void FlipGuarded()
@@ -46,7 +46,6 @@ public class Player
         {
             OnDeath(this);
         }
-        
     }
     // Private Methods
     private int CalculateDamage(int damage)
