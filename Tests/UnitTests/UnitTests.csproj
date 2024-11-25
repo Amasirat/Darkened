@@ -21,4 +21,8 @@
       <ProjectReference Include="..\..\Darkened\Darkened.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Data\" />
+    </ItemGroup>
+
 </Project>

@@ -1,6 +1,6 @@
 using Darkened.Core.Entities;
 
-namespace UnitTests;
+namespace UnitTests.Core.Entities;
 
 public class PlayerTests
 {
@@ -14,7 +14,6 @@ public class PlayerTests
     {
         // Setup
         Player player = new Player();
-        
         // Do
         player.FlipGuarded();
         // Assert
