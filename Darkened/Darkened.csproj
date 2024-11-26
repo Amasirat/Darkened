@@ -13,7 +13,6 @@
 
     <ItemGroup>
       <Folder Include="Assets\" />
-      <Folder Include="Core\Interfaces\" />
       <Folder Include="Data\Database\" />
     </ItemGroup>
 

@@ -1,4 +1,8 @@
-﻿using SFML.Window;
+﻿using Darkened.Core.Entities;
+using Darkened.Core.Interfaces;
+using Darkened.Core.Systems;
+using Darkened.Data;
+using SFML.Window;
 using SFML.Graphics;
 
 namespace Darkened.Main;
@@ -13,6 +17,8 @@ public static class Game
         {
             window.Clear();
             window.DispatchEvents();
+        
+            Tree<string> tree = new Tree<string>();
             
             window.Display();
         }

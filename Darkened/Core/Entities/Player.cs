@@ -1,3 +1,5 @@
+using Darkened.Core.Interfaces;
+
 namespace Darkened.Core.Entities;
 using Data.Interface;
 
@@ -11,10 +13,10 @@ using Data.Interface;
  *      Armour
  *      bool IsGuarded
  */
-public class Player
+public class Player : ICombator
 {
     // Events
-    public event Action<Player> OnDeath;
+    public event Action<Player> Death;
     // Constructors
     public Player(IStaticData playerDetails, IDatabase noteDatabase)
     {}
@@ -27,12 +29,13 @@ public class Player
         IDatabase? noteDatabase = null
     )
     {
-        // setting field parameters
         Name = playerName;
         MaxHealth = maxHealth;
         MaxStamina = maxSt;
+        // This is for when the field is not given
         Health = health == -1 ? maxHealth : health;
         Stamina = stamina == -1 ? maxSt : stamina;
+        
         notes = noteDatabase;
     }
     public void FlipGuarded()
@@ -44,8 +47,13 @@ public class Player
         Health -= CalculateDamage(damage);
         if (Health <= 0)
         {
-            OnDeath(this);
+            Death(this);
         }
+    }
+
+    public void TakeTurn(string[] choices)
+    {
+        throw new NotImplementedException();
     }
     // Private Methods
     private int CalculateDamage(int damage)

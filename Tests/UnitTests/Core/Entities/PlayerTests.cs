@@ -40,7 +40,7 @@ public class PlayerTests
         // Setup
         Player player = new Player();
         int damage = 100;
-        player.OnDeath += (o) => Console.WriteLine(player.Health);
+        player.Death += (o) => Console.WriteLine(player.Health);
         // Do
         player.TakeDamage(damage);
         
