@@ -16,7 +16,7 @@ public class Player
     // Events
     public event Action<Player> OnDeath;
     // Constructors
-    public Player(IJson playerDetails, IDatabase noteDatabase)
+    public Player(IStaticData playerDetails, IDatabase noteDatabase)
     {}
     public Player (
         string playerName = "Cleo", 
