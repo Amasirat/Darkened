@@ -60,6 +60,13 @@ public class TreeTests
         
         Assert.That(node, Is.Null);
     }
-    
+
+    [Test]
+    public void CloneSuccessfull()
+    {
+        var newTree = testTree.Clone();
+        
+        
+    }
     private Tree<string> testTree;
 }

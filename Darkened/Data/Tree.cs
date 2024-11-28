@@ -1,15 +1,32 @@
 namespace Darkened.Data;
 
-public class Tree<T>
+public class Tree<T> : ICloneable
 {
     public Tree()
     {
         _root = new Node();
     }
 
-    public Tree(Tree<T> tree)
+    public object Clone()
     {
-        _root = tree._root;
+        var tree = new Tree<T>();
+        foreach (var child in _root.Children)
+        {
+            tree.AddChild(child.Value);
+        }
+        var queue = new Queue<Node>();
+        queue.Enqueue(_root.Children.First());
+        
+        while (queue.Count > 0)
+        {
+            var node = queue.Dequeue();
+            foreach (var child in node.Children)
+            {
+                tree.AddChild(child.Value, node.Value);
+                queue.Enqueue(child);
+            }
+        }
+        return tree;
     }
     
     // Adds a child to root
@@ -31,7 +48,7 @@ public class Tree<T>
     }
     
     // Add children to root
-    public void AddChildren(T[] children)
+    public void AddChildren(List<T> children)
     {
         foreach (var child in children)
         {
@@ -42,7 +59,7 @@ public class Tree<T>
     // Complexity is most likely O(m*b^d) m being number of children
     // and branching factor which is likely really variable. and d is max depth.
     // Candidate for optimization if having trouble with performance
-    public void AddChildren(T[] children, T parentValue)
+    public void AddChildren(List<T> children, T parentValue)
     {
         foreach (var child in children)
         {
@@ -59,9 +76,7 @@ public class Tree<T>
         {
             queue.Enqueue(child);
         }
-
-        if (queue.Count == 0) throw new Exception("Tree has no children");
-
+        
         while (queue.Count != 0)
         {
             var child = queue.Dequeue();

@@ -14,6 +14,12 @@ public class JsonParser : IStaticData
     public Dictionary<string, object> Parse(object primaryKey)
     {
         Dictionary<string, object> result = new();
+
+        switch (primaryKey)
+        {
+            case int intPrimaryKey:
+                break;
+        }
         
         return result;
     }

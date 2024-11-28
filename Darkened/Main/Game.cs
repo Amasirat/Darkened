@@ -12,25 +12,8 @@ public static class Game
     public static void Main()
     {
         Initialize();
-        var tree = new Tree<string>();
 
-        tree.AddChildren(["Attack", "Spells", "Items"]);
-
-        List<string> children = tree.GetRootChildren();
-        foreach (var child in children)
-        {
-            Console.WriteLine(child);
-        }
-
-        tree.AddChild("Calista", "Spells");
-        
-        List<string> spells = tree.GetChildren("Spells");
-        foreach (var spell in spells)
-        {
-            Console.WriteLine(spell);   
-        }
     }
-
     // Make all initialization code here
     private static void Initialize()
     {

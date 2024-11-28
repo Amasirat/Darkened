@@ -3,14 +3,14 @@
     "name": "Calista",
     "type": "Heat",
     "description": "",
-    "mana_cost": 5
+    "mana_cost": 4
   },
 
   "1": {
-    "name": "Calista",
-    "type": "Heat",
+    "name": "",
+    "type": "Cold",
     "description": "",
-    "mana_cost": 5
+    "mana_cost": 4
   },
   
   "2": {

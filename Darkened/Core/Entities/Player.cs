@@ -1,22 +1,19 @@
 using Darkened.Core.Interfaces;
+using Darkened.Core.Systems;
+using Darkened.Data;
 
 namespace Darkened.Core.Entities;
 using Data.Interface;
 
 /*
- *  Player:                     Events:  OnDeath, 
- *      Health
- *      Stamina
- *      Spells
- *      Items
- *      Weapons
- *      Armour
- *      bool IsGuarded
+ *  Player
  */
 public class Player : ICombator
 {
     // Events
-    public event Action<Player> Death;
+    public event Action<ICombator> Death;
+
+    public event Action<Tree<string>> RenderActions;
     // Constructors
     public Player(IStaticData playerDetails, IDatabase noteDatabase)
     {}
@@ -44,19 +41,42 @@ public class Player : ICombator
     }
     public void TakeDamage(int damage)
     {
-        Health -= CalculateDamage(damage);
+        Health -= CalculateDamageTaken(damage);
         if (Health <= 0)
         {
             Death(this);
         }
     }
 
-    public void TakeTurn(string[] choices)
+    public Move TakeTurn(List<ICombator> combators)
     {
+        // if (_actionTree == null)
+        //     throw new Exception("Player has no action tree");
+        //
+        // RenderActions(_actionTree);
         throw new NotImplementedException();
     }
+
+    public void TakeActionMoves(Tree<string> actionTree)
+    {
+        _actionTree = (Tree<string>)actionTree.Clone();
+        foreach (var spell in _spells)
+        {
+            actionTree.AddChild(spell.SpellName, "Spells");
+        }
+
+        foreach (var item in _items)
+        {
+            actionTree.AddChild(item.Name, "Items");
+        }
+    }
+
+    public int DealDamage()
+    {
+        return _weaponSlot?.Attack ?? 1;
+    }
     // Private Methods
-    private int CalculateDamage(int damage)
+    private int CalculateDamageTaken(int damage)
     {
         int armourDamage = _armour?.Defense ?? 1;
         int guardedDamage = IsGuarded ? damage / 2 : 0;
@@ -78,9 +98,11 @@ public class Player : ICombator
     private int _st;
     private int _maxSt;
     
-    private Weapon? _weaponSlot1 = null;
-    private Weapon? _weaponSlot2 = null;
+    private Weapon? _weaponSlot = null;
     private Armour? _armour = null;
+    private List<Spell> _spells;
+    private List<Item> _items;
     
     private IDatabase? notes;
+    private Tree<string>? _actionTree;
 }
