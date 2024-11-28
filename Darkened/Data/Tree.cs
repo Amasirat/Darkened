@@ -11,13 +11,37 @@ public class Tree<T>
     {
         _root = tree._root;
     }
-
-    public void AddChild(T child, T parentValue)
+    
+    // Adds a child to root
+    public Node AddChild(T child)
     {
-        Node parent = FindNode(parentValue);
-        parent.Children?.Append(new Node(child, []));
+        var childNode = new Node(child);
+        
+        _root.Children.Add(childNode);
+        return childNode;
     }
+    // Overflow of above that adds a node to another non-root node
+    public Node AddChild(T child, T parentValue)
+    {
+        Node? parent = FindNode(parentValue);
+        Node childNode = new Node(child);
+        parent?.Children.Add(childNode);
 
+        return childNode;
+    }
+    
+    // Add children to root
+    public void AddChildren(T[] children)
+    {
+        foreach (var child in children)
+        {
+            AddChild(child);
+        }
+    }
+    // Overflow of above, adding children to a specific node
+    // Complexity is most likely O(m*b^d) m being number of children
+    // and branching factor which is likely really variable. and d is max depth.
+    // Candidate for optimization if having trouble with performance
     public void AddChildren(T[] children, T parentValue)
     {
         foreach (var child in children)
@@ -26,8 +50,8 @@ public class Tree<T>
         }
     }
     
-    // Finds node by using the BFS algorithm
-    private Node FindNode(T parentValue)
+    // Finds node by using a BFS algorithm
+    public Node? FindNode(T parentValue)
     {
         Queue<Node> queue = new Queue<Node>();
 
@@ -38,42 +62,61 @@ public class Tree<T>
 
         if (queue.Count == 0) throw new Exception("Tree has no children");
 
-        foreach (var child in queue)
+        while (queue.Count != 0)
         {
+            var child = queue.Dequeue();
             if (child.Value.Equals(parentValue))
             {
                 return child;
             }
-
-            queue.Dequeue();
+            
             foreach (var childItems in child.Children)
             {
                 queue.Enqueue(childItems);
             }
         }
-        // Still not sure how to handle non-existing node,
-        // this is a temp thing to have it compile
-        return new Node();
+        return null;
     }
-    
-    public T[] GetChildren(Node node)
-    {
-        if(node.Children == null) throw new NullReferenceException();
-        
-        int length = node.Children?.Length ?? 0;
-        T[] values = new T[length];
 
-        foreach (var child in node.Children)
+    public List<T> GetRootChildren()
+    {
+        List<T> rootChildren = new List<T>();
+
+        foreach (var child in _root.Children)
         {
-            values.Append(child.Value);
+            rootChildren.Add(child.Value);
         }
-
-        return values;
+        
+        return rootChildren;
     }
-    public struct Node(T? value, Node[] children)
+    public List<T> GetChildren(T nodeValue)
     {
-        public T? Value { get; set; } = value;
-        public Node[] Children { get; set; } = children;
+        Node? node = FindNode(nodeValue);
+        
+        if(node == null) throw new Exception("The desired node was not found: Tree<T>.GetChildren()");
+        
+        List<T> childValues = new List<T>();
+
+        foreach (var child in node?.Children)
+        {
+            childValues.Add(child.Value);
+        }
+        return childValues;
+    }
+    public struct Node
+    {
+        public Node()
+        {
+            Children = new List<Node>();
+        }
+        
+        public Node(T? value)
+        {
+            Children = new List<Node>();
+            Value = value;
+        }
+        public T? Value { get; set; }
+        public List<Node> Children { get; set; }
     }
 
     private Node _root;

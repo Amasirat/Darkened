@@ -12,15 +12,22 @@ public static class Game
     public static void Main()
     {
         Initialize();
-        // Main Render Loop
-        while (window.IsOpen)
+        var tree = new Tree<string>();
+
+        tree.AddChildren(["Attack", "Spells", "Items"]);
+
+        List<string> children = tree.GetRootChildren();
+        foreach (var child in children)
         {
-            window.Clear();
-            window.DispatchEvents();
+            Console.WriteLine(child);
+        }
+
+        tree.AddChild("Calista", "Spells");
         
-            Tree<string> tree = new Tree<string>();
-            
-            window.Display();
+        List<string> spells = tree.GetChildren("Spells");
+        foreach (var spell in spells)
+        {
+            Console.WriteLine(spell);   
         }
     }
 
@@ -32,7 +39,8 @@ public static class Game
         window.Closed += OnClose;
     }
 
-    // Window calls this method whenever it wants to close, put anything that needs to be done before closing here
+    // Window calls this method whenever it wants to close
+    // put anything that needs to be done before closing here
     private static void OnClose(object? sender, EventArgs e)
     {
         RenderWindow renderWindow = (RenderWindow)sender;
