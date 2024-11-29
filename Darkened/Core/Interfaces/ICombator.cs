@@ -10,13 +10,15 @@ public interface ICombator
 
     public Move TakeTurn(List<ICombator> combators);
 
-    public void TakeActionMoves(Tree<string> actionTree);
+    public void TakeAndUpdateActionMoves(Tree<string> actionTree);
 
-    public int DealDamage();
+    public int CalculateDamageDealt();
 
     public void FlipGuarded();
 
+    public Tree<string> GetActionTree();
         
     public bool IsGuarded { get; }
+    public string Name { get; }
     public event Action<ICombator> Death;
 }

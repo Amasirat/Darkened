@@ -2,8 +2,19 @@ using Darkened.Core.Interfaces;
 
 namespace Darkened.Core.Entities;
 
-public struct Move
+
+public interface IMove
 {
-    public string title;
-    public ICombator target;
+    public ICombator target { get; set; }
+}
+
+public struct Move : IMove
+{
+    public string title { get; set; }
+    public ICombator target { get; set; }
+}
+public struct Magic : IMove
+{
+    public List<string> spells { get; set; }
+    public ICombator target { get; set; }
 }

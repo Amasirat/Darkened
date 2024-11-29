@@ -12,7 +12,7 @@ public class Enemy : ICombator
     {
         Name = name;
     }
-
+    
     public void TakeDamage(int damage)
     {
         throw new NotImplementedException();
@@ -23,12 +23,17 @@ public class Enemy : ICombator
         throw new NotImplementedException();
     }
 
-    public void TakeActionMoves(Tree<string> actionTree)
+    public void TakeAndUpdateActionMoves(Tree<string> actionTree)
     {
         throw new NotImplementedException();
     }
 
-    public int DealDamage()
+    public Tree<string> GetActionTree()
+    {
+        return _actionTree;
+    }
+
+    public int CalculateDamageDealt()
     {
         throw new NotImplementedException();
     }
@@ -41,4 +46,6 @@ public class Enemy : ICombator
     public string Name { get; set; }
     
     public bool IsGuarded { get; private set; }
+    
+    private Tree<string> _actionTree;
 }

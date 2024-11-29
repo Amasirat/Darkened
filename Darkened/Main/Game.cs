@@ -11,8 +11,17 @@ public static class Game
 {
     public static void Main()
     {
-        Initialize();
-
+        // Initialize();
+        var player = new Player();
+        var enemy= new Enemy();
+        
+        List<ICombator> enemies =
+        [
+            enemy
+        ];
+        var encounter = new CombatEncounter(player, enemies, true);
+        
+        encounter.StartEncounter();
     }
     // Make all initialization code here
     private static void Initialize()

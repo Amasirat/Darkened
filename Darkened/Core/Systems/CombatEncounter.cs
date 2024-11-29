@@ -8,14 +8,28 @@ namespace Darkened.Core.Systems;
 public class CombatEncounter
 {
     public CombatEncounter(ICombator player, List<ICombator> enemies, bool playerStruckFirst)
-    { 
+    {
+        // The explicit types of these combators is required for passing them into the render event
+        // Should throw a cast exception if explicit cast fails
+        _player = (Player)player;
         if (enemies.Count == 0)
         {
             throw new ConstraintException("No enemies were provided to CombatEncounter.");
         }
+        _enemies = [];
+        foreach (var enemy in enemies)
+        {
+            _enemies.Add((Enemy)enemy);
+        }
+
+        _actionTree = new Tree<string>();
+        _actionTree.AddChild("Attack");
+        _actionTree.AddChild("Defend");
+        _actionTree.AddChild("Spells");
+        _actionTree.AddChild("Items");
         
         player.Death += OnPlayerDeath;
-        player.TakeActionMoves(_actionTree);
+        player.TakeAndUpdateActionMoves(_actionTree);
         
         _combators = new List<ICombator>();
         if (playerStruckFirst)
@@ -25,7 +39,7 @@ public class CombatEncounter
             {
                 _combators.Add(enemy);
                 enemy.Death += OnEnemyDeath;
-                enemy.TakeActionMoves(_actionTree);
+                // enemy.TakeAndUpdateActionMoves(_actionTree);
             }
         }
         else
@@ -33,29 +47,28 @@ public class CombatEncounter
             foreach (var enemy in enemies)
             {
                 enemy.Death += OnEnemyDeath;
-                enemy.TakeActionMoves(_actionTree);
+                // enemy.TakeAndUpdateActionMoves(_actionTree);
                 _combators.Add(enemy);
             }
             _combators.Add(player);
         }
     }
-    
     public void StartEncounter()
     {
+
+        int turnIncrementor = 0;
+        _currentTurn = _combators[turnIncrementor];
         if(_currentTurn == null) 
             throw new NullReferenceException("Current Turn was discovered to be null. " +
                                              "Something may have gone wrong: " + 
                                              "CombatEncounter.StartEncounter()");
-
-        int turnIncrementor = 0;
-        _currentTurn = _combators[turnIncrementor];
         while (true)
         {
-            var combators = _combators.Where(combator => combator != _currentTurn).ToList();
-        // by giving the above to TakeTurn, any combator can make moves on any other combator except itself. 
-            Move action = _currentTurn.TakeTurn(combators);
-            CarryOutAction(_currentTurn, action);
-            _currentTurn = _combators[turnIncrementor % _combators.Count];
+        // by giving the above to TakeTurn, any combator can make moves on any other combator except itself.
+            Move action = _currentTurn.TakeTurn(_combators);
+            // CarryOutAction(_currentTurn, action);
+            // turnIncrementor++;
+            // _currentTurn = _combators[turnIncrementor % _combators.Count];
         }
     }
 
@@ -64,7 +77,7 @@ public class CombatEncounter
         switch (action.title)
         {
             case "Attack":
-                action.target.TakeDamage(offender.DealDamage());
+                action.target.TakeDamage(offender.CalculateDamageDealt());
                 break;
             case "Defend":
                 offender.FlipGuarded();
@@ -83,7 +96,21 @@ public class CombatEncounter
     }
     
     public event Action<bool> CombatEnded;
+
+    public event Action<Tree<string>, Player, List<Enemy>> Render;
+
+    public enum ValidActions
+    {
+        Attack,
+        Magic,
+        Defend,
+        UseItem
+    }
     // fields
+    private Player _player;
+    private List<Enemy> _enemies;
+    
+    // The below ICombator list is for the encounter logic to use for easy turn management
     private List<ICombator> _combators;
     private ICombator _currentTurn;
     private Tree<string> _actionTree;

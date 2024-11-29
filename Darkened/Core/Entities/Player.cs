@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using Darkened.Core.Interfaces;
 using Darkened.Core.Systems;
 using Darkened.Data;
@@ -13,7 +14,8 @@ public class Player : ICombator
     // Events
     public event Action<ICombator> Death;
 
-    public event Action<Tree<string>> RenderActions;
+    public event Action<Tree<string>, List<ICombator>, int> CombatRenderer;
+
     // Constructors
     public Player(IStaticData playerDetails, IDatabase noteDatabase)
     {}
@@ -32,7 +34,7 @@ public class Player : ICombator
         // This is for when the field is not given
         Health = health == -1 ? maxHealth : health;
         Stamina = stamina == -1 ? maxSt : stamina;
-        
+        CombatRenderer += ConsoleRenderer;
         notes = noteDatabase;
     }
     public void FlipGuarded()
@@ -44,20 +46,110 @@ public class Player : ICombator
         Health -= CalculateDamageTaken(damage);
         if (Health <= 0)
         {
-            Death(this);
+            Death?.Invoke(this);
         }
     }
-
+    public void ConsoleRenderer(Tree<string> actionTree, List<ICombator> enemies, int depth)
+    {
+        var menuItems = new List<string>();
+        switch (depth)
+        {
+            case 0:
+            {
+                menuItems = actionTree.GetRootChildren();
+                int index = 0;
+                foreach (string menuItem in menuItems)
+                {
+                    Console.Write($"{index}.{menuItem} ");
+                    index++;
+                }
+                
+                HandleInput(depth);
+                break;
+            }
+        }
+        // List<string> rootMenuItems = actionTree.GetRootChildren();
+        //
+        // int index = 0;
+        // foreach (string menuItem in rootMenuItems)
+        // {
+        //     Console.Write($"{index}.{menuItem} ");
+        //     index++;
+        // }
+        
+        Console.WriteLine($"Health: {Health}/{MaxHealth}");
+        Console.WriteLine($"Stamina: {Stamina}/{MaxStamina}");
+    }
     public Move TakeTurn(List<ICombator> combators)
     {
-        // if (_actionTree == null)
-        //     throw new Exception("Player has no action tree");
-        //
-        // RenderActions(_actionTree);
-        throw new NotImplementedException();
+        if (_actionTree == null)
+            throw new Exception("Player has no action tree");
+
+        foreach (var combator in combators)
+        {
+            _actionTree.AddChild(combator.Name, "Attack");
+        }
+        
+        CombatRenderer(_actionTree, combators, 0);
+        HandleInput();
+        return new Move();
     }
 
-    public void TakeActionMoves(Tree<string> actionTree)
+    private string HandleInput(int depth = 0)
+    {
+        string action = "";
+
+        switch (depth)
+        {
+            case 0:
+            {
+                switch (Console.ReadKey(true).Key)
+                {
+                    case ConsoleKey.UpArrow:
+                    {
+                        depth++;
+                        
+                        break;
+                    }
+                    case ConsoleKey.DownArrow:
+                    {
+                        break;
+                    }
+                    case ConsoleKey.LeftArrow:
+                    {
+                        break;
+                    }
+                    case ConsoleKey.RightArrow:
+                    {
+                        break;
+                    }
+                }
+                break;
+            }
+            case 1:
+            {
+                switch (Console.ReadKey(true).Key)
+                {
+                    case ConsoleKey.Escape:
+                    {
+                        depth--;
+                        break;
+                    }
+                }
+                break;
+            }
+            case 2:
+            {
+                
+                break;
+            }
+                
+        }
+
+        return action;
+    }
+
+    public void TakeAndUpdateActionMoves(Tree<string> actionTree)
     {
         _actionTree = (Tree<string>)actionTree.Clone();
         foreach (var spell in _spells)
@@ -71,7 +163,12 @@ public class Player : ICombator
         }
     }
 
-    public int DealDamage()
+    public Tree<string> GetActionTree()
+    {
+        return _actionTree;
+    }
+    
+    public int CalculateDamageDealt()
     {
         return _weaponSlot?.Attack ?? 1;
     }
@@ -84,7 +181,7 @@ public class Player : ICombator
         return damage - (armourDamage + guardedDamage);
     }
     // Properties
-    public string Name { get; set; }
+    public string Name { get; private set; }
     public int Health { get => _health; set => _health = Math.Clamp(value, 0, MaxHealth); }
     public int MaxHealth { get => _maxHealth; set => _maxHealth = value <= 0 ? 1 : value; }
     public int Stamina { get => _st; set => _st = Math.Clamp(value, 0, MaxStamina); }
@@ -100,8 +197,8 @@ public class Player : ICombator
     
     private Weapon? _weaponSlot = null;
     private Armour? _armour = null;
-    private List<Spell> _spells;
-    private List<Item> _items;
+    private List<Spell> _spells = [];
+    private List<Item> _items = [];
     
     private IDatabase? notes;
     private Tree<string>? _actionTree;
