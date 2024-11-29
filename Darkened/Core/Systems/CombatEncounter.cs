@@ -66,7 +66,7 @@ public class CombatEncounter
         {
         // by giving the above to TakeTurn, any combator can make moves on any other combator except itself.
             Move action = _currentTurn.TakeTurn(_combators);
-            // CarryOutAction(_currentTurn, action);
+            CarryOutAction(_currentTurn, action);
             // turnIncrementor++;
             // _currentTurn = _combators[turnIncrementor % _combators.Count];
         }

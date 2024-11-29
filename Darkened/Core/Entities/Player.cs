@@ -14,7 +14,7 @@ public class Player : ICombator
     // Events
     public event Action<ICombator> Death;
 
-    public event Action<Tree<string>, List<ICombator>, int> CombatRenderer;
+    public event Func<Tree<string>, List<ICombator>, int, string> CombatRenderer;
 
     // Constructors
     public Player(IStaticData playerDetails, IDatabase noteDatabase)
@@ -49,36 +49,54 @@ public class Player : ICombator
             Death?.Invoke(this);
         }
     }
-    public void ConsoleRenderer(Tree<string> actionTree, List<ICombator> enemies, int depth)
+
+    private void RenderMenu(string parent)
     {
+        Console.Clear();
         var menuItems = new List<string>();
-        switch (depth)
+        if (parent == "")
         {
-            case 0:
-            {
-                menuItems = actionTree.GetRootChildren();
-                int index = 0;
-                foreach (string menuItem in menuItems)
-                {
-                    Console.Write($"{index}.{menuItem} ");
-                    index++;
-                }
-                
-                HandleInput(depth);
-                break;
-            }
+            menuItems = _actionTree?.GetRootChildren();
         }
-        // List<string> rootMenuItems = actionTree.GetRootChildren();
-        //
-        // int index = 0;
-        // foreach (string menuItem in rootMenuItems)
-        // {
-        //     Console.Write($"{index}.{menuItem} ");
-        //     index++;
-        // }
+        else
+        {
+            menuItems = _actionTree?.GetChildren(parent);
+        }
+
+        if (menuItems.Count == 0)
+        {
+            string emptyNotifyMessage = parent != "" ? $"No {parent}" : $"Nothing to show here...";
+            Console.WriteLine(emptyNotifyMessage);
+        }
+
+        foreach (var item in menuItems)
+        {
+            Console.Write($"{item}\t");
+        }
+        Console.WriteLine("\n--------------------------------------------------------");
+        Console.WriteLine("--------------------------------------------------------");
         
         Console.WriteLine($"Health: {Health}/{MaxHealth}");
         Console.WriteLine($"Stamina: {Stamina}/{MaxStamina}");
+    }
+    public string ConsoleRenderer(Tree<string> actionTree, List<ICombator> combators, int depth)
+    {
+        string playerActionChoice = "";
+        // A list of action choices that end the turn and need to be applyed
+        List<string> turnEndingActions = ["Defend"];
+        foreach (var combator in combators)
+        {
+            turnEndingActions.Add(combator.Name);
+        }
+        while (true)
+        {
+            RenderMenu(playerActionChoice);
+            playerActionChoice = HandleInput(ref depth);
+            if (turnEndingActions.Contains(playerActionChoice))
+            {
+                return playerActionChoice;
+            }
+        }
     }
     public Move TakeTurn(List<ICombator> combators)
     {
@@ -89,13 +107,13 @@ public class Player : ICombator
         {
             _actionTree.AddChild(combator.Name, "Attack");
         }
-        
-        CombatRenderer(_actionTree, combators, 0);
-        HandleInput();
-        return new Move();
+
+        Move playerAction = new Move();
+        playerAction.title = CombatRenderer(_actionTree, combators, 0);
+        return playerAction;
     }
 
-    private string HandleInput(int depth = 0)
+    private string HandleInput(ref int depth)
     {
         string action = "";
 
@@ -108,19 +126,25 @@ public class Player : ICombator
                     case ConsoleKey.UpArrow:
                     {
                         depth++;
-                        
+                        action = "Attack";
                         break;
                     }
                     case ConsoleKey.DownArrow:
                     {
+                        action = "Spells";
+                        depth++;
                         break;
                     }
                     case ConsoleKey.LeftArrow:
                     {
+                        depth++;
+                        action = "Defend";
                         break;
                     }
                     case ConsoleKey.RightArrow:
                     {
+                        depth++;
+                        action = "Items";
                         break;
                     }
                 }
@@ -130,9 +154,10 @@ public class Player : ICombator
             {
                 switch (Console.ReadKey(true).Key)
                 {
-                    case ConsoleKey.Escape:
+                    case ConsoleKey.A:
                     {
                         depth--;
+                        action = "";
                         break;
                     }
                 }
