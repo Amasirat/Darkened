@@ -1,4 +1,5 @@
 using Darkened.Core.Entities;
+using Darkened.Core.Systems;
 using Darkened.Data;
 
 namespace Darkened.Core.Interfaces;
@@ -8,7 +9,7 @@ public interface ICombator
 {
     public void TakeDamage(int damage);
 
-    public Move TakeTurn(List<ICombator> combators);
+    public ActionMove TakeTurn(List<ICombator> combators);
 
     public void TakeAndUpdateActionMoves(Tree<string> actionTree);
 
@@ -20,5 +21,9 @@ public interface ICombator
         
     public bool IsGuarded { get; }
     public string Name { get; }
+    public int Health { get; }
+    public int MaxHealth { get; }
+    public int Stamina { get; }
+    public int MaxStamina { get; }
     public event Action<ICombator> Death;
 }

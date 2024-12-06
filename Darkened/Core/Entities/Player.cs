@@ -14,7 +14,7 @@ public class Player : ICombator
     // Events
     public event Action<ICombator> Death;
 
-    public event Func<Tree<string>, List<ICombator>, int, string> CombatRenderer;
+    public event Action<Tree<string>, string, List<ICombator>, Player> CombatRenderer;
 
     // Constructors
     public Player(IStaticData playerDetails, IDatabase noteDatabase)
@@ -34,8 +34,8 @@ public class Player : ICombator
         // This is for when the field is not given
         Health = health == -1 ? maxHealth : health;
         Stamina = stamina == -1 ? maxSt : stamina;
-        CombatRenderer += ConsoleRenderer;
         notes = noteDatabase;
+
     }
     public void FlipGuarded()
     {
@@ -79,44 +79,52 @@ public class Player : ICombator
         Console.WriteLine($"Health: {Health}/{MaxHealth}");
         Console.WriteLine($"Stamina: {Stamina}/{MaxStamina}");
     }
-    public string ConsoleRenderer(Tree<string> actionTree, List<ICombator> combators, int depth)
-    {
-        string playerActionChoice = "";
-        // A list of action choices that end the turn and need to be applyed
-        List<string> turnEndingActions = ["Defend"];
-        foreach (var combator in combators)
-        {
-            turnEndingActions.Add(combator.Name);
-        }
-        while (true)
-        {
-            RenderMenu(playerActionChoice);
-            playerActionChoice = HandleInput(ref depth);
-            if (turnEndingActions.Contains(playerActionChoice))
-            {
-                return playerActionChoice;
-            }
-        }
-    }
-    public Move TakeTurn(List<ICombator> combators)
+
+    public ActionMove TakeTurn(List<ICombator> combators)
     {
         if (_actionTree == null)
             throw new Exception("Player has no action tree");
 
         foreach (var combator in combators)
         {
-            _actionTree.AddChild(combator.Name, "Attack");
+            _actionTree.AddChild(
+                combator.Name, 
+                ActionHandler.ToString(ActionHandler.Actions.Attack
+                ));
+        }
+        
+        ActionMove actionMove = new ActionMove();
+        CombatRenderer += Renderer.Render;
+        int depth = 0;       
+        // A list of action choices that end the turn and need to be applied
+        List<string> turnEndingActions = [
+            ActionHandler.
+                ToString(
+                    ActionHandler.Actions.Defend)
+        ];
+        // Once a name of an enemy is called, turn ends. Whether it be an attack
+        // or a check
+        foreach (var combator in combators)
+        {
+            turnEndingActions.Add(combator.Name);
+        }
+        var pathTrace = new LinkedList<string>();
+        pathTrace.AddLast("");
+        while (true)
+        {
+            CombatRenderer?.Invoke(_actionTree, pathTrace.Last.Value, combators, this);
+            HandleInput(ref depth, ref pathTrace);
+            if (turnEndingActions.Contains(pathTrace.Last.Value))
+            {
+                break;
+            }
         }
 
-        Move playerAction = new Move();
-        playerAction.title = CombatRenderer(_actionTree, combators, 0);
-        return playerAction;
+        return actionMove;
     }
 
-    private string HandleInput(ref int depth)
+    private void HandleInput(ref int depth, ref LinkedList<string> pathTrace)
     {
-        string action = "";
-
         switch (depth)
         {
             case 0:
@@ -126,25 +134,24 @@ public class Player : ICombator
                     case ConsoleKey.UpArrow:
                     {
                         depth++;
-                        action = "Attack";
+                        pathTrace.AddLast(ActionHandler.ToString(ActionHandler.Actions.Attack));
                         break;
                     }
                     case ConsoleKey.DownArrow:
                     {
-                        action = "Spells";
+                        pathTrace.AddLast(ActionHandler.ToString(ActionHandler.Actions.Magic));
                         depth++;
                         break;
                     }
                     case ConsoleKey.LeftArrow:
                     {
-                        depth++;
-                        action = "Defend";
+                        pathTrace.AddLast(ActionHandler.ToString(ActionHandler.Actions.Defend));
                         break;
                     }
                     case ConsoleKey.RightArrow:
                     {
                         depth++;
-                        action = "Items";
+                        pathTrace.AddLast(ActionHandler.ToString(ActionHandler.Actions.UseItem));
                         break;
                     }
                 }
@@ -157,21 +164,13 @@ public class Player : ICombator
                     case ConsoleKey.A:
                     {
                         depth--;
-                        action = "";
+                        pathTrace.RemoveLast();
                         break;
                     }
                 }
                 break;
             }
-            case 2:
-            {
-                
-                break;
-            }
-                
         }
-
-        return action;
     }
 
     public void TakeAndUpdateActionMoves(Tree<string> actionTree)
@@ -179,12 +178,16 @@ public class Player : ICombator
         _actionTree = (Tree<string>)actionTree.Clone();
         foreach (var spell in _spells)
         {
-            actionTree.AddChild(spell.SpellName, "Spells");
+            actionTree.AddChild(spell.SpellName, 
+                ActionHandler.
+                    ToString(ActionHandler.Actions.Magic));
         }
 
         foreach (var item in _items)
         {
-            actionTree.AddChild(item.Name, "Items");
+            actionTree.AddChild(item.Name, 
+                ActionHandler.
+                    ToString(ActionHandler.Actions.UseItem));
         }
     }
 

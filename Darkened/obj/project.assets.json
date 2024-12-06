@@ -1086,6 +1086,7 @@
       "packagesPath": "/home/amasirat/.nuget/packages/",
       "outputPath": "/home/amasirat/dev/Darkened/Darkened/obj/",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "/home/amasirat/.nuget/NuGet/NuGet.Config"
       ],

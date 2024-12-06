@@ -1,4 +1,5 @@
 using Darkened.Core.Interfaces;
+using Darkened.Core.Systems;
 using Darkened.Data;
 
 namespace Darkened.Core.Entities;
@@ -18,7 +19,7 @@ public class Enemy : ICombator
         throw new NotImplementedException();
     }
 
-    public Move TakeTurn(List<ICombator> combators)
+    public ActionMove TakeTurn(List<ICombator> combators)
     {
         throw new NotImplementedException();
     }
@@ -45,7 +46,12 @@ public class Enemy : ICombator
     
     public string Name { get; set; }
     
+    public int Health { get; set; }
+    public int MaxHealth { get; set; }
+    public int Stamina { get; set; }
+    public int MaxStamina { get; set; }
     public bool IsGuarded { get; private set; }
     
+
     private Tree<string> _actionTree;
 }

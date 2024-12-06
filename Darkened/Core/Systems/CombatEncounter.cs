@@ -12,6 +12,14 @@ public class CombatEncounter
         // The explicit types of these combators is required for passing them into the render event
         // Should throw a cast exception if explicit cast fails
         _player = (Player)player;
+        _validActions =
+        [
+            ActionHandler.Actions.Attack,
+            ActionHandler.Actions.Defend,
+            ActionHandler.Actions.Magic,
+            ActionHandler.Actions.UseItem
+        ];
+        
         if (enemies.Count == 0)
         {
             throw new ConstraintException("No enemies were provided to CombatEncounter.");
@@ -23,10 +31,11 @@ public class CombatEncounter
         }
 
         _actionTree = new Tree<string>();
-        _actionTree.AddChild("Attack");
-        _actionTree.AddChild("Defend");
-        _actionTree.AddChild("Spells");
-        _actionTree.AddChild("Items");
+        // _actionTree.AddChild("Attack");
+        // _actionTree.AddChild("Defend");
+        // _actionTree.AddChild("Spells");
+        // _actionTree.AddChild("Items");
+        PopulateActionTree();
         
         player.Death += OnPlayerDeath;
         player.TakeAndUpdateActionMoves(_actionTree);
@@ -64,48 +73,53 @@ public class CombatEncounter
                                              "CombatEncounter.StartEncounter()");
         while (true)
         {
-        // by giving the above to TakeTurn, any combator can make moves on any other combator except itself.
-            Move action = _currentTurn.TakeTurn(_combators);
-            CarryOutAction(_currentTurn, action);
-            // turnIncrementor++;
-            // _currentTurn = _combators[turnIncrementor % _combators.Count];
+            ActionMove actionMove = _currentTurn.TakeTurn(_combators);
+            CarryOutAction(_currentTurn, actionMove);
+            if (_combators.Count == 1)
+            {
+                CombatEnded?.Invoke(false);
+            }
+            turnIncrementor++;
+            _currentTurn = _combators[turnIncrementor % _combators.Count];
         }
     }
 
-    private void CarryOutAction(ICombator offender, Move action)
+    private void CarryOutAction(ICombator offender, ActionMove actionMove)
     {
-        switch (action.title)
+        switch (actionMove.Act)
         {
-            case "Attack":
-                action.target.TakeDamage(offender.CalculateDamageDealt());
+            case ActionHandler.Actions.Attack:
+                actionMove.Target.TakeDamage(offender.CalculateDamageDealt());
                 break;
-            case "Defend":
+            case ActionHandler.Actions.Defend:
                 offender.FlipGuarded();
+                break;
+            case ActionHandler.Actions.Magic:
+                break;
+            case ActionHandler.Actions.UseItem:
                 break;
         }
     }
 
     private void OnPlayerDeath(ICombator obj)
     {
-        throw new NotImplementedException();
+        CombatEnded?.Invoke(true);
     }
     
     private void OnEnemyDeath(ICombator obj)
     {
         throw new NotImplementedException();
     }
-    
-    public event Action<bool> CombatEnded;
 
-    public event Action<Tree<string>, Player, List<Enemy>> Render;
-
-    public enum ValidActions
+    private void PopulateActionTree()
     {
-        Attack,
-        Magic,
-        Defend,
-        UseItem
+        foreach (var action in _validActions)
+        {
+            _actionTree.AddChild(ActionHandler.ToString(action));
+        }
     }
+    public event Action<bool> CombatEnded;
+    
     // fields
     private Player _player;
     private List<Enemy> _enemies;
@@ -113,5 +127,6 @@ public class CombatEncounter
     // The below ICombator list is for the encounter logic to use for easy turn management
     private List<ICombator> _combators;
     private ICombator _currentTurn;
+    private List<ActionHandler.Actions> _validActions;
     private Tree<string> _actionTree;
 }
