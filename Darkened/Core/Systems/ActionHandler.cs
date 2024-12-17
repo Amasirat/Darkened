@@ -6,6 +6,8 @@ namespace Darkened.Core.Systems;
 
 public static class ActionHandler
 {
+
+    public static event Action ActionTaken;
     public static string ToString(Actions action)
     {
         return action switch
@@ -49,6 +51,8 @@ public static class ActionHandler
     }
     public static void Defend(ICombator caster)
     {
+        Console.WriteLine("Entered Defend");
+        ActionTaken?.Invoke();
         caster.FlipGuarded();
     }
 

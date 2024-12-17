@@ -28,7 +28,7 @@ public class CombatEncounter
             // CarryOutAction(_currentTurn, actionMove);
             if (_combators.Count == 1)
             {
-                CombatEnded?.Invoke(false);
+                CombatEnded?.Invoke();
             }
 
             turnIncrementor++;
@@ -36,26 +36,8 @@ public class CombatEncounter
         }
     }
 
-    private void CarryOutAction(ICombator offender, ActionMove actionMove)
-    {
-        switch (actionMove.Value)
-        {
-            case ActionHandler.Actions.Attack:
-                actionMove.Target?.TakeDamage(offender.CalculateDamageDealt());
-                break;
-            case ActionHandler.Actions.Defend:
-                offender.FlipGuarded();
-                break;
-            case ActionHandler.Actions.Magic:
-                break;
-            case ActionHandler.Actions.UseItem:
-                break;
-        }
-    }
-
     private void OnPlayerDeath(ICombator obj)
     {
-        CombatEnded?.Invoke(true);
     }
     
     private void OnEnemyDeath(ICombator obj)
@@ -113,7 +95,7 @@ public class CombatEncounter
             _combators.Add(player);
         }
     }
-    public event Action<bool> CombatEnded;
+    public event Action CombatEnded;
     
     // fields
     private Player _player;

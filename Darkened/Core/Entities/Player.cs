@@ -51,12 +51,13 @@ public class Player : ICombator
 
     public void TakeTurn(List<ICombator> combators)
     {
+        IsGuarded = false;
         if (_actionTree == null)
             throw new Exception("Player has no action tree");
 
         foreach (var combator in combators)
         {
-            _actionTree.AddChild(combator.Name, 
+            _actionTree.AddChild(ActionHandler.ToString(ActionHandler.Actions.Attack) + "-" + combator.Name, 
                 ActionHandler.ToString(ActionHandler.Actions.Attack));
         }
         

@@ -34,6 +34,7 @@ public static class Game
             ActionHandler.ToString(
                 ActionHandler.Actions.Attack), 
             () => combatMenu.GoNext(ActionHandler.ToString(ActionHandler.Actions.Attack)));
+        combatMenu.AddActionToSelection(ActionHandler.ToString(ActionHandler.Actions.Defend), () => ActionHandler.Defend(player));
 
         player.CombatRenderer += combatMenu.TakeStateAndDrawMenu;
         
