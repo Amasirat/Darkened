@@ -18,9 +18,11 @@ public sealed class CombatMenu : UIMenu
         combatorMaxStamina = combator.MaxStamina;
         
         UpdateItemsTree(combatorMenuTree);
-        while (_window.IsOpen)
+        bool turnEnded = false;
+        while (_window.IsOpen && !turnEnded)
         {
             _window.DispatchEvents();
+            _window.Clear();
             Render();
             HandleInput();
             _window.Display();

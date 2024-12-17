@@ -65,7 +65,7 @@ public class Player : ICombator
     
     public void TakeAndUpdateActionMoves(Tree<string> actionTree)
     {
-        _actionTree = (Tree<string>)actionTree.Clone();
+        _actionTree = actionTree;
         foreach (var spell in _spells)
         {
             actionTree.AddChild(spell.SpellName, 

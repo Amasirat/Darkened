@@ -16,12 +16,12 @@ public class CombatEncounter
 
     public void StartEncounter()
     {
+        int turnIncrementor = 0;
+        _currentTurn = _combators[turnIncrementor];
         if(_currentTurn == null) 
             throw new NullReferenceException("Current Turn was discovered to be null. " +
                                              "Something may have gone wrong: " + 
                                              "CombatEncounter.StartEncounter()");
-        int turnIncrementor = 0;
-        _currentTurn = _combators[turnIncrementor];
         while (true)
         {
             _currentTurn.TakeTurn(_combators);

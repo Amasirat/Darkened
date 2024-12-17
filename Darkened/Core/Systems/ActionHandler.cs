@@ -45,6 +45,7 @@ public static class ActionHandler
 
     public static void Attack(ICombator offender, ICombator target)
     {
+        target.TakeDamage(offender.CalculateDamageDealt());
     }
     public static void Defend(ICombator caster)
     {
