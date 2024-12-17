@@ -12,7 +12,7 @@ public class UIMenu : IRender
     public UIMenu(RenderWindow window, Tree<string> menuTree)
     {
         _window = window;
-        _itemsTree = menuTree;
+        _itemsTree = (Tree<string>)menuTree.Clone();
         Initialize();
     }
     public void Render()
@@ -114,7 +114,7 @@ public class UIMenu : IRender
     
     public void UpdateItemsTree(Tree<string> menuTree)
     {
-        _itemsTree = menuTree;
+        _itemsTree = (Tree<string>)menuTree.Clone();
     }
     
     public void GoNext(string selection)

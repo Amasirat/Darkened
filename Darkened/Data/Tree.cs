@@ -11,20 +11,19 @@ public class Tree<T> : ICloneable
     {
         // TODO: if one child of root has no children, the foreach will be exited and loop will prematurely end
         var tree = new Tree<T>();
+        var queue = new Queue<Node>();
         foreach (var child in Root.Children)
         {
             tree.AddChild(child.Value);
+            queue.Enqueue(child);
         }
-        var queue = new Queue<Node>();
-        queue.Enqueue(Root);
         
         while (queue.Count > 0)
         {
             var node = queue.Dequeue();
-
             foreach (var child in node.Children)
             {
-                tree.AddChild(node.Value, child.Value);
+                tree.AddChild(child.Value, node.Value);
                 queue.Enqueue(child);
             }
         }
