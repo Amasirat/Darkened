@@ -12,9 +12,101 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Assets\" />
       <Folder Include="Data\Database\" />
       <Folder Include="Data\Interface\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\Montserrat-Italic-VariableFont_wght.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\Montserrat-VariableFont_wght.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\OFL.txt" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\README.txt" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-Black.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-BlackItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-Bold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-BoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-ExtraBold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-ExtraBoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-ExtraLight.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-ExtraLightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-Italic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-Light.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-LightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-Medium.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-MediumItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-Regular.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-SemiBold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-SemiBoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-Thin.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Montserrat\static\Montserrat-ThinItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\NewAmsterdam-Regular.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\New_Amsterdam\NewAmsterdam-Regular.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\New_Amsterdam\OFL.txt" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\OFL.txt" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-Black.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-BlackItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-Bold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-BoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-ExtraBold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-ExtraBoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-ExtraLight.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-ExtraLightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-Italic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-Light.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-LightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-Medium.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-MediumItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-Regular.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-SemiBold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-SemiBoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-Thin.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins-ThinItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\OFL.txt" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-Black.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-BlackItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-Bold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-BoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-ExtraBold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-ExtraLight.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-Italic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-Light.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-LightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-Medium.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-MediumItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-Regular.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-SemiBold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-Thin.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Poppins\Poppins-ThinItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-Black.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-BlackItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-Bold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-BoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-Italic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-Light.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-LightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-Medium.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-MediumItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-Regular.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-Thin.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto-ThinItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\LICENSE.txt" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-Black.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-BlackItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-Bold.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-BoldItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-Italic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-Light.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-LightItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-Medium.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-MediumItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-Regular.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-Thin.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Fonts\Roboto\Roboto-ThinItalic.ttf" />
+      <None Include="bin\Debug\net8.0\Assets\Untitled.png" />
+      <None Include="bin\Debug\net8.0\Untitled.png" />
     </ItemGroup>
 
 </Project>

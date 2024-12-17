@@ -9,7 +9,7 @@ public interface ICombator
 {
     public void TakeDamage(int damage);
 
-    public ActionMove TakeTurn(List<ICombator> combators);
+    public void TakeTurn(List<ICombator> combators);
 
     public void TakeAndUpdateActionMoves(Tree<string> actionTree);
 

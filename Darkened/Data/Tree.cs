@@ -4,25 +4,27 @@ public class Tree<T> : ICloneable
 {
     public Tree()
     {
-        _root = new Node();
+        Root = new Node();
     }
 
     public object Clone()
     {
+        // TODO: if one child of root has no children, the foreach will be exited and loop will prematurely end
         var tree = new Tree<T>();
-        foreach (var child in _root.Children)
+        foreach (var child in Root.Children)
         {
             tree.AddChild(child.Value);
         }
         var queue = new Queue<Node>();
-        queue.Enqueue(_root.Children.First());
+        queue.Enqueue(Root);
         
         while (queue.Count > 0)
         {
             var node = queue.Dequeue();
+
             foreach (var child in node.Children)
             {
-                tree.AddChild(child.Value, node.Value);
+                tree.AddChild(node.Value, child.Value);
                 queue.Enqueue(child);
             }
         }
@@ -34,7 +36,7 @@ public class Tree<T> : ICloneable
     {
         var childNode = new Node(child);
         
-        _root.Children.Add(childNode);
+        Root.Children.Add(childNode);
         return childNode;
     }
     // Overflow of above that adds a node to another non-root node
@@ -72,7 +74,7 @@ public class Tree<T> : ICloneable
     {
         Queue<Node> queue = new Queue<Node>();
 
-        foreach (var child in _root.Children)
+        foreach (var child in Root.Children)
         {
             queue.Enqueue(child);
         }
@@ -93,11 +95,28 @@ public class Tree<T> : ICloneable
         return null;
     }
 
+    public void RemoveChild(T key, T parentValue)
+    {
+        Node? parent = FindNode(parentValue);
+        if (parent == null) throw new KeyNotFoundException();
+
+        int index = 0;
+        foreach (var child in parent?.Children)
+        {
+            if (child.Value.Equals(key))
+            {
+                break;
+            }
+            index++;
+        }
+        parent?.Children.RemoveAt(index);
+    }
+
     public List<T> GetRootChildren()
     {
         List<T> rootChildren = new List<T>();
 
-        foreach (var child in _root.Children)
+        foreach (var child in Root.Children)
         {
             rootChildren.Add(child.Value);
         }
@@ -134,5 +153,5 @@ public class Tree<T> : ICloneable
         public List<Node> Children { get; set; }
     }
 
-    private Node _root;
+    public Node Root;
 }

@@ -12,21 +12,46 @@ public class Enemy : ICombator
     public Enemy(string name = "Crow")
     {
         Name = name;
+        Health = 20;
+        Stamina = 20;
+        MaxHealth = 20;
+        MaxStamina = 20;
     }
     
     public void TakeDamage(int damage)
     {
-        throw new NotImplementedException();
+        Health -= CalculateDamageTaken(damage);
+        if (Health <= 0)
+        {
+            Death?.Invoke(this);
+        }
     }
 
-    public ActionMove TakeTurn(List<ICombator> combators)
+    public void TakeTurn(List<ICombator> combators)
     {
-        throw new NotImplementedException();
+    }
+    
+    public void FlipGuarded()
+    {
+        IsGuarded = !IsGuarded;
     }
 
     public void TakeAndUpdateActionMoves(Tree<string> actionTree)
     {
-        throw new NotImplementedException();
+        _actionTree = (Tree<string>)actionTree.Clone();
+        foreach (var spell in _spells)
+        {
+            actionTree.AddChild(spell.SpellName, 
+                ActionHandler.
+                    ToString(ActionHandler.Actions.Magic));
+        }
+
+        foreach (var item in _items)
+        {
+            actionTree.AddChild(item.Name, 
+                ActionHandler.
+                    ToString(ActionHandler.Actions.UseItem));
+        }
     }
 
     public Tree<string> GetActionTree()
@@ -36,12 +61,36 @@ public class Enemy : ICombator
 
     public int CalculateDamageDealt()
     {
-        throw new NotImplementedException();
+        return _weapon?.Attack ?? 1;
+    }
+    
+    private int CalculateDamageTaken(int damage)
+    {
+        int damageTaken = damage;
+
+        damageTaken = IsGuarded ? damageTaken / 2 : damageTaken;
+        
+        return damageTaken;
     }
 
-    public void FlipGuarded()
+    private void AddCombatorsToActionTree(List<ICombator> combators)
     {
-        IsGuarded = !IsGuarded;
+        foreach (var combator in combators)
+        {
+            _actionTree.AddChild(combator.Name,
+                ActionHandler.ToString(ActionHandler.Actions.Attack));
+        }
+    }
+
+    private void RemoveCombatorsFromActionTree(List<ICombator> combators)
+    {
+        for (int i = 0; i < combators.Count; i++) 
+        {
+            _actionTree.RemoveChild(
+                combators[i].Name,
+                ActionHandler.ToString(ActionHandler.Actions.Attack)
+            );
+        }
     }
     
     public string Name { get; set; }
@@ -52,6 +101,8 @@ public class Enemy : ICombator
     public int MaxStamina { get; set; }
     public bool IsGuarded { get; private set; }
     
-
+    private Weapon? _weapon = null;
+    private List<Item> _items = new();
+    private List<Spell> _spells = new();
     private Tree<string> _actionTree;
 }
