@@ -55,7 +55,6 @@ public class Enemy : ICombator
                     ToString(ActionHandler.Actions.UseItem));
         }
     }
-
     public Tree<string> GetActionTree()
     {
         return _actionTree;
@@ -75,7 +74,7 @@ public class Enemy : ICombator
         return damageTaken;
     }
 
-    private void AddCombatorsToActionTree(List<ICombator> combators)
+    public void AddCombatorsToActionTree(List<ICombator> combators)
     {
         foreach (var combator in combators)
         {

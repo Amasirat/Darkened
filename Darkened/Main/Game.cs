@@ -19,31 +19,35 @@ public static class Game
 {
     public static void Main()
     {
-        Logger.Instance.Log("Logged");
-        // Initialize();
-        // var player = new Player();
-        // var enemy= new Enemy();
-        //
-        // List<ICombator> enemies =
-        // [
-        //     enemy
-        // ];
-        // var encounter = new CombatEncounter(player, enemies, true);
-        //
-        // var combatMenu = new CombatMenu(window, encounter.ActionTree);
-        // combatMenu.AddActionToSelection(
-        //     ActionHandler.ToString(
-        //         ActionHandler.Actions.Attack), 
-        //     () => combatMenu.GoNext(ActionHandler.ToString(ActionHandler.Actions.Attack)));
-        // combatMenu.AddActionToSelection(ActionHandler.ToString(ActionHandler.Actions.Defend), () => ActionHandler.Defend(player));
-        //
-        // player.CombatRenderer += combatMenu.TakeStateAndDrawMenu;
-        //
-        // encounter.StartEncounter();
+        Initialize();
+        var player = new Player();
+        
+        List<ICombator> enemies =
+        [
+            new Enemy()
+        ];
+        var encounter = new CombatEncounter(player, enemies, true);
+        encounter.CombatEnded += (bool playerWon) => Console.WriteLine(playerWon);
+        
+        string attackString = ActionHandler.ToString(ActionHandler.Actions.Attack);
+        var playerCombatMenu = new CombatMenu(window, encounter.ActionTree);
+        
+        playerCombatMenu.AddActionToSelection( attackString, () => playerCombatMenu.GoNext(attackString));
+        playerCombatMenu.AddActionToSelection(ActionHandler.ToString(ActionHandler.Actions.Defend), () => ActionHandler.Defend(player));
+        playerCombatMenu.AddActionToSelection($"{attackString}-{player.Name}", () => ActionHandler.Attack(player, player));
+        foreach (var enemy in enemies)
+        {
+            playerCombatMenu.AddActionToSelection($"{attackString}-{enemy.Name}", () => ActionHandler.Attack(player, enemy));
+        }
+        
+        player.CombatRenderer += playerCombatMenu.TakeStateAndDrawMenu;
+        
+        encounter.StartEncounter();
     }
     // Make all initialization code here
     private static void Initialize()
     {
+        Logger.Instance.Log("Initializing Game Window...");
         windowMode = new VideoMode(WindowWidth, WindowHeight);
         window = new RenderWindow(windowMode, gameTitle);
         window.Closed += OnClose;
@@ -53,6 +57,7 @@ public static class Game
     // put anything that needs to be done before closing here
     private static void OnClose(object? sender, EventArgs e)
     {
+        Logger.Instance.Log("Game Window Closed");
         RenderWindow renderWindow = (RenderWindow)sender;
         renderWindow?.Close();
     }

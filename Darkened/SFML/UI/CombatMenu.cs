@@ -2,6 +2,7 @@ using Darkened.Core.Interfaces;
 using Darkened.Core.Systems;
 using Darkened.Data;
 using SFML.Graphics;
+using SFML.System;
 
 namespace Darkened.SFML.UI;
 
@@ -22,6 +23,8 @@ public sealed class CombatMenu : UIMenu
         
         UpdateItemsTree(combatorMenuTree);
         turnEnded = false;
+
+        var attackNode = _itemsTree.FindNode(ActionHandler.ToString(ActionHandler.Actions.Attack));
         
         while (_window.IsOpen && !turnEnded)
         {
@@ -33,6 +36,13 @@ public sealed class CombatMenu : UIMenu
         }
     }
 
+    public void Render()
+    {
+        var statText = new Text($"Health: {combatorHealth}/{combatorMaxHealth}", Globals.DefaultFont);
+        statText.Position = new Vector2f(200f, 500f);
+        _window.Draw(statText);
+        base.Render();
+    }
     public void OnTurnEnded()
     {
         turnEnded = true;

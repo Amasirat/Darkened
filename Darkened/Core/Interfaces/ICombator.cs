@@ -13,6 +13,8 @@ public interface ICombator
 
     public void TakeAndUpdateActionMoves(Tree<string> actionTree);
 
+    public void AddCombatorsToActionTree(List<ICombator> combators);
+
     public int CalculateDamageDealt();
 
     public void FlipGuarded();

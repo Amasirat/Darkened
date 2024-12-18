@@ -51,16 +51,14 @@ public class Player : ICombator
 
     public void TakeTurn(List<ICombator> combators)
     {
+        Logger.Instance?.Log("Player starts turn");
         IsGuarded = false;
         if (_actionTree == null)
-            throw new Exception("Player has no action tree");
-
-        foreach (var combator in combators)
         {
-            _actionTree.AddChild(ActionHandler.ToString(ActionHandler.Actions.Attack) + "-" + combator.Name, 
-                ActionHandler.ToString(ActionHandler.Actions.Attack));
+            string message = "ERROR: Player has no action tree";
+            Logger.Instance?.Log(message);
+            throw new Exception(message);
         }
-        
         CombatRenderer?.Invoke(_actionTree, this);
     }
     
@@ -80,13 +78,36 @@ public class Player : ICombator
                 ActionHandler.
                     ToString(ActionHandler.Actions.UseItem));
         }
+        Logger.Instance?.Log("Player updates ActionTree");
     }
 
     public Tree<string> GetActionTree()
     {
         return _actionTree;
     }
-    
+
+    public void AddCombatorsToActionTree(List<ICombator> combators)
+    {
+        if (_actionTree == null)
+        {
+            Logger.Instance?.Log("ERROR: Player has no action tree(TakeCombatorsAndUpdateActionTree)");
+            throw new NullReferenceException("ERROR: Player has no action tree(TakeCombatorsAndUpdateActionTree)");
+        }
+
+        if (combators.Count == 0) return;
+
+        string attackString = ActionHandler.ToString(ActionHandler.Actions.Attack);
+        string itemString = ActionHandler.ToString(ActionHandler.Actions.UseItem);
+
+        var itemNode = _actionTree.FindNode(itemString);
+        
+        foreach (var combator in combators)
+        {
+            _actionTree.AddChild($"{attackString}-{combator.Name}", attackString);
+            foreach(var item in itemNode?.Children)
+                _actionTree.AddChild($"{itemString}-{combator.Name}", item.Value);
+        }
+    }
     public int CalculateDamageDealt()
     {
         return _weaponSlot?.Attack ?? 1;
@@ -120,5 +141,5 @@ public class Player : ICombator
     private List<Item> _items = [];
     
     private IDatabase? notes;
-    private Tree<string>? _actionTree;
+    private Tree<string>? _actionTree = null;
 }

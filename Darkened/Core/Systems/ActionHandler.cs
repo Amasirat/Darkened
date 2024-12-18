@@ -47,11 +47,13 @@ public static class ActionHandler
 
     public static void Attack(ICombator offender, ICombator target)
     {
+        Console.WriteLine("Reached Attack method");
+        ActionTaken?.Invoke();
         target.TakeDamage(offender.CalculateDamageDealt());
+        Console.WriteLine($"{target.Name} Health: {target.Health} / {target.MaxHealth}");
     }
     public static void Defend(ICombator caster)
     {
-        Console.WriteLine("Entered Defend");
         ActionTaken?.Invoke();
         caster.FlipGuarded();
     }

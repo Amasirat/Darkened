@@ -13,66 +13,12 @@ public class CombatEncounter
     {
         Initialize(player, enemies, playerStruckFirst);
     }
-
-    public void StartEncounter()
-    {
-        int turnIncrementor = 0;
-        _currentTurn = _combators[turnIncrementor];
-        if(_currentTurn == null) 
-            throw new NullReferenceException("Current Turn was discovered to be null. " +
-                                             "Something may have gone wrong: " + 
-                                             "CombatEncounter.StartEncounter()");
-        while (true)
-        {
-            _currentTurn.TakeTurn(_combators);
-            // CarryOutAction(_currentTurn, actionMove);
-            if (_combators.Count == 1)
-            {
-                CombatEnded?.Invoke();
-            }
-
-            turnIncrementor++;
-            _currentTurn = _combators[turnIncrementor % _combators.Count];
-        }
-    }
-
-    private void OnPlayerDeath(ICombator obj)
-    {
-    }
-    
-    private void OnEnemyDeath(ICombator obj)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void PopulateActionTree()
-    {
-        foreach (var action in ActionHandler.GetActionHashMap())
-        {
-            ActionTree.AddChild(action.Value);
-        }
-    }
     private void Initialize(ICombator player, List<ICombator> enemies, bool playerStruckFirst)
     {
-        // The explicit types of these combators is required for passing them into the render event
-        // Should throw a cast exception if explicit cast fails
-        _player = (Player)player;
-        
-        if (enemies.Count == 0)
-        {
-            throw new ConstraintException("No enemies were provided to CombatEncounter.");
-        }
-        _enemies = [];
-        foreach (var enemy in enemies)
-        {
-            _enemies.Add((Enemy)enemy);
-        }
-
         ActionTree = new Tree<string>();
         PopulateActionTree();
         player.Death += OnPlayerDeath;
         player.TakeAndUpdateActionMoves(ActionTree);
-        
         _combators = new List<ICombator>();
         if (playerStruckFirst)
         {
@@ -94,16 +40,60 @@ public class CombatEncounter
             }
             _combators.Add(player);
         }
+        // This is for letting the combators add the initial combators to their action trees
+        foreach (var combator in _combators)
+        {
+            combator.AddCombatorsToActionTree(_combators);
+        }
     }
-    public event Action CombatEnded;
+    public void StartEncounter()
+    {
+        Logger.Instance?.Log("Starting CombatEncounter");
+        int turnIncrementor = 0;
+        _currentTurn = _combators[turnIncrementor];
+        if(_currentTurn == null) 
+            throw new NullReferenceException("Current Turn was discovered to be null. " +
+                                             "Something may have gone wrong: " + 
+                                             "CombatEncounter.StartEncounter()");
+        while (true)
+        {
+            _currentTurn.TakeTurn(_combators);
+            if (_combators.Count == 1 || playerDied)
+            {
+                CombatEnded?.Invoke(!playerDied);
+                break;
+            }
+            turnIncrementor++;
+            _currentTurn = _combators[turnIncrementor % _combators.Count];
+        }
+    }
+
+    private void OnPlayerDeath(ICombator obj)
+    {
+        Logger.Instance?.Log($"CombatEncounter.OnPlayerDeath: {obj.Name}");
+        Console.WriteLine("PlayerDeath");
+        playerDied = true;
+        CombatEnded?.Invoke(!playerDied);
+    }
     
-    // fields
-    private Player _player;
-    private List<Enemy> _enemies;
-    
+    private void OnEnemyDeath(ICombator obj)
+    {
+        _combators.Remove(obj);
+    }
+
+    private void PopulateActionTree()
+    {
+        foreach (var action in ActionHandler.GetActionHashMap())
+        {
+            ActionTree.AddChild(action.Value);
+        }
+    }
+    // gives a boolean informing the delegate if player won or lost
+    public event Action<bool> CombatEnded;
     // The below ICombator list is for the encounter logic to use for easy turn management
     private List<ICombator> _combators;
     private ICombator _currentTurn;
     private List<ActionHandler.Actions> _validActions;
+    private bool playerDied;
     public Tree<string> ActionTree;
 }

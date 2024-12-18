@@ -114,7 +114,7 @@ public class UIMenu : IRender
     
     public void UpdateItemsTree(Tree<string> menuTree)
     {
-        _itemsTree = (Tree<string>)menuTree.Clone();
+        _itemsTree = menuTree;
     }
     
     public void GoNext(string selection)
@@ -135,7 +135,7 @@ public class UIMenu : IRender
         _visibleItems.Clear();
         foreach (var item in _currentParent?.Children)
         {
-            _visibleItems.Add(new Text(item.Value, new Font("Assets/Fonts/Poppins-Light.ttf")));
+            _visibleItems.Add(new Text(item.Value, Globals.DefaultFont));
         }
     }
     
@@ -145,7 +145,7 @@ public class UIMenu : IRender
         _visibleItems = new List<Text>();
         foreach (var child in _currentParent?.Children)
         {
-            _visibleItems.Add(new Text(child.Value, new Font("Assets/Fonts/Poppins-Light.ttf")));
+            _visibleItems.Add(new Text(child.Value, Globals.DefaultFont));
         }
         SelectedItem = _visibleItems.FirstOrDefault();
         _actionMap = new Dictionary<string, Action?>();
@@ -153,6 +153,7 @@ public class UIMenu : IRender
         foreach (var item in _visibleItems)
         {
             _actionMap.Add(item.DisplayedString, () => Console.WriteLine($"Selected: {item.DisplayedString}"));
+            _actionMap[item.DisplayedString] += () => Logger.Instance.Log($"Selected: {item.DisplayedString}");
         }
 
         _selectionPath = new LinkedList<Tree<string>.Node?>();
