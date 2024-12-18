@@ -1,3 +1,4 @@
+using System.Text;
 using SFML.System;
 
 namespace Darkened.Data;
@@ -10,33 +11,41 @@ public class Logger
 
     private void Initialize()
     {
-        fileStream = new FileStream(LogOutPath, FileMode.OpenOrCreate, FileAccess.Write);
+        if (!Directory.Exists(Globals.LogDirectory))
+        {
+            Directory.CreateDirectory(Globals.LogDirectory);
+        }
+        _logOutPath = Path.Join(Globals.LogDirectory, DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss") + ".log");
+        Console.WriteLine(_logOutPath);
+        fileStream = new FileStream(_logOutPath, FileMode.OpenOrCreate, FileAccess.Write);
         fileStream.Close();
     }
-    public static void Log(string message)
+    public void Log(string message)
     {
-        FileStream appendStream = new FileStream(LogOutPath, FileMode.Append);
+        fileStream = new FileStream(_logOutPath, FileMode.Append);
+        
+        string Line = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss}: {message}";
+        byte[] buffer = Encoding.UTF8.GetBytes(Line);
+        fileStream.Write(buffer, 0, buffer.Length);
+        
+        fileStream.Close();
     }
-
     public static Logger Instance
     {
         get
         {
             if (_instance == null)
-            {
-                _instance = new Logger();
-            }
-
+                lock (_lock)
+                {
+                    _instance ??= new Logger();
+                }
+            
             return _instance;
         }
     }
-    
-    public static string LogOutPath { get; set; } = Path.Join(
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-        _dateTimeNow.ToString("yyyy-MM-dd HH:mm:ss") + ".log"
-    );
-    
+
+    private static string _logOutPath;
     private static Logger _instance;
-    private static DateTime _dateTimeNow = DateTime.Now;
+    private static readonly object _lock = new();
     private FileStream fileStream;
 }

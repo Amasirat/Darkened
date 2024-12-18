@@ -19,26 +19,27 @@ public static class Game
 {
     public static void Main()
     {
-        Initialize();
-        var player = new Player();
-        var enemy= new Enemy();
-        
-        List<ICombator> enemies =
-        [
-            enemy
-        ];
-        var encounter = new CombatEncounter(player, enemies, true);
-
-        var combatMenu = new CombatMenu(window, encounter.ActionTree);
-        combatMenu.AddActionToSelection(
-            ActionHandler.ToString(
-                ActionHandler.Actions.Attack), 
-            () => combatMenu.GoNext(ActionHandler.ToString(ActionHandler.Actions.Attack)));
-        combatMenu.AddActionToSelection(ActionHandler.ToString(ActionHandler.Actions.Defend), () => ActionHandler.Defend(player));
-
-        player.CombatRenderer += combatMenu.TakeStateAndDrawMenu;
-        
-        encounter.StartEncounter();
+        Logger.Instance.Log("Logged");
+        // Initialize();
+        // var player = new Player();
+        // var enemy= new Enemy();
+        //
+        // List<ICombator> enemies =
+        // [
+        //     enemy
+        // ];
+        // var encounter = new CombatEncounter(player, enemies, true);
+        //
+        // var combatMenu = new CombatMenu(window, encounter.ActionTree);
+        // combatMenu.AddActionToSelection(
+        //     ActionHandler.ToString(
+        //         ActionHandler.Actions.Attack), 
+        //     () => combatMenu.GoNext(ActionHandler.ToString(ActionHandler.Actions.Attack)));
+        // combatMenu.AddActionToSelection(ActionHandler.ToString(ActionHandler.Actions.Defend), () => ActionHandler.Defend(player));
+        //
+        // player.CombatRenderer += combatMenu.TakeStateAndDrawMenu;
+        //
+        // encounter.StartEncounter();
     }
     // Make all initialization code here
     private static void Initialize()
@@ -56,7 +57,7 @@ public static class Game
         renderWindow?.Close();
     }
     
-    private static string gameTitle = "Darkened";
+    private static string gameTitle = Globals.ProjectName;
     private static RenderWindow window;
     private static VideoMode windowMode;
 

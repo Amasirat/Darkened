@@ -37,7 +37,7 @@ public sealed class CombatMenu : UIMenu
     {
         turnEnded = true;
     }
-    
+
     private string combatorName;
     private int combatorHealth;
     private int combatorStamina;
