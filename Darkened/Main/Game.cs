@@ -34,12 +34,15 @@ public static class Game
         
         playerCombatMenu.AddActionToSelection( attackString, () => playerCombatMenu.GoNext(attackString));
         playerCombatMenu.AddActionToSelection(ActionHandler.ToString(ActionHandler.Actions.Defend), () => ActionHandler.Defend(player));
-        playerCombatMenu.AddActionToSelection($"{attackString}-{player.Name}", () => ActionHandler.Attack(player, player));
+        playerCombatMenu.AddActionToSelection($"{attackString} {player.Name}", () => ActionHandler.Attack(player, player));
         foreach (var enemy in enemies)
         {
-            playerCombatMenu.AddActionToSelection($"{attackString}-{enemy.Name}", () => ActionHandler.Attack(player, enemy));
+            playerCombatMenu.AddActionToSelection($"{attackString} {enemy.Name}", () => ActionHandler.Attack(player, enemy));
         }
-        
+        playerCombatMenu.AddActionToSelection(
+            ActionHandler.ToString(ActionHandler.Actions.UseItem),
+            () => playerCombatMenu.GoNext(ActionHandler.ToString(ActionHandler.Actions.UseItem))
+        );
         player.CombatRenderer += playerCombatMenu.TakeStateAndDrawMenu;
         
         encounter.StartEncounter();

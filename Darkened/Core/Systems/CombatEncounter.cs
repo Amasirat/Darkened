@@ -46,6 +46,15 @@ public class CombatEncounter
             combator.AddCombatorsToActionTree(_combators);
         }
     }
+// Method to give proper functionality to combator
+    public void HandleCombatMenuInitialization(
+        ICombator combator, 
+        List<ICombator> targets)
+    {
+        combator.AddCombatorsToActionTree(_combators);
+        combator.TakeAndUpdateActionMoves(ActionTree);
+        
+    }
     public void StartEncounter()
     {
         Logger.Instance?.Log("Starting CombatEncounter");

@@ -94,6 +94,33 @@ public class Tree<T> : ICloneable
         return null;
     }
 
+    private Node? DFS(T value, Node node)
+    {
+        if (node.Children.Count != 0)
+        {
+            foreach (var child in node.Children)
+            {
+                var current = DFS(value, child);
+                if (current != null)
+                    return current;
+            }
+
+            if (node.Value.Equals(value))
+            {
+                return node;
+            }
+        }
+        else
+        {
+            if (node.Value.Equals(value))
+            {
+                return node;
+            }
+        }
+
+        return null;
+    }
+
     public void RemoveChild(T key, T parentValue)
     {
         Node? parent = FindNode(parentValue);

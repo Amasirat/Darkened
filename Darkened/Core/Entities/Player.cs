@@ -2,6 +2,7 @@ using System.Reflection.Metadata;
 using Darkened.Core.Interfaces;
 using Darkened.Core.Systems;
 using Darkened.Data;
+using Darkened.SFML.UI;
 
 namespace Darkened.Core.Entities;
 using Data.Interface;
@@ -35,6 +36,9 @@ public class Player : ICombator
         Health = health < 0 ? maxHealth : health;
         Stamina = stamina < 0 ? maxSt : stamina;
         notes = noteDatabase;
+        
+        _items = new Dictionary<Item, uint>();
+        _items.Add(new Item(), 1);
     }
     public void FlipGuarded()
     {
@@ -64,6 +68,8 @@ public class Player : ICombator
     
     public void TakeAndUpdateActionMoves(Tree<string> actionTree)
     {
+        if (!_readyToUpdateActionTree) return;
+        
         _actionTree = actionTree;
         foreach (var spell in _spells)
         {
@@ -72,13 +78,14 @@ public class Player : ICombator
                     ToString(ActionHandler.Actions.Magic));
         }
 
-        foreach (var item in _items)
+        foreach (var item in _items.Keys)
         {
             actionTree.AddChild(item.Name, 
                 ActionHandler.
                     ToString(ActionHandler.Actions.UseItem));
         }
         Logger.Instance?.Log("Player updates ActionTree");
+        _readyToUpdateActionTree = false;
     }
 
     public Tree<string> GetActionTree()
@@ -103,22 +110,37 @@ public class Player : ICombator
         
         foreach (var combator in combators)
         {
-            _actionTree.AddChild($"{attackString}-{combator.Name}", attackString);
+            _actionTree.AddChild($"{attackString} {combator.Name}", attackString);
             foreach(var item in itemNode?.Children)
-                _actionTree.AddChild($"{itemString}-{combator.Name}", item.Value);
+                _actionTree.AddChild($"{itemString} {combator.Name}", item.Value);
         }
     }
     public int CalculateDamageDealt()
     {
         return _weaponSlot?.Attack ?? 1;
     }
+
+    public void TakeUIMenu(UIMenu uiMenu)
+    {
+        _uiMenu = uiMenu;
+    }
+
+    public void TakeCombatMenu(CombatMenu combatMenu)
+    {
+        CombatMenu = combatMenu;
+    }
     // Private Methods
     private int CalculateDamageTaken(int damage)
     {
-        // int armourDamage = _armour?.Defense ?? 1;
+        // int armourResistence = _armour?.Defense ?? 1;
         int guardedDamage = IsGuarded ? damage / 2 : 0;
         
         return damage - (guardedDamage);
+    }
+
+    private void AddSelectionsToCombatMenu()
+    {
+        
     }
     // Properties
     public string Name { get; private set; }
@@ -128,18 +150,22 @@ public class Player : ICombator
     public int MaxStamina { get => _maxSt; set => _maxSt = value < 0 ? 1 : value; }
     // This boolean dictates how much damage player takes
     public bool IsGuarded { get; private set; }
+    public CombatMenu? CombatMenu { get; set; }
     
     // fields
     private int _health;
     private int _maxHealth;
     private int _st;
     private int _maxSt;
+    // This is for making sure TakeAndUpdateActionTree does not get duplicate values
+    private bool _readyToUpdateActionTree = true;
     
     private Weapon? _weaponSlot = null;
     private Armour? _armour = null;
     private List<Spell> _spells = [];
-    private List<Item> _items = [];
+    private Dictionary<Item, uint> _items;
     
     private IDatabase? notes;
-    private Tree<string>? _actionTree = null;
+    private Tree<string>? _actionTree;
+    private UIMenu? _uiMenu;
 }

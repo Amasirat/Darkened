@@ -30,6 +30,7 @@ public class Enemy : ICombator
     public void TakeTurn(List<ICombator> combators)
     {
         IsGuarded = false;
+        
         Console.WriteLine("Turn Ended");
     }
     

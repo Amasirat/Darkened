@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FZPjQcGIELI=",
+  "dgSpecHash": "rNM/1YepRzM=",
   "success": true,
   "projectFilePath": "/home/amasirat/dev/Darkened/Darkened/Darkened.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "/home/amasirat/.nuget/packages/sfml.net/2.6.0/sfml.net.2.6.0.nupkg.sha512",
     "/home/amasirat/.nuget/packages/sfml.system/2.6.0/sfml.system.2.6.0.nupkg.sha512",
     "/home/amasirat/.nuget/packages/sfml.window/2.6.0/sfml.window.2.6.0.nupkg.sha512",
-    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.10/microsoft.aspnetcore.app.ref.8.0.10.nupkg.sha512"
+    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
   ],
   "logs": []
 }
