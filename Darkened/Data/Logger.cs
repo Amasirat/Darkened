@@ -1,5 +1,4 @@
 using System.Text;
-using SFML.System;
 
 namespace Darkened.Data;
 public class Logger

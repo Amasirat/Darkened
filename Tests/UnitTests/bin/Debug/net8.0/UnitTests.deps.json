@@ -1272,7 +1272,10 @@
           "SFML.Net": "2.6.0"
         },
         "runtime": {
-          "Darkened.dll": {}
+          "Darkened.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

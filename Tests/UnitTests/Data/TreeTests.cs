@@ -62,7 +62,7 @@ public class TreeTests
     }
 
     [Test]
-    public void CloneSuccessfull()
+    public void CloneSuccessful()
     {
         var newTree = testTree.Clone();
         

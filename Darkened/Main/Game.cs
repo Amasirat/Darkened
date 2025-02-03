@@ -50,7 +50,7 @@ public static class Game
     // Make all initialization code here
     private static void Initialize()
     {
-        Logger.Instance.Log("Initializing Game Window...");
+        // Logger.Instance.Log("Initializing Game Window...");
         windowMode = new VideoMode(WindowWidth, WindowHeight);
         window = new RenderWindow(windowMode, gameTitle);
         window.Closed += OnClose;

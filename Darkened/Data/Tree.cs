@@ -58,7 +58,7 @@ public class Tree<T> : ICloneable
     }
     // Overflow of above, adding children to a specific node
     // Complexity is most likely O(m*b^d) m being number of children
-    // and branching factor which is likely really variable. and d is max depth.
+    // and branching factor which is variable. and d is max depth.
     // Candidate for optimization if having trouble with performance
     public void AddChildren(List<T> children, T parentValue)
     {
@@ -68,53 +68,51 @@ public class Tree<T> : ICloneable
         }
     }
     
-    // Finds node by using a BFS algorithm
+    // Finds the first node given its value
     public Node? FindNode(T parentValue)
     {
-        Queue<Node> queue = new Queue<Node>();
-
-        foreach (var child in Root.Children)
-        {
-            queue.Enqueue(child);
-        }
+        // Finding Node using BFS: Faster but memory intensive
+        // Queue<Node> queue = new Queue<Node>();
+        //
+        // foreach (var child in Root.Children)
+        // {
+        //     queue.Enqueue(child);
+        // }
+        //
+        // while (queue.Count != 0)
+        // {
+        //     var child = queue.Dequeue();
+        //     if (child.Value.Equals(parentValue))
+        //     {
+        //         return child;
+        //     }
+        //     
+        //     foreach (var childItems in child.Children)
+        //     {
+        //         queue.Enqueue(childItems);
+        //     }
+        // }
+        // return null;
         
-        while (queue.Count != 0)
-        {
-            var child = queue.Dequeue();
-            if (child.Value.Equals(parentValue))
-            {
-                return child;
-            }
-            
-            foreach (var childItems in child.Children)
-            {
-                queue.Enqueue(childItems);
-            }
-        }
-        return null;
+        // finding Node using DFS: Slower but less memory usage
+        Node? searchingNode = Root;
+
+        searchingNode = DFS(parentValue, (Node)searchingNode);
+        return searchingNode;
     }
 
     private Node? DFS(T value, Node node)
     {
-        if (node.Children.Count != 0)
+        if (node.Value != null && node.Value.Equals(value))
+            return node;
+        
+        Node? nextNode = node;
+        foreach (var child in node.Children)
         {
-            foreach (var child in node.Children)
+            nextNode = DFS(value, child);
+            if (nextNode is not null)
             {
-                var current = DFS(value, child);
-                if (current != null)
-                    return current;
-            }
-
-            if (node.Value.Equals(value))
-            {
-                return node;
-            }
-        }
-        else
-        {
-            if (node.Value.Equals(value))
-            {
-                return node;
+                return nextNode;
             }
         }
 

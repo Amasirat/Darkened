@@ -279,9 +279,9 @@
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.AssemblyInfo.cs
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.csproj.CoreCompileInputs.cache
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.sourcelink.json
-/home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.csproj.CopyComplete
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.dll
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/refint/UnitTests.dll
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.pdb
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.genruntimeconfig.cache
 /home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/ref/UnitTests.dll
+/home/amasirat/dev/Darkened/Tests/UnitTests/obj/Debug/net8.0/UnitTests.csproj.Up2Date
