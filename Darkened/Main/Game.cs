@@ -1,17 +1,6 @@
-﻿using System.Diagnostics.Tracing;
-using System.Numerics;
-using System.Text;
-using System.Threading.Channels;
-using Darkened.Core.Entities;
-using Darkened.Core.Interfaces;
-using Darkened.Core.Systems;
-using Darkened.Data;
-using Darkened.SFML;
-using Darkened.SFML.UI;
-using SFML.Audio;
+﻿using Darkened.Data;
 using SFML.Window;
 using SFML.Graphics;
-using SFML.System;
 
 namespace Darkened.Main;
 // This class contains the entry point into the program and is responsible for managing the window
@@ -20,32 +9,6 @@ public static class Game
     public static void Main()
     {
         Initialize();
-        var player = new Player();
-        
-        List<ICombator> enemies =
-        [
-            new Enemy()
-        ];
-        var encounter = new CombatEncounter(player, enemies, true);
-        encounter.CombatEnded += (bool playerWon) => Console.WriteLine(playerWon);
-        
-        string attackString = ActionHandler.ToString(ActionHandler.Actions.Attack);
-        var playerCombatMenu = new CombatMenu(window, encounter.ActionTree);
-        
-        playerCombatMenu.AddActionToSelection( attackString, () => playerCombatMenu.GoNext(attackString));
-        playerCombatMenu.AddActionToSelection(ActionHandler.ToString(ActionHandler.Actions.Defend), () => ActionHandler.Defend(player));
-        playerCombatMenu.AddActionToSelection($"{attackString} {player.Name}", () => ActionHandler.Attack(player, player));
-        foreach (var enemy in enemies)
-        {
-            playerCombatMenu.AddActionToSelection($"{attackString} {enemy.Name}", () => ActionHandler.Attack(player, enemy));
-        }
-        playerCombatMenu.AddActionToSelection(
-            ActionHandler.ToString(ActionHandler.Actions.UseItem),
-            () => playerCombatMenu.GoNext(ActionHandler.ToString(ActionHandler.Actions.UseItem))
-        );
-        player.CombatRenderer += playerCombatMenu.TakeStateAndDrawMenu;
-        
-        encounter.StartEncounter();
     }
     // Make all initialization code here
     private static void Initialize()
