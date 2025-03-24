@@ -16,18 +16,18 @@ public class Logger
         }
         _logOutPath = Path.Join(Globals.LogDirectory, DateTime.Now.ToString("yyyy-MM-dd-HH:mm:ss") + ".log");
         Console.WriteLine(_logOutPath);
-        var fileStream = new FileStream(_logOutPath, FileMode.OpenOrCreate, FileAccess.Write);
-        fileStream.Close();
+        var writeFileStream = new FileStream(_logOutPath, FileMode.OpenOrCreate, FileAccess.Write);
+        writeFileStream.Close();
+        // creates a static appending log stream for Logger.
+        // This should be the main log stream that is supposed to be used
+        // and opening any new streams should be avoided
+        LogStream = new FileStream(_logOutPath, FileMode.Append);
     }
     public void Log(string message)
     {
-        var fileStream = new FileStream(_logOutPath, FileMode.Append);
-        
         string line = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss}: {message}\n";
         byte[] buffer = Encoding.UTF8.GetBytes(line);
-        fileStream.Write(buffer, 0, buffer.Length);
-        
-        fileStream.Close();
+        LogStream.Write(buffer, 0, buffer.Length);
     }
     public static Logger? Instance
     {
@@ -46,4 +46,5 @@ public class Logger
     private static string _logOutPath;
     private static Logger? _instance;
     private static readonly object _lock = new();
+    private static FileStream LogStream;
 }

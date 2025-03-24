@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "20D1/352SpM=",
+  "dgSpecHash": "Qvg+frz3NtE=",
   "success": true,
   "projectFilePath": "/home/amasirat/dev/Darkened/Tests/UnitTests/UnitTests.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,8 @@
     "/home/amasirat/.nuget/packages/sfml.system/2.6.0/sfml.system.2.6.0.nupkg.sha512",
     "/home/amasirat/.nuget/packages/sfml.window/2.6.0/sfml.window.2.6.0.nupkg.sha512",
     "/home/amasirat/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
-    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.3/microsoft.aspnetcore.app.ref.9.0.3.nupkg.sha512"
+    "/home/amasirat/.nuget/packages/microsoft.netcore.app.ref/8.0.14/microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
+    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.14/microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512"
   ],
   "logs": []
 }
