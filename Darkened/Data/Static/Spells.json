@@ -1,0 +1,50 @@
+{
+  "0": {
+    "name": "Calista",
+    "type": "Heat",
+    "description": "",
+    "mana_cost": 4
+  },
+
+  "1": {
+    "name": "",
+    "type": "Cold",
+    "description": "",
+    "mana_cost": 4
+  },
+  
+  "2": {
+    "name": "Calista",
+    "type": "Heat",
+    "description": "",
+    "mana_cost": 5
+  },
+  
+  "3": {
+    "name": "Calista",
+    "type": "Heat",
+    "description": "",
+    "mana_cost": 5
+  },
+  
+  "4": {
+    "name": "Calista",
+    "type": "Heat",
+    "description": "",
+    "mana_cost": 5
+  },
+  
+  "5": {
+    "name": "Calista",
+    "type": "Heat",
+    "description": "",
+    "mana_cost": 5
+  },
+  
+  "6": {
+    "name": "Calista",
+    "type": "Heat",
+    "description": "",
+    "mana_cost": 5
+  }
+}
