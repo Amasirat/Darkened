@@ -1,4 +1,4 @@
-namespace Darkened.Core.Systems;
+namespace Darkened.State;
 // The state machine relies on this Mode enum value to keep track of what mode the game is on
 // The game can be in many modes, the 4 major game modes are:
 // Combat: When the player is currently engaged in combat

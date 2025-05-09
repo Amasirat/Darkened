@@ -1,4 +1,4 @@
-namespace Darkened.Core.Systems;
+namespace Darkened.State;
 
 public class StateMachine
 {

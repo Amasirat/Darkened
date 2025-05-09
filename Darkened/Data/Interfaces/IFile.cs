@@ -1,4 +1,4 @@
-namespace Darkened.Data;
+namespace Darkened.Data.Interfaces;
 
 public interface IFile
 {
@@ -8,7 +8,7 @@ public interface IFile
 
     public void Append(string content);
     
-    public bool FileExists(string filePath);
+    public bool PathExists();
     
     public string Path { get; }
 }

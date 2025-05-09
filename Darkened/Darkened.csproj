@@ -15,7 +15,6 @@
       <Folder Include="bin\Debug\net9.0\" />
       <Folder Include="Core\Systems\FreeRoam\" />
       <Folder Include="Data\Database\" />
-      <Folder Include="Data\Interface\" />
     </ItemGroup>
 
     <ItemGroup>

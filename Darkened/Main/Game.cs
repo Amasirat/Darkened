@@ -1,14 +1,21 @@
 ﻿using Darkened.Data;
 using SFML.Window;
 using SFML.Graphics;
+using System.Text.Json;
+using Darkened.Core.Systems.Novel;
 
 namespace Darkened.Main;
 // This class contains the entry point into the program and is responsible for managing the window
 public static class Game
 {
+    struct Data
+    {
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+    }
     public static void Main()
     {
-        Initialize();
+        // Initialize();
     }
     // Make all initialization code here
     private static void Initialize()

@@ -1,31 +1,29 @@
+using System.Text.Json;
 namespace Darkened.Data;
+using Interfaces;
 
-public class JsonParser
+public class JsonParser<T>
 {
-    public JsonParser(string filePath)
+    public JsonParser(IFile file, JsonSerializerOptions? options)
     {
-        FilePath = filePath;
-        if(!File.Exists(FilePath))
-            throw new FileNotFoundException("File not found", FilePath);
+        File = file;
+        Options = options ?? new JsonSerializerOptions { WriteIndented = true }; 
     }
-    
-    public Dictionary<string, object> Parse(object primaryKey)
+    public void Store(T data)
     {
-        Dictionary<string, object> result = new();
-
-        switch (primaryKey)
-        {
-            case int intPrimaryKey:
-                break;
-        }
-        
-        return result;
+        if(!File.PathExists())
+            throw new FileNotFoundException("File not found", File.Path);
+        string jsonString = JsonSerializer.Serialize(data, Options);
+        File.Write(jsonString);
     }
-
-    public void Store(Dictionary<string, object> data)
+    public T Load()
     {
-        
+        if(!File.PathExists())
+            throw new FileNotFoundException("File not found", File.Path);
+        string jsonString = File.Read();
+        T data = JsonSerializer.Deserialize<T>(jsonString, Options) ?? throw new Exception("Invalid file format");
+        return data;
     }
-    
-    public string FilePath { get; set; }
+    private IFile File { get; set; }
+    private JsonSerializerOptions Options { get; set; }
 }
