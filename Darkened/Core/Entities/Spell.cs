@@ -1,4 +1,3 @@
-using Darkened.Data.Interface;
 
 namespace Darkened.Core.Systems;
 
@@ -18,10 +17,6 @@ public class Spell
         SpellType = spellType;
         SpellDescription = spellDescription;
         StaminaCost = staminaCost;
-    }
-
-    public Spell(IStaticData spellStaticData, object primaryKey)
-    {
     }
     public enum Type
     {

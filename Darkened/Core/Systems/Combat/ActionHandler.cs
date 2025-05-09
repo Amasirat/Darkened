@@ -1,8 +1,6 @@
-using System.Data;
 using Darkened.Core.Entities;
-using Darkened.Core.Interfaces;
 
-namespace Darkened.Core.Systems;
+namespace Darkened.Core.Systems.Combat;
 
 public static class ActionHandler
 {

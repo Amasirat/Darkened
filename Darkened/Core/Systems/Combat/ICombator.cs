@@ -1,8 +1,6 @@
-using Darkened.Core.Entities;
-using Darkened.Core.Systems;
 using Darkened.Data;
 
-namespace Darkened.Core.Interfaces;
+namespace Darkened.Core.Systems.Combat;
 
 // Interface for objects that are allowed to participate in Combat Encounters
 public interface ICombator

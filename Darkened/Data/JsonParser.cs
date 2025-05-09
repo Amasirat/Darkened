@@ -1,8 +1,6 @@
-using Darkened.Data.Interface;
-
 namespace Darkened.Data;
 
-public class JsonParser : IStaticData
+public class JsonParser
 {
     public JsonParser(string filePath)
     {

@@ -1,10 +1,9 @@
-using Darkened.Core.Interfaces;
-using Darkened.Core.Systems;
+using Darkened.Core.Systems.Combat;
 using Darkened.Data;
 using SFML.Graphics;
 using SFML.System;
 
-namespace Darkened.SFML.UI;
+namespace Darkened.Rendering.UI;
 
 public sealed class CombatMenu : UIMenu
 {

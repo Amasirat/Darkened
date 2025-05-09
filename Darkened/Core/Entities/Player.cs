@@ -1,11 +1,9 @@
-using System.Reflection.Metadata;
-using Darkened.Core.Interfaces;
 using Darkened.Core.Systems;
 using Darkened.Data;
-using Darkened.SFML.UI;
+using Darkened.Rendering.UI;
 
 namespace Darkened.Core.Entities;
-using Data.Interface;
+using Systems.Combat;
 
 /*
  *  Player
@@ -18,15 +16,14 @@ public class Player : ICombator
     public event Action<Tree<string>, ICombator> CombatRenderer;
 
     // Constructors
-    public Player(IStaticData playerDetails, IDatabase noteDatabase)
-    {}
+    // public Player(IStaticData playerDetails, IDatabase noteDatabase)
+    // {}
     public Player (
         string playerName = "Cleo", 
         int maxHealth = 20, 
         int maxSt = 20, 
         int health = -1, 
-        int stamina = -1, 
-        IDatabase? noteDatabase = null
+        int stamina = -1
     )
     {
         Name = playerName;
@@ -35,7 +32,6 @@ public class Player : ICombator
         // This is for when the field is not given
         Health = health < 0 ? maxHealth : health;
         Stamina = stamina < 0 ? maxSt : stamina;
-        notes = noteDatabase;
         
         _items = new Dictionary<Item, uint>();
         _items.Add(new Item(), 1);
@@ -164,8 +160,7 @@ public class Player : ICombator
     private Armour? _armour = null;
     private List<Spell> _spells = [];
     private Dictionary<Item, uint> _items;
-    
-    private IDatabase? notes;
+
     private Tree<string>? _actionTree;
     private UIMenu? _uiMenu;
 }

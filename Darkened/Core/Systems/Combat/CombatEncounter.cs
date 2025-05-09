@@ -1,11 +1,9 @@
 using System.Data;
 using Darkened.Core.Entities;
-using Darkened.Core.Interfaces;
 using Darkened.Data;
-using Darkened.Data.Interface;
-using Darkened.SFML.UI;
+using Darkened.Rendering.UI;
 
-namespace Darkened.Core.Systems;
+namespace Darkened.Core.Systems.Combat;
 
 public class CombatEncounter
 {

@@ -1,9 +1,8 @@
-using Darkened.Core.Interfaces;
-using Darkened.Core.Systems;
-using Darkened.Data;
-
 namespace Darkened.Core.Entities;
 
+using Systems;
+using Systems.Combat;
+using Data;
 public class Enemy : ICombator
 {
     // Events

@@ -1,13 +1,12 @@
 using Darkened.Core.Entities;
 using Darkened.Data;
-using Darkened.Data.Interface;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 
-namespace Darkened.SFML.UI;
+namespace Darkened.Rendering.UI;
 
-public class UIMenu : IRender
+public class UIMenu
 {
     public UIMenu(RenderWindow window, Tree<string> menuTree)
     {

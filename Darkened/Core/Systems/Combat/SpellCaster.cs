@@ -1,4 +1,4 @@
-namespace Darkened.Core.Systems;
+namespace Darkened.Core.Systems.Combat;
 
 public class SpellCaster
 {
