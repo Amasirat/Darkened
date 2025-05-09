@@ -3,6 +3,7 @@ using SFML.Window;
 using SFML.Graphics;
 using System.Text.Json;
 using Darkened.Core.Systems.Novel;
+using File = Darkened.Data.File;
 
 namespace Darkened.Main;
 // This class contains the entry point into the program and is responsible for managing the window
@@ -16,6 +17,11 @@ public static class Game
     public static void Main()
     {
         // Initialize();
+        var file = new File(Path.Join(Globals.ProjectDirectory, "Main/Darkened.json"));
+        var parser = new JsonParser<Data>(file, null);
+
+        var data = parser.Load();
+        Console.WriteLine(data.Name);
     }
     // Make all initialization code here
     private static void Initialize()
