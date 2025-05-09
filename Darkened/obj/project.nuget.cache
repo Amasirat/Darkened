@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "7yZlMgRNJbY=",
-  "success": false,
+  "dgSpecHash": "g6C9N8fsC6A=",
+  "success": true,
   "projectFilePath": "/home/amasirat/dev/Darkened/Darkened/Darkened.csproj",
   "expectedPackageFiles": [
     "/home/amasirat/.nuget/packages/csfml/2.6.1/csfml.2.6.1.nupkg.sha512",
@@ -10,25 +10,7 @@
     "/home/amasirat/.nuget/packages/sfml.net/2.6.0/sfml.net.2.6.0.nupkg.sha512",
     "/home/amasirat/.nuget/packages/sfml.system/2.6.0/sfml.system.2.6.0.nupkg.sha512",
     "/home/amasirat/.nuget/packages/sfml.window/2.6.0/sfml.window.2.6.0.nupkg.sha512",
-    "/home/amasirat/.nuget/packages/microsoft.netcore.app.ref/8.0.14/microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
-    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.14/microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512"
+    "/home/amasirat/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.4/microsoft.aspnetcore.app.ref.9.0.4.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1801",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "libraryId": "Microsoft.NETCore.App.Host.linux-x64"
-    },
-    {
-      "code": "NU1102",
-      "level": "Error",
-      "message": "Unable to find package Microsoft.NETCore.App.Host.linux-x64 with version (= 8.0.14)\n  - Found 187 version(s) in nuget.org [ Nearest version: 8.0.14 ]",
-      "libraryId": "Microsoft.NETCore.App.Host.linux-x64",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
