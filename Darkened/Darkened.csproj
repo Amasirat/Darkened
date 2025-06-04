@@ -110,4 +110,8 @@
       <None Include="bin\Debug\net9.0\Assets\Untitled.png" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="obj\Debug\.gitignore" />
+    </ItemGroup>
+
 </Project>
