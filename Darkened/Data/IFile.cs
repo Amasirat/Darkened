@@ -1,4 +1,4 @@
-namespace Darkened.Data.Interfaces;
+namespace Darkened.Data;
 
 public interface IFile
 {

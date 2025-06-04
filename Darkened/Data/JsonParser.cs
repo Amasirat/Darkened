@@ -1,6 +1,5 @@
 using System.Text.Json;
 namespace Darkened.Data;
-using Interfaces;
 
 public class JsonParser<T>(IFile file, JsonSerializerOptions? options)
 {

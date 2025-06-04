@@ -19,7 +19,7 @@ public class Player : ICombator
     // public Player(IStaticData playerDetails, IDatabase noteDatabase)
     // {}
     public Player (
-        string playerName = "Cleo", 
+        string playerName = "Ruoxi", 
         int maxHealth = 20, 
         int maxSt = 20, 
         int health = -1, 
@@ -121,10 +121,10 @@ public class Player : ICombator
         _uiMenu = uiMenu;
     }
 
-    public void TakeCombatMenu(CombatMenu combatMenu)
-    {
-        CombatMenu = combatMenu;
-    }
+    // public void TakeCombatMenu(CombatMenu combatMenu)
+    // {
+    //     CombatMenu = combatMenu;
+    // }
     // Private Methods
     private int CalculateDamageTaken(int damage)
     {
@@ -132,11 +132,6 @@ public class Player : ICombator
         int guardedDamage = IsGuarded ? damage / 2 : 0;
         
         return damage - (guardedDamage);
-    }
-
-    private void AddSelectionsToCombatMenu()
-    {
-        
     }
     // Properties
     public string Name { get; private set; }
@@ -146,7 +141,7 @@ public class Player : ICombator
     public int MaxStamina { get => _maxSt; set => _maxSt = value < 0 ? 1 : value; }
     // This boolean dictates how much damage player takes
     public bool IsGuarded { get; private set; }
-    public CombatMenu? CombatMenu { get; set; }
+    // public CombatMenu? CombatMenu { get; set; }
     
     // fields
     private int _health;

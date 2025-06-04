@@ -1,6 +1,5 @@
 using System.Text.Json;
 using Darkened.Data;
-using Darkened.Data.Interfaces;
 using Moq;
 
 namespace UnitTests.Data;
