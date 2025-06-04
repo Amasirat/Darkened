@@ -9,15 +9,15 @@ public interface ICombator
 
     public void TakeTurn(List<ICombator> combators);
 
-    public void TakeAndUpdateActionMoves(Tree<string> actionTree);
+    // public void TakeAndUpdateActionMoves(Tree<string> actionTree);
 
-    public void AddCombatorsToActionTree(List<ICombator> combators);
+    // public void AddCombatorsToActionTree(List<ICombator> combators);
 
     public int CalculateDamageDealt();
 
     public void FlipGuarded();
 
-    public Tree<string> GetActionTree();
+    // public Tree<string> GetActionTree();
         
     public bool IsGuarded { get; }
     public string Name { get; }

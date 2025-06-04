@@ -12,13 +12,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="bin\Debug\net9.0\" />
+      <Folder Include="bin\Debug\" />
       <Folder Include="Core\Systems\FreeRoam\" />
       <Folder Include="Data\Database\" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="bin\Debug\net8.0\Untitled.png" />
       <None Include="bin\Debug\net9.0\Assets\Fonts\Montserrat\Montserrat-Italic-VariableFont_wght.ttf" />
       <None Include="bin\Debug\net9.0\Assets\Fonts\Montserrat\Montserrat-VariableFont_wght.ttf" />
       <None Include="bin\Debug\net9.0\Assets\Fonts\Montserrat\OFL.txt" />

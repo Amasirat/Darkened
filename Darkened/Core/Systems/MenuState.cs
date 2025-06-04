@@ -17,6 +17,7 @@ public class MenuState : IState
             Direction = MenuDirection
         };
         clock = new Clock();
+        Logger.Instance?.Log($"{Mode} state pushed on stack");
     }
     
     public void HandleInput()
@@ -47,11 +48,13 @@ public class MenuState : IState
         if (input.IsActionPressed(ActionMove.Interact))
         {
             uiMenu.SelectedItem.ItemAction?.Invoke();
+            Logger.Instance?.Log($"{uiMenu.SelectedItem.ItemText.DisplayedString} Pressed");
             clock.Restart();
         }
 
         if (input.IsActionPressed(ActionMove.Back))
         {
+            Logger.Instance?.Log($"Pressed back");
             uiMenu.GoPrevious();
             clock.Restart();
         }
@@ -66,10 +69,9 @@ public class MenuState : IState
     }
     public void Exit()
     {
+        Logger.Instance?.Log($"{Mode} state popped off stack");
     }
-    
-
-    
+    public GameMode Mode { get; } = GameMode.Menu;
     public MDirection MenuDirection { get; set; }
 
     private InputHandler input;

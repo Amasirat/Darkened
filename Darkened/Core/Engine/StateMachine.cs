@@ -1,3 +1,4 @@
+using Darkened.Data;
 using SFML.Graphics;
 
 namespace Darkened.Core.Engine;
@@ -9,6 +10,7 @@ public class StateMachine
         window = mainWindow;
         stateStack = new Stack<IState>();
         stateStack.Push(startingState);
+        Logger.Instance?.Log($"StateMachine initialized...");
     }
 
     public void PushState(IState state)

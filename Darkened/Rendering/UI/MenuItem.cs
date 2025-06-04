@@ -7,7 +7,6 @@ public class MenuItem
 {
     public MenuItem(string itemString, Action? action)
     {
-        this.itemString = itemString;
         ItemText = new Text(itemString, Globals.DefaultFont);
         ItemAction += action;
     }
@@ -17,7 +16,7 @@ public class MenuItem
     }
     public bool Equals(MenuItem other)
     {
-        return itemString == other.itemString;
+        return ItemText.DisplayedString == other.ItemText.DisplayedString;
     }
 
     public void AddAction(Action? action)
@@ -26,6 +25,4 @@ public class MenuItem
     }
     public Text ItemText { get; }
     public Action? ItemAction { get; private set; }
-    // The string behind this MenuItem, used for checking equality
-    private string itemString;
 }

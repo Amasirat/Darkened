@@ -15,7 +15,7 @@ public class Game
     // Make all initialization code here
     private void Initialize()
     {
-        Logger.Instance?.Log("Initializing Game Window...");
+        Logger.Instance.Log("Initializing Game Window...");
         window = new RenderWindow(new VideoMode(WindowWidth, WindowHeight), GameTitle);
         window.Closed += OnClose;
         gameClock = new Clock();
@@ -57,6 +57,7 @@ public class Game
             
             window.Display();
         }
+        window.Close();
     }
     // Window calls this method whenever it wants to close
     // put anything that needs to be done before closing here
@@ -64,7 +65,7 @@ public class Game
     {
         var renderWindow = (RenderWindow)sender;
         renderWindow?.Close();
-        Logger.Instance?.Log("Game Window Closed");
+        Logger.Instance?.ShutDown();
     }
     public static uint WindowWidth { get; set; } = 1920;
     public static uint WindowHeight { get; set; } = 1080;

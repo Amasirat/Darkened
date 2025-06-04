@@ -16,7 +16,7 @@ public class CombatEncounter
         ActionTree = new Tree<string>();
         PopulateActionTree();
         player.Death += OnPlayerDeath;
-        player.TakeAndUpdateActionMoves(ActionTree);
+        // player.TakeAndUpdateActionMoves(ActionTree);
         _combators = new List<ICombator>();
         if (playerStruckFirst)
         {
@@ -25,7 +25,7 @@ public class CombatEncounter
             {
                 _combators.Add(enemy);
                 enemy.Death += OnEnemyDeath;
-                enemy.TakeAndUpdateActionMoves(ActionTree);
+                // enemy.TakeAndUpdateActionMoves(ActionTree);
             }
         }
         else
@@ -33,7 +33,7 @@ public class CombatEncounter
             foreach (var enemy in enemies)
             {
                 enemy.Death += OnEnemyDeath;
-                enemy.TakeAndUpdateActionMoves(ActionTree);
+                // enemy.TakeAndUpdateActionMoves(ActionTree);
                 _combators.Add(enemy);
             }
             _combators.Add(player);
@@ -41,18 +41,18 @@ public class CombatEncounter
         // This is for letting the combators add the initial combators to their action trees
         foreach (var combator in _combators)
         {
-            combator.AddCombatorsToActionTree(_combators);
+            // combator.AddCombatorsToActionTree(_combators);
         }
     }
 // Method to give proper functionality to combator
-    public void HandleCombatMenuInitialization(
-        ICombator combator, 
-        List<ICombator> targets)
-    {
-        combator.AddCombatorsToActionTree(_combators);
-        combator.TakeAndUpdateActionMoves(ActionTree);
-        
-    }
+    // public void HandleCombatMenuInitialization(
+    //     ICombator combator, 
+    //     List<ICombator> targets)
+    // {
+    //     combator.AddCombatorsToActionTree(_combators);
+    //     combator.TakeAndUpdateActionMoves(ActionTree);
+    //     
+    // }
     public void StartEncounter()
     {
         Logger.Instance?.Log("Starting CombatEncounter");
