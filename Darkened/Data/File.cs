@@ -5,8 +5,12 @@ public class File : IFile
     public File(string path)
     {
         Path = path;
+        // if directory does not previously exist create it
+        Console.WriteLine(Directory.GetParent(path));
+        Directory.GetParent(Path)?.Create();
         if (!PathExists())
         {
+            // Create a new file and dispose of the resource that did so
             System.IO.File.CreateText(Path).Dispose();
         }
     }

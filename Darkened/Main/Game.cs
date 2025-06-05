@@ -20,7 +20,6 @@ public class Game
         window.Closed += OnClose;
         gameClock = new Clock();
         stateMachine = new StateMachine(
-            window, 
             new MenuState(window, new InputHandler(), GetDefaultStartMenuTree())
         );
     }

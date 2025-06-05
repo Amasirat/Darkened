@@ -5,9 +5,8 @@ namespace Darkened.Core.Engine;
 
 public class StateMachine
 {
-    public StateMachine(RenderWindow mainWindow, IState startingState)
+    public StateMachine(IState startingState)
     {
-        window = mainWindow;
         stateStack = new Stack<IState>();
         stateStack.Push(startingState);
         Logger.Instance?.Log($"StateMachine initialized...");
@@ -42,9 +41,8 @@ public class StateMachine
 
     public void Run(float deltaTime)
     {
-        var currentState = CurrentState();
-        currentState.Draw();
-        currentState.Update(deltaTime);
+        CurrentState().Draw();
+        CurrentState().Update(deltaTime);
     }
 
     public bool IsRunning()
@@ -53,5 +51,4 @@ public class StateMachine
     }
     
     private Stack<IState> stateStack;
-    private RenderWindow window;
 }
