@@ -1,5 +1,4 @@
 using Darkened.Data;
-using SFML.Graphics;
 
 namespace Darkened.Core.Engine;
 
@@ -19,7 +18,7 @@ public class StateMachine
             throw new Exception("State stack is empty");
         }
         
-        CurrentState().Exit();
+        CurrentState()?.Exit();
         stateStack.Push(state);
     }
 
@@ -30,19 +29,19 @@ public class StateMachine
             throw new Exception("StateStack is empty");
         }
         
-        CurrentState().Exit();
+        CurrentState()?.Exit();
         stateStack.Pop();
     }
 
-    public IState CurrentState()
+    public IState? CurrentState()
     {
-        return stateStack.Peek();
+        return !IsRunning() ? null : stateStack.Peek();
     }
 
     public void Run(float deltaTime)
     {
-        CurrentState().Draw();
-        CurrentState().Update(deltaTime);
+        CurrentState()?.Draw();
+        CurrentState()?.Update(deltaTime);
     }
 
     public bool IsRunning()

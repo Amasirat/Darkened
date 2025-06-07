@@ -17,6 +17,5 @@ public static class Globals
     
     public static readonly string ProjectDirectory = Directory.GetParent(Environment.CurrentDirectory)?.Parent?.Parent?.FullName 
                                                      ?? throw new DirectoryNotFoundException();
-    
     public static readonly Font DefaultFont = new Font(Path.Join(ProjectDirectory, "Assets/Fonts/Poppins-Light.ttf"));
 }
