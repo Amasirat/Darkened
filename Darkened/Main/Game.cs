@@ -26,6 +26,7 @@ public class Game
     private Tree<MenuItem> GetDefaultStartMenuTree()
     {
         var startMenuTree = new Tree<MenuItem>();
+       
         startMenuTree.AddChildren([
             new MenuItem("Start", () => stateMachine.PushState(new CombatState())),
             new MenuItem("Settings"),
@@ -38,6 +39,10 @@ public class Game
             new MenuItem("Check", () => {Console.WriteLine("Hit");}),
         ], new MenuItem("Settings"));
         
+        startMenuTree.AddChildren([
+            new MenuItem("Exit", () => stateMachine.PopState() ),
+            new MenuItem("Checking")
+        ], new MenuItem("Keyboard"));
         return startMenuTree;
     }
     public Game()

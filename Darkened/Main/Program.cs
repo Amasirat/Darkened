@@ -1,3 +1,5 @@
+using Darkened.Data;
+
 namespace Darkened.Main;
 
 public static class Program
@@ -11,6 +13,7 @@ public static class Program
         }
         catch (Exception e)
         {
+            Logger.Instance?.Log(e.Message);
             Console.WriteLine(e.Message);
         }
     }

@@ -42,6 +42,8 @@ public class Tree<T> : ICloneable
     public Node AddChild(T child, T parentValue)
     {
         Node? parent = FindNode(parentValue);
+        if (parent is null)
+            throw new ArgumentNullException("ERROR: Parent node could not be found");
         Node childNode = new Node(child);
         parent?.Children.Add(childNode);
 
@@ -71,34 +73,23 @@ public class Tree<T> : ICloneable
     // Finds the first node given its value
     public Node? FindNode(T parentValue)
     {
-        // Finding Node using BFS: Faster but memory intensive
-        // Queue<Node> queue = new Queue<Node>();
-        //
-        // foreach (var child in Root.Children)
-        // {
-        //     queue.Enqueue(child);
-        // }
-        //
-        // while (queue.Count != 0)
-        // {
-        //     var child = queue.Dequeue();
-        //     if (child.Value.Equals(parentValue))
-        //     {
-        //         return child;
-        //     }
-        //     
-        //     foreach (var childItems in child.Children)
-        //     {
-        //         queue.Enqueue(childItems);
-        //     }
-        // }
-        // return null;
-        
-        // finding Node using DFS: Slower but less memory usage
-        Node? searchingNode = Root;
+        switch (TraversalAlgorithm)
+        {
+            case TaMode.BFS:
+            {
+                var searchingNode = BFS(parentValue, Root);
+                return searchingNode;
+            }
+            case TaMode.DFS:
+            {
+                Node? searchingNode = Root;
 
-        searchingNode = DFS(parentValue, (Node)searchingNode);
-        return searchingNode;
+                searchingNode = DFS(parentValue, (Node)searchingNode);
+                return searchingNode;
+            }
+            default:
+                throw new Exception("ERROR: Traversal algorithm not implemented or defined");
+        }
     }
 
     private Node? DFS(T value, Node node)
@@ -116,6 +107,32 @@ public class Tree<T> : ICloneable
             }
         }
 
+        return null;
+    }
+    // Finding Node using BFS: Faster but memory intensive
+    private Node? BFS(T value, Node node)
+    {
+        Queue<Node> queue = new Queue<Node>();
+        
+        foreach (var child in node.Children)
+        {
+            queue.Enqueue(child);
+        }
+        
+        while (queue.Count != 0)
+        {
+            var child = queue.Dequeue();
+
+            if (child.Value != null && child.Value.Equals(value))
+            {
+                return child;
+            }
+            
+            foreach (var childItems in child.Children)
+            {
+                queue.Enqueue(childItems);
+            }
+        }
         return null;
     }
 
@@ -175,7 +192,14 @@ public class Tree<T> : ICloneable
         }
         public T? Value { get; set; }
         public List<Node> Children { get; set; }
-    }
 
+    }
+    public TaMode TraversalAlgorithm { get; set; } = TaMode.DFS;
+
+    public enum TaMode
+    {
+        DFS,
+        BFS
+    }
     public Node Root;
 }

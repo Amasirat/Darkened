@@ -14,9 +14,18 @@ public class MenuItem
     public MenuItem(string itemString) : this(itemString, () => {})
     {
     }
-    public bool Equals(MenuItem other)
+
+    public override bool Equals(object? obj)
     {
+        if (obj is not MenuItem other)
+            return false;
+        
         return ItemText.DisplayedString == other.ItemText.DisplayedString;
+    }
+
+    public override int GetHashCode()
+    {
+        return ItemText.DisplayedString.GetHashCode();
     }
 
     public void AddAction(Action? action)

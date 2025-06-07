@@ -12,7 +12,16 @@ public class UIMenu
     {
         this.window = window;
         itemsTree = (Tree<MenuItem>)menuTree.Clone();
-        Initialize();
+        currentParent = itemsTree.Root;
+        GiveActionToNodes();
+        visibleItems = [];
+        UpdateVisibleItems();
+        SelectedItem = visibleItems.FirstOrDefault() ?? 
+                       throw new Exception(
+                           "ERROR: There is no initial selection item selected. " +
+                           "(Either itemTree given to UIMenu is invalid or has no children");
+        selectionPath = [];
+        selectionPath.AddLast(currentParent);
     }
     public void Render()
     {
@@ -43,11 +52,15 @@ public class UIMenu
     }
     public void MoveUpSelectedItem()
     {
+        // -1 moves the selection by one in the visibleItems list
+        // (lower index means going up, towards the first item)
         MoveSelectedItem(-1);
     }
 
     public void MoveDownSelectedItem()
     {
+        // -1 moves down the selection by one in the visibleItems list
+        // (higher index means going down)
         MoveSelectedItem(1);
     }
     
@@ -65,6 +78,7 @@ public class UIMenu
 
     public void GoPrevious()
     {
+        if (IsOnRoot()) return;
         selectionPath.RemoveLast();
         currentParent = selectionPath.Last();
         UpdateVisibleItems();
@@ -77,17 +91,31 @@ public class UIMenu
             visibleItems.Add(item.Value);
         }
     }
-    
-    private void Initialize()
+    // All internal nodes that are not leaves can be given the GoNext() action
+    // That way the caller does not need to know how UIMenu handles updating visible items
+    private void GiveActionToNodes()
     {
-        currentParent = itemsTree.Root;
-        visibleItems = [];
+        var bfsQueue = new Queue<Tree<MenuItem>.Node>();
+        bfsQueue.Enqueue(itemsTree.Root);
 
-        UpdateVisibleItems();
-        SelectedItem = visibleItems.FirstOrDefault();
-
-        selectionPath = [];
-        selectionPath.AddLast(currentParent);
+        while (bfsQueue.Count > 0)
+        {
+            var current = bfsQueue.Dequeue();
+            foreach (var child in current.Children)
+            {
+                if (child.Children.Count != 0)
+                {
+                    child.Value?.AddAction(() => GoNext(child.Value));
+                    bfsQueue.Enqueue(child);
+                }
+            }
+        }
+    }
+    
+// When selectionPath has only one node, it means the UIMenu is on the root list of items
+    private bool IsOnRoot()
+    { 
+        return selectionPath.Count <= 1;
     }
 
     public float Spacing { get; set; } = 100.0f;
