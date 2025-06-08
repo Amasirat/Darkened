@@ -1,5 +1,6 @@
 using Darkened.Data;
 using SFML.Graphics;
+using SFML.System;
 
 namespace Darkened.Rendering.UI;
 
@@ -9,6 +10,7 @@ public class MenuItem
     {
         ItemText = new Text(itemString, Globals.DefaultFont);
         ItemAction += action;
+        itemColors = GetDefaultColors();
     }
     
     public MenuItem(string itemString) : this(itemString, () => {})
@@ -27,11 +29,29 @@ public class MenuItem
     {
         return ItemText.DisplayedString.GetHashCode();
     }
+    
+    public virtual void Render(RenderWindow window, Vector2f position, bool isSelected)
+    {
+        ItemText.Position = new Vector2f(position.X, position.Y);
+        ItemText.FillColor = isSelected ? itemColors["SelectedColor"] : itemColors["NormalColor"];
+        window.Draw(ItemText);
+    }
 
     public void AddAction(Action? action)
     {
         ItemAction += action;
     }
-    public Text ItemText { get; }
+
+    private Dictionary<string, Color> GetDefaultColors()
+    {
+        return new Dictionary<string, Color>()
+        {
+            ["SelectedColor"] = Color.Red,
+            ["NormalColor"] = Color.White
+        };
+    }
+    public Text ItemText { get; protected set; }
     public Action? ItemAction { get; private set; }
+    
+    private Dictionary<string, Color> itemColors;
 }

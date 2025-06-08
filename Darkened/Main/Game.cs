@@ -34,7 +34,7 @@ public class Game
         ]);
         
         startMenuTree.AddChildren([
-            new MenuItem("FullScreen"),
+            new CheckMenuItem("FullScreen", false),
             new MenuItem("Keyboard"),
             new MenuItem("Check", () => {Console.WriteLine("Hit");}),
         ], new MenuItem("Settings"));
@@ -54,9 +54,8 @@ public class Game
         while (window.IsOpen && stateMachine.IsRunning())
         {
             float deltaTime = gameClock.Restart().AsSeconds();
-            window.Clear(Color.Black);
             window.DispatchEvents();
-            
+            window.Clear();
             stateMachine.Run(deltaTime);
             
             window.Display();

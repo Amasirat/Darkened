@@ -25,19 +25,21 @@ public class UIMenu
     }
     public void Render()
     {
-        RenderMenuItems(visibleItems);
+        RenderMenuItems();
     }
 
-    private void RenderMenuItems(List<MenuItem> menuItems)
+    private void RenderMenuItems()
     {
         // TODO: Row Direction does not layout properly
         float positionX = 20.0f;
         float positionY = 20.0f;
-        foreach (var menuItem in menuItems)
+        foreach (var menuItem in visibleItems)
         {
-            menuItem.ItemText.Position = new Vector2f(positionX, positionY);
-            menuItem.ItemText.FillColor = menuItem.Equals(SelectedItem) ? Color.Red : Color.White;
-            window.Draw(menuItem.ItemText);
+            menuItem.Render(
+                window,
+                new Vector2f(positionX, positionY),
+                menuItem.Equals(SelectedItem)
+            );
             positionX += Direction == MDirection.Row ? Spacing : 0.0f;
             positionY += Direction == MDirection.Column ? Spacing : 0.0f;
         }
