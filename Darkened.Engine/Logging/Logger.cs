@@ -7,7 +7,7 @@ public class Logger : ILogger
 {
     public event Action<LogMessage> OnLogOutput;
     
-    public Logger? Instance
+    public static Logger Instance
     {
         get
         {
@@ -79,14 +79,16 @@ public class Logger : ILogger
         }
     }
 
-    private void ShutDown()
+    public void ShutDown()
     {
+        IsRunning = false;
+        _logEvent.Set();
         _loggingThread.Join();
     }
 
     private ConcurrentQueue<LogMessage> _logBuffer;
     private AutoResetEvent _logEvent;
-    private readonly Lock _threadLock = new();
+    private static readonly Lock _threadLock = new();
     private readonly Thread _loggingThread;
     private static Logger? _instance;
     
